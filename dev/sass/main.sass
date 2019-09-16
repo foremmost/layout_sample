@@ -1,0 +1,27 @@
+@import "../../../../core/mixins/reset"
+@import "../../../../core/mixins/mixins"
+@import "vars"
+$font_body: 14px
+
+//+font_inc($f_reg,'Montserrat-Light.ttf')
+.set
+	+wh(100%)
+	overflow: hidden
+html,body
+	min-height: 100vh
+	overflow-x: hidden
+body
+	+wh(100%)
+	//+font($font_body,$f_reg,$gray)
+	//+bg(100%,url(../img/bb.png),left bottom,no-repeat)
+$unit: 'px'
+@import "media/mobile"
++mq($mobile-large#{$unit})
+	@import "media/mobile-large"
++mq($tablet#{$unit})
+	@import "media/tablet"
++mq($tablet-large#{$unit})
+	@import "media/tablet-large"
++mq($desktop#{$unit})
+	@import "media/desktop"
+@import "grid/grid"
