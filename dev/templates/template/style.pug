@@ -1,0 +1,12 @@
+head
+    meta(charset='utf-8')
+    meta(name="viewport" content="width=device-width")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title #{site_name} - #{page_title}
+    +inc('css','css/main.css')
+    - if(fancy)
+        +inc('css','css/jquery.fancybox.css')
+    - if(slick)
+        +inc('css','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css')
+        +inc('css','https://kenwheeler.github.io/slick/slick/slick-theme.css')
+        +inc('css','http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')

@@ -1,41 +1,13 @@
-block vars
-	-
-		let
-			page_title = '',
-			fancy = false,
-			slick = false,
-			greensock = false;
-		const
-			site_name = 'Sample';
+include  vars
 include ../../../../../core/mixins/mixins
 include ../data/data
 doctype html
 html(lang='ru')
-	head
-		meta(charset='utf-8')
-		meta(name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0,maximum-scale=1.0")
-		meta(http-equiv="X-UA-Compatible" content="ie=edge")
-		title #{site_name} - #{page_title}
-		- if(fancy)
-			+inc('css','css/jquery.fancybox.css')
-		- if(slick)
-			+inc('css','css/css_js/slick.css')
-		+inc('css','css/main.css')
+	include  style
 	body
 		.set
-			block header
-				header.head
+			include header
 			block main
 				block aside
 				block content
-			block footer
-				- if(fancy || slick)
-					+inc('js','js/jquery-3.3.1.min.js')
-				- if(fancy)
-					+inc('js','js/jquery.fancybox.min.js')
-				- if(slick)
-						+inc('js','js/slick.js')
-				- if(greensock)
-						+inc('js','js/greensock.js')
-				+inc('js','js/main.js',true)
-			//	+inc('js','js/main.js',true)
+			include footer
