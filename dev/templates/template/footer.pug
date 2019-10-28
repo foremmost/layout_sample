@@ -1,13 +1,11 @@
 footer
 
-- if(fancy || slick)
-    +inc('js','js/jquery-3.3.1.min.js')
+    - if(fancy || slick)
+        +inc('js','js/jquery-3.3.1.min.js')
     - if(fancy)
-    +inc('js','js/jquery.fancybox.min.js')
+        +inc('js','js/jquery.fancybox.min.js')
     - if(slick)
-    +inc('js','https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js')
+        +inc('js','slick.js')
     - if(greensock)
-    +inc('js','js/greensock.js')
+        +inc('js','js/greensock.js')
     +inc('js','js/main.js',true)
-    +inc('js','http://code.jquery.com/ui/1.12.1/jquery-ui.js')
-    //	+inc('js','js/main.js',true)
