@@ -3,17 +3,16 @@
 @import "vars"
 $font_body: 14px
 
-//+font_inc($f_reg,'Montserrat-Light.ttf')
++font_inc($f_reg,'SFProDisplayRegular.ttf')
++font_inc($f_medium,'SFProDisplayMedium.ttf')
 .set
 	+wh(100%)
-	overflow: hidden
 html,body
 	min-height: 100vh
 	overflow-x: hidden
 body
 	+wh(100%)
-	//+font($font_body,$f_reg,$gray)
-	//+bg(100%,url(../img/bb.png),left bottom,no-repeat)
+	+font($font_body,$f_reg,#000)
 $unit: 'px'
 @import "media/m"
 +mq($mobile-large#{$unit})
@@ -26,6 +25,4 @@ $unit: 'px'
 	@import "media/d"
 +mq($desktop-large#{$unit})
 	@import "media/dl"
-+mq($desktop-fullHD#{$unit})
-	@import "media/dlf"
 @import "grid/grid"
