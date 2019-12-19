@@ -1,38 +1,3 @@
 $unit: 'px'
 .section
   +w($desktop#{$unit})
-.head
-  +w(1042px)
-  margin: auto
-  &-name
-    +w(330px)
-  &-login
-    &:hover
-      background-color: $head-gray
-      transition: .35s ease
-      span
-        color: #fff
-      .head-login-lock
-        span:first-child
-          border-color: #fff
-        span:last-child
-          background-color: #fff
-  &-language
-    &-select
-      .head-button
-        &:hover
-          transition: .35s ease
-          background-color: $head-gray
-          span
-            color: #fff
-          .head-language-arrow span
-            border-color: #fff
-  .participate
-    &:hover
-      transform: rotate(45deg)
-      display: block
-      transition: .35s ease
-      span
-        color: #C7132A
-  &-underline
-    display: none
