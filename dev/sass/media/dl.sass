@@ -1,3 +1,112 @@
 $unit: 'px'
 .section
-  +w($desktop-large#{$unit})
+  //+w($desktop-large#{$unit})
+  +w(100%)
+.container
+  +w(1800px)
+  display: flex
+  margin: auto
+  min-height: 100vh
+.title
+  +font(32px,$f_bold,$text)
+  line-height: 38px
+.left-block
+  +w(calc(100% - 630px))
+  position: relative
+  background-color: #f9f9f9
+.navigation
+  display: flex
+  align-items: center
+  position: absolute
+  top: 30px
+  right: 40px
+  &-desc
+    +font(13px,$f_bold,$text)
+  div
+    +w(32px)
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-left: 15px
+  &-button
+    +wh(4px)
+    border-radius: 2px
+    background-color: $light-gray
+.active
+  background-color: $text
+.rectangle
+  +wh(100%,50px)
+  display: flex
+  align-items: center
+.create
+  &-form
+    +w(480px)
+    margin: 220px auto 0
+  &-sign
+    margin: 40px 0
+    &-button
+      +font(15px,$f_bold,$blue)
+      margin-left: 5px
+  &-unit
+    border: 1px solid $gray
+    padding-left: 10px
+    padding-right: 15px
+    margin-bottom: 20px
+    position: relative
+    &-span
+      transition: 0.35s ease
+      padding: 0 5px
+      &-active
+        transform: translateY(-25px)
+        background-color: #f9f9f9
+    &-span,&-select-head,&-comment
+      color: $light-text
+    &-input
+      +w(465px)
+      position: absolute
+      left: 15px
+    &-select
+      padding-left: 15px
+      &-list
+        display: none
+    &-pass
+      margin-bottom: 60px
+      &-button
+        margin-left: auto
+        i
+          color: $text
+        .arrow-down
+          font-size: 20px
+          transition: .35s ease
+    &-comment
+      font-size: 12px
+      position: absolute
+      bottom: -35px
+      left: 0
+  &-submit
+    background-color: $gray
+    justify-content: space-around
+    &-span
+      color: $light-gray
+  &-comment
+    display: block
+    margin-top: 40px
+    font-size: 13px
+    line-height: 25px
+    letter-spacing: 0.21px
+    &-link
+      +font(13px,$f_bold,$blue)
+      line-height: 25px
+      letter-spacing: 0.21px
+.right
+  &-block
+    +w(630px)
+    padding-top: 432px
+  &-title
+    color: #fff
+    text-align: center
+  &-p
+    +w(340px)
+    +font(18px,$f_reg,#fff)
+    margin: 80px auto 0
+    line-height: 30px
