@@ -2,7 +2,6 @@
 @import "../../../../core/mixins/mixins"
 @import "vars"
 $font_body: 14px
-
 +font_inc($f_reg,'roboto-regular.ttf')
 +font_inc($f_bold,'roboto-bold.ttf')
 .set
@@ -25,6 +24,5 @@ input
 	background-color: transparent
 	border: none
 $unit: 'px'
-
 +mq($desktop-large#{$unit})
 	@import "media/dl"

@@ -36,6 +36,8 @@ $unit: 'px'
   background-color: $text
 .rectangle
   +wh(100%,50px)
+  border-radius: 4px
+  transition: .35s ease
   display: flex
   align-items: center
 .create
@@ -47,32 +49,73 @@ $unit: 'px'
     &-button
       +font(15px,$f_bold,$blue)
       margin-left: 5px
+      &:hover
+        text-decoration: underline
   &-unit
     border: 1px solid $gray
     padding-left: 10px
-    padding-right: 15px
     margin-bottom: 20px
     position: relative
+    &:hover
+      .create-unit-span
+        transform: translateY(-25px)
+    &-span,&-select-head,&-comment
+      color: $light-text
     &-span
       transition: 0.35s ease
       padding: 0 5px
-      &-active
-        transform: translateY(-25px)
-        background-color: #f9f9f9
-    &-span,&-select-head,&-comment
-      color: $light-text
+      &-error
+        font-size: 12px
+        color: $red
+        display: none
     &-input
-      +w(465px)
+      +wh(465px,100%)
       position: absolute
       left: 15px
     &-select
-      padding-left: 15px
+      padding-left: 0
+      &-button
+        top: 15px
+        transition: .35s ease
+      &-head,&-item
+        padding-left: 15px
       &-list
+        +w(100%)
         display: none
+        transition: .35s ease
+      &-item
+        +w(100%)
+        display: block
+        text-align: left
+        padding: 0 15px
+        transition: .35s ease
+        opacity: 0
+        visibility: hidden
+        &:hover
+          background-color: $light-gray
+          color: #fff
+      &-active
+        height: 150px
+        .create-unit
+          &-button
+            transform: rotate(180deg)
+          &-select
+            &-list
+              display: block
+            &-head
+              display: none
+            &-item
+              padding-left: 15px
+              height: 50px
+              opacity: 1
+              visibility: visible
+    &-button
+      position: absolute
+      right: 15px
     &-pass
       margin-bottom: 60px
       &-button
-        margin-left: auto
+        top: 16.5px
         i
           color: $text
         .arrow-down
@@ -83,11 +126,56 @@ $unit: 'px'
       position: absolute
       bottom: -35px
       left: 0
+    &-active
+      .create-unit-span
+        transform: translateY(-25px)
+        background-color: #f9f9f9
+    &-error
+      margin-bottom: 40px
+      border-color: $red
+      .create-unit
+        &-comment
+          transform: translateX(150px)
+        &-span
+          color: $red
+          &-error
+            display: block
+            transform: translateX(0)
   &-submit
-    background-color: $gray
     justify-content: space-around
+    position: relative
+    overflow: hidden
+    border: 1px solid $gray
     &-span
+      position: relative
+      z-index: 10
       color: $light-gray
+      font-size: 13px
+      transition: .35s ease
+      &-bgc
+        +wh(50%,100%)
+        position: absolute
+        background-color: $gray
+        transition: .35s ease
+        &-left
+          left: 0
+        &-right
+          right: 0
+    &-active
+      border-color: $blue
+      .create-submit-span-bgc
+        background-color: $blue
+      &:hover
+        .create-submit-span
+          color: $blue
+          &-bgc
+            &-left
+              transform: translateX(-100%)
+            &-right
+              transform: translateX(100%)
+      .create-submit-span
+        font-family: $f_bold
+        color: #fff
   &-comment
     display: block
     margin-top: 40px
@@ -98,6 +186,8 @@ $unit: 'px'
       +font(13px,$f_bold,$blue)
       line-height: 25px
       letter-spacing: 0.21px
+      &:hover
+        text-decoration: underline
 .right
   &-block
     +w(630px)
@@ -110,3 +200,4 @@ $unit: 'px'
     +font(18px,$f_reg,#fff)
     margin: 80px auto 0
     line-height: 30px
+
