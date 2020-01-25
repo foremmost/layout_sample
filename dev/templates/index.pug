@@ -1,54 +1,7 @@
 extends template/main
 append vars
   -
-    page_title= 'Create account'
+    page_title= 'main page'
 block content
     main
         .section
-            .container
-                .left-block
-                    .navigation
-                        span.navigation-desc Step #[span(class='navigation-desc-current') 1] of 3
-                        div
-                            button.navigation-button.one.active
-                            button.navigation-button.two
-                            button.navigation-button.three
-                    form.create-form
-                        h2.create-title.title Let’s set up your account
-                        .create-sign
-                            span.create-sign-span Already have a account?
-                            button.create-sign-button Sign in
-                        .create-unit.rectangle
-                            span.create-unit-span Your name
-                            input(type='text').create-unit-input
-                        .create-unit.rectangle.create-unit-mail
-                            span.create-unit-span Email address
-                            input(type='email').create-unit-input
-                            span.create-unit-span-error.create-unit-comment Please enter a valid email address
-                        .create-unit.rectangle.create-unit-select
-                            span.create-unit-select-head I would describe my user type as
-                            input(type='hidden')
-                            ul.create-unit-select-list
-                                li
-                                    button(type='button' data-value='developer').create-unit-select-item Developer
-                                li
-                                    button(type='button' data-value='designer').create-unit-select-item Designer
-                                li
-                                    button(type='button' data-value='programmer').create-unit-select-item Programmer
-                            .create-unit-select-button.create-unit-button
-                                i.fas.fa-angle-down.arrow-down
-                        .create-unit.create-unit-pass.rectangle
-                            span.create-unit-span Password
-                            input(type='password').create-unit-input
-                            button(type='button').create-unit-pass-button.create-unit-button
-                                i.fas.fa-eye
-                            span.create-unit-span-error.create-unit-comment Password is too short
-                            span.create-unit-comment Minimum 8 characters
-                        button(type='button').rectangle.create-submit
-                            span.create-submit-span Next
-                            span.create-submit-span-bgc.create-submit-span-bgc-left
-                            span.create-submit-span-bgc.create-submit-span-bgc-right
-                        span.create-comment By clicking the "Next" button, you agree to creating a free account, and to #[a(href='#' class='create-comment-link') Terms of Service] and #[a(href='#' class='create-comment-link') Privacy Policy.]
-                .right-block
-                    h2.right-title.title Dummy Heading
-                    p.right-p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
