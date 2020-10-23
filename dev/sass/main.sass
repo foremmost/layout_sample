@@ -2,7 +2,7 @@
 @import "../../../../core/mixins/mixins"
 @import "vars"
 $font_body: 14px
-+font_inc($f_reg,'roboto-regular.ttf')
+//+font_inc($f_reg,'roboto-regular.ttf')
 .set
 	+wh(100%)
 html,body
@@ -22,7 +22,6 @@ input
 
 $unit: 'px'
 
-+mq($mobile#{$unit})
 	@import "media/m"
 +mq($mobile-large#{$unit})
 	@import "media/ml"
@@ -32,5 +31,5 @@ $unit: 'px'
 	@import "media/tl"
 +mq($desktop#{$unit})
 	@import "media/d"
-+mq($desktop-large#{$unit})
+//+mq($desktop-large#{$unit})
 	@import "media/dl"
