@@ -1,4 +1,5 @@
-const gulp = require('gulp'),
+const 
+    gulp = require('gulp'),
     notify = require('gulp-notify'),
     pug = require('gulp-pug'),
     sass = require('gulp-sass'),
@@ -13,19 +14,16 @@ const gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     clean_CSS = require('gulp-clean-css'),
     autoprefixer = require('gulp-autoprefixer'),
-    minifyjs = require('gulp-js-minify'),
-    grid_template = 'flex',
-    pretty = true;
-/* --==[ Пути ]==--*/
+    minifyjs = require('gulp-js-minify');
+
 // html | pug
 const
-    project_name = "",
-    project_path = '../build'
-
+    proxy = 'localhost',
+    projectName = "Sample",
+    projectPath = '../';
 const
     html =  {
         pretty: true,
-        path: 'I:/gulp/',
         err_title: "Ошибка компиляции в HTML",
         src_build : ['templates/*.pug'],
         src_all : [
@@ -33,44 +31,41 @@ const
             'templates/parts/*.pug',
             'templates/*.pug'
         ],
-        dest: project_path
+        dest: projectPath
     },
     css = {
         style : 'uncompressed',
-        path : 'I:/gulp/',
         err_title: "Ошибка при компиляции в CSS",
         src_build : ['sass/*.sass'],
         src_libs : ['sass/css_js/*.css'],
-        file_name: 'main.css',
+        file_name: 'front.css',
         src_all : [
             'sass/*.sass',
             'sass/media/*.sass',
             'sass/grid/*.sass',
             'sass/ui/*.sass'
         ],
-        dest: project_path+'/css'
+        dest: projectPath
     },
     js = {
         style : 'compressed',
-        path : 'I:/gulp/',
         src_build : ['js/*.js'],
-        file_name: 'main.js',
+        file_name: 'front.js',
         src_all : [
             'js/*.js'
         ],
-        dest: project_path+'/js'
+        dest: projectPath
     },
     img = {
         src_all : ['img/**/*'],
-        dest: project_path+'/img'
-    }
+        dest: projectPath+'/img'
+    };
 
 gulp.task('html', function(){
     return gulp.src(html['src_build'])
         .pipe(
             pug({
                 pretty: html['pretty'],
-                basedir: 'I:/gulp/',
                 filters: {
                     php: pugPHPFilter
                 }
@@ -82,11 +77,11 @@ gulp.task('html', function(){
                     })
                 )
         )
-  /*      .pipe(
+        .pipe(
             rename(function (path) {
-                //path.extname = ".php"
+                path.extname = ".php"
             })
-        )*/
+        )
         .pipe(
             gulp.dest(html['dest'])
         ).pipe(reload({stream:true}));
@@ -130,7 +125,7 @@ gulp.task('css_libs', function(){
         );
 });
 gulp.task('media_query',function () {
-    return gulp.src(project_path+'/css/*.css')
+    return gulp.src(projectPath+'/css/*.css')
         .pipe(cmq({
             log: true
         }))
@@ -138,10 +133,10 @@ gulp.task('media_query',function () {
             browsers: ['last 2 versions'],
             cascade: true
         }))*/
-        .pipe(gulp.dest(project_path+'/css'));
+        .pipe(gulp.dest(projectPath+'/css'));
 });
 gulp.task('min_css',function () {
-    return gulp.src(project_path+'/css/*.css')
+    return gulp.src(projectPath+'/css/*.css')
         .pipe(cmq({
             log: true
         }))
@@ -150,7 +145,7 @@ gulp.task('min_css',function () {
             browsers: ['last 2 versions'],
             cascade: true
         }))*/
-        .pipe(gulp.dest(project_path+'/css'));
+        .pipe(gulp.dest(projectPath+'/css'));
 });
 gulp.task('js',function() {
   return gulp.src(js['src_all'])
@@ -170,12 +165,13 @@ gulp.task('min_js',function() {
 });
 gulp.task('browserSync', function() {
     browserSync.init({
-      server: {
-        baseDir: project_path,
+      proxy: proxy,
+      /*  server: {
+        baseDir: projectPath,
         index: "index.html",
         serveStaticOptions: {
             extensions: ["html"]
-        }},
+        }},*/
       port: 80,
       open: true,
       notify: true
@@ -196,7 +192,7 @@ gulp.task('move_fonts', function() {
             flatten({ includeParents: 0 })
         )
         .pipe(
-            gulp.dest(project_path+'/css/fonts')
+            gulp.dest(projectPath+'/css/fonts')
         )
 });
 gulp.task('min_main', function() {
@@ -212,7 +208,7 @@ gulp.task('watch', function() {
     gulp.watch(css['src_all'],gulp.parallel('css'));
     gulp.watch(js['src_all'],gulp.parallel('js'));
     gulp.watch(img['src_all'],gulp.parallel('move_images'));
-    gulp.watch(project_path+'/css/!*.css',gulp.parallel('media_query'));
+    gulp.watch(projectPath+'/css/!*.css',gulp.parallel('media_query'));
 
 });
 
