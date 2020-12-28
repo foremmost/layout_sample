@@ -30,14 +30,13 @@ const
     },
     css = {
         err_title: "Ошибка при компиляции в CSS",
-        src_build : ['sass/*.sass'],
+        src_build : ['sass/main.sass'],
         src_libs : ['sass/css_js/*.css'],
         file_name: 'front.css',
         src_all : [
-            'sass/*.sass',
+            'sass/main.sass',
             'sass/media/*.sass',
             'sass/grid/*.sass',
-            'sass/ui/*.sass'
         ],
         dest: projectPath
     },
@@ -133,7 +132,7 @@ gulp.task('move_fonts', function() {
           flatten({ includeParents: 0 })
       )
       .pipe(
-          gulp.dest(projectPath+'/css/fonts')
+          gulp.dest(projectPath+'/fonts')
       )
 });
 gulp.task('browserSync', function() {
@@ -161,12 +160,12 @@ gulp.task('min_js',function() {
       );
 });
 gulp.task('min_css',function () {
-  return gulp.src(projectPath+'/css/*.css')
+  return gulp.src(projectPath+'/*.css')
       .pipe(cmq({
         log: true
       }))
       .pipe(clean_CSS())
-      .pipe(gulp.dest(projectPath+'/css'));
+      .pipe(gulp.dest(projectPath+'/'));
 });
 gulp.task('min_main', function() {
   return gulp.src(img['src_all'])
@@ -184,7 +183,7 @@ gulp.task('watch', function() {
   gulp.watch(css['src_all'],gulp.parallel('css'));
   gulp.watch(js['src_all'],gulp.parallel('js'));
   gulp.watch(img['src_all'],gulp.parallel('move_images'));
-  gulp.watch(projectPath+'/css/!*.css',gulp.parallel('media_query'));
+  gulp.watch(projectPath+'/*.css',gulp.parallel('media_query'));
 
 });
 gulp.task('default', gulp.parallel('watch','html','js', 'move_fonts','css' ,'browserSync','move_images','media_query'));

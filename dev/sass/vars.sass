@@ -1,30 +1,63 @@
-///*--==[ Ширины]==--*/
-//$unit : '%'
+%df
+	display: flex
+%dfi
+	@extend %df
+	justify-content: space-between
+	align-items: center
+%dfc
+	@extend %df
+	justify-content: center
+	align-items: center
+
+\:root
+	///*--==[ Размеры экранов ]==--*/
+	--mobile-width: calc(100% - 20px)
+	--mobile-large-width: 460px
+	--tablet-width: 740px
+	--tablet-large-width: 1000px
+	--desktop-width: 1170px
+	// --==[ Цвета ]==--
+	
+	
+	--green: #{getRgb(#00FF00)}
+	--black: #000
+	--black-rgb: #{getRgb(#000)}
+	--blue: #0000FF
+	--blue-rgb: #{getRgb(#0000FF)}
+	--gray: #DDD
+	--gray-rgb: #{getRgb(#DDD)}
+	--red: #FF0000
+	--red-rgb: #{getRgb(#FF0000)}
+	// --==[ Шрифты ]==--
+	--fontsize-body: 14px
+	--freg: ''
+	// --==[ Отступы ]==--
+	--col: 70px
+	--gap: 30px
 
 
-// 320
-$mobile: 320
-// 460
-$mobile-large: 460
-// 768
-$tablet: 768
-// 1004
-$tablet-large: 1004
-// 1170
-$desktop: 1170
-// 1440
-//$desktop-large: 1440
 
+// --==[ Ширины ]==--
+$mobile: var(--mobile-width)
+$mobile-large: var(--mobile-large-width)
+$tablet: var(--tablet-width)
+$tablet-large: var(--tablet-large-width)
+$desktop: var(--desktop-width)
 
 ///*--==[ Отступы ]==--*/
-$col: 0
-$gap: 0
+$col: var(--col)
+$gap: var(--gap)
+$f_reg: '2'
+// --==[Шрифты]==--
+//
+	$f_light: '1'
+	$f_reg: '2'
+	$f_semi:'3'
+	$f_bold:'4'
 
-
-// --==[ Названия шрифтов]==--
-//+font_inc($f_reg,'path')
-$f_reg: 'Arial'
-
-
-///*--==[ Цвета ]==--*/
-$black: #000
+// --==[ Цвета ]==--
+$black: var(--black)
+$blue: var(--blue)
+$gray: var(--gray)
+$green: var(--green)
+$red: var(--red)
