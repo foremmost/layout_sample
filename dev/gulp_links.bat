@@ -9,4 +9,5 @@ npm link gulp-concat && ^
 npm link gulp-flatten && ^
 npm link gulp-clean-css && ^
 npm link gulp-js-minify && ^
+npm link sass && ^
 gulp

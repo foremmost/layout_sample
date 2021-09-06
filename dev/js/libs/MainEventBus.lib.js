@@ -9,7 +9,7 @@ class _MainEventBus {
     if(!prop){
       prop= fn.name;
     }
-    if (!componentName) return;
+    if (!componentName) return _;
     componentName = componentName.toLowerCase();
     if(!_.components[componentName]){
       _.components[componentName] = {};
@@ -21,12 +21,48 @@ class _MainEventBus {
     _.components[componentName]['events'] = _.components[componentName]['events'] || new Map();
     if(!_.components[componentName]['events'][eventName].has(prop)) {
       _.components[componentName]['events'][eventName].set(prop, fn);
-      return;
+      return _;
     }
     if(_.flag === 'dev'){
       console.warn(`Подписка на событие ${eventName} на ф-ю: ${fn.name}`);
     }
-
+    return _;
+  }
+  on(component,eventName,fn,inProp){
+    const _ = this;
+    let prop;
+    if (!component) return _;
+    if(!fn)
+      fn = component[eventName].bind(component);
+    prop  = component.busProp;
+    if(!component.busProp){
+      prop = fn.name;
+    }
+    if(inProp){
+      prop = inProp;
+    }
+    let componentName;
+    if(typeof component == 'object'){
+      componentName = component.componentName.toLowerCase();
+    }else{
+      componentName = component;
+    }
+    if(!_.components[componentName]){
+      _.components[componentName] = {};
+      _.components[componentName]['events'] = {};
+    }
+    if(!_.components[componentName]['events'][eventName]){
+      _.components[componentName]['events'][eventName] = new Map();
+    }
+    _.components[componentName]['events'] = _.components[componentName]['events'] || new Map();
+    if(!_.components[componentName]['events'][eventName].has(prop)) {
+      _.components[componentName]['events'][eventName].set(prop, fn);
+      return _;
+    }
+    if(_.flag === 'dev'){
+      console.warn(`Подписка на событие ${eventName} на ф-ю: ${fn.name}`);
+    }
+    return _;
   }
   trigger(componentName,eventName,data){
     const _ = this;
@@ -67,6 +103,18 @@ class _MainEventBus {
       if (prop === 'includeModule' || prop === 'showMenu') continue;
       delete _.events[prop];
     }
+  }
+  inDev(){
+    const _ = this;
+    let title = document.createElement('DIV');
+    title.textContent = 'Фунция в разработке';
+    _.trigger('Modaler','showModal',{
+      type:'object',
+      content: title,
+      padding: '20px',
+      'border-radius':'10px',
+      'font-size': '40px'
+    });
   }
 }
 export const MainEventBus = new _MainEventBus('prod');

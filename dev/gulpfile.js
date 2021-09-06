@@ -1,11 +1,11 @@
 const gulp = require('gulp'),
     notify = require('gulp-notify'),
     pug = require('gulp-pug'),
-    sass = require('gulp-sass'),
+    sass = require('gulp-sass')(require('sass')),
     cmq = require('gulp-group-css-media-queries'),
-    imagemin = require('gulp-imagemin'),
+    //   imagemin = require('gulp-imagemin'),
     browserSync = require('browser-sync'),
-    reload      = browserSync.reload,
+    reload = browserSync.reload,
     concat = require('gulp-concat'),
     flatten = require('gulp-flatten'),
     clean_CSS = require('gulp-clean-css'),
@@ -112,78 +112,78 @@ gulp.task('media_query',function () {
 });
 
 gulp.task('js',function() {
-  return gulp.src(js['src_all'])
-  .pipe(
-      gulp.dest(js['dest'])
-  ).pipe(reload({stream:true}));
+    return gulp.src(js['src_all'])
+        .pipe(
+            gulp.dest(js['dest'])
+        ).pipe(reload({stream:true}));
 });
 gulp.task('move_images', function() {
-  return gulp.src(img['src_all'])
-      .pipe(
-          flatten({ includeParents: 0 })
-      )
-      .pipe(
-          gulp.dest(img['dest'])
-      )
+    return gulp.src(img['src_all'])
+        .pipe(
+            flatten({ includeParents: 0 })
+        )
+        .pipe(
+            gulp.dest(img['dest'])
+        )
 });
 gulp.task('move_fonts', function() {
-  return gulp.src('sass/fonts/*.*')
-      .pipe(
-          flatten({ includeParents: 0 })
-      )
-      .pipe(
-          gulp.dest(projectPath+'/fonts')
-      )
+    return gulp.src('sass/fonts/*.*')
+        .pipe(
+            flatten({ includeParents: 0 })
+        )
+        .pipe(
+            gulp.dest(projectPath+'/fonts')
+        )
 });
 gulp.task('browserSync', function() {
-  let serverCfg = {
-    port: 80,
-    open: true,
-    notify: true
-  };
-  if (!proxy){
-    serverCfg['server'] =  {
-      baseDir: projectPath,
-      index: "index.html",
-      serveStaticOptions: {
-        extensions: ["html"]
-      }
+    let serverCfg = {
+        port: 80,
+        open: true,
+        notify: true
     };
-  }
+    if (!proxy){
+        serverCfg['server'] =  {
+            baseDir: projectPath,
+            index: "index.html",
+            serveStaticOptions: {
+                extensions: ["html"]
+            }
+        };
+    }
     browserSync.init(serverCfg);
 });
 gulp.task('min_js',function() {
-  return gulp.src(js['src_all'])
-      .pipe(minifyjs())
-      .pipe(
-          gulp.dest(js['dest'])
-      );
+    return gulp.src(js['src_all'])
+        .pipe(minifyjs())
+        .pipe(
+            gulp.dest(js['dest'])
+        );
 });
 gulp.task('min_css',function () {
-  return gulp.src(projectPath+'/*.css')
-      .pipe(cmq({
-        log: true
-      }))
-      .pipe(clean_CSS())
-      .pipe(gulp.dest(projectPath+'/'));
+    return gulp.src(projectPath+'/*.css')
+        .pipe(cmq({
+            log: true
+        }))
+        .pipe(clean_CSS())
+        .pipe(gulp.dest(projectPath+'/'));
 });
 gulp.task('min_main', function() {
-  return gulp.src(img['src_all'])
-      .pipe(imagemin())
-      .pipe(
-          gulp.dest(img['dest'])
-      )
+    return gulp.src(img['src_all'])
+        .pipe(imagemin())
+        .pipe(
+            gulp.dest(img['dest'])
+        )
 });
 
 gulp.task('minify',gulp.parallel('min_main','min_css','min_js'));
 
 gulp.task('watch', function() {
-  gulp.watch(html['src_all'],gulp.series('html'));
-  gulp.watch(css['src_build'],gulp.parallel('css'));
-  gulp.watch(css['src_all'],gulp.parallel('css'));
-  gulp.watch(js['src_all'],gulp.parallel('js'));
-  gulp.watch(img['src_all'],gulp.parallel('move_images'));
-  gulp.watch(projectPath+'/*.css',gulp.parallel('media_query'));
+    gulp.watch(html['src_all'],gulp.series('html'));
+    gulp.watch(css['src_build'],gulp.parallel('css'));
+    gulp.watch(css['src_all'],gulp.parallel('css'));
+    gulp.watch(js['src_all'],gulp.parallel('js'));
+    gulp.watch(img['src_all'],gulp.parallel('move_images'));
+    gulp.watch(projectPath+'/*.css',gulp.parallel('media_query'));
 
 });
 gulp.task('default', gulp.parallel('watch','html','js', 'move_fonts','css' ,'browserSync','move_images','media_query'));
