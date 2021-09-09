@@ -1,3 +1,4 @@
+@use "sass:math"
 $unit: 'px'
 .pallet
 	font-weight: 700
@@ -16,7 +17,7 @@ $one_col_koef: .7
 =grid($col_cnt,$letter,$full:null)
 	@for $i from 1 through $col_cnt
 		@if($full)
-			$one_full_col: ( 100% / 11.7 )
+			$one_full_col: math.div(100%, 11.7)
 			$one_dep: $one_full_col - ($one_full_col * $one_col_koef)
 			$one_col: $one_full_col - $one_dep
 			#{$letter}#{$i}
@@ -26,7 +27,7 @@ $one_col_koef: .7
 			#{$letter}wi#{$i}
 				width: (($one_full_col) * $i) - $one_col
 		@else
-			$one_full_col: (100% / $col_cnt)
+			$one_full_col: math.div(100%, $col_cnt)
 			#{$letter}#{$i}
 				width:  ($one_full_col * $i)
 
