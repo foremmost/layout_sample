@@ -39,6 +39,20 @@ export class _front{
       resolve(modulName);
     });
   }
+  getParent(target,parentSelectors,selectorType = 'className'){
+    if (!target || !selectorType) return;
+    if (typeof parentSelectors === 'string') parentSelectors = [parentSelectors];
+
+    for (let i = 0; i < parentSelectors.length; i++) {
+      let sTarget = target;
+      while (sTarget.tagName !== 'BODY') {
+        if (sTarget[selectorType] === parentSelectors[i]) break;
+        sTarget = sTarget.parentElement;
+      }
+      if (sTarget.tagName !== "BODY") return sTarget;
+    }
+    return null;
+  }
   formDataCapture(form){
     return new Promise(function (resolve) {
       let
