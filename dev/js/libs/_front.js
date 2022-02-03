@@ -1,24 +1,25 @@
-import { MainEventBus } from "./MainEventBus.lib.js";
-import { View } from "./View.js";
-import { Ctrl } from "./Ctrl.js";
-export class _front{
+import G_G from "./G_G.js";
+import { G_Bus } from "./G_Bus.js";
+export class _front extends G_G{
   constructor() {
+		super();
     const _ = this;
     _.componentName = 'front';
-    _.view = new View(null);
-    _.ctrl = new Ctrl(null, _.view, {
+    //_.view = new View(null);
+/*    _.ctrl = new Ctrl(null, _.view, {
       container: document.querySelector('body')
-    });
+    });*/
     _.libs = new Map();
     _.components = new Map();
     _.busEvents= [
       'registerUser', 'frontLogin','frontLogout','chooseLang','createOrder'
     ];
     //
-    MainEventBus.add(_.componentName,'createOrder',_.createOrder.bind(_));
+   
     //
     _.init();
   }
+	define(){}
   getModule(moduleData){
     const _ = this;
     return new Promise(async function (resolve) {
