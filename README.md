@@ -1,2 +1,2 @@
-# layout_sample
+#  HTML&CSS Sample 
 Шаблон для вёрстки
