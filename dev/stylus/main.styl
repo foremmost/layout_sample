@@ -1,2 +1,24 @@
-body
-  background-color: green
+-pos(type, args)
+  i = 0
+  position: unquote(type)
+  {args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+  {args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+absolute()
+  -pos('absolute', arguments)
+fixed()
+  -pos('fixed', arguments)
+
+
+body{
+  background-color: red;
+  color: #fff;
+  text-align: center;
+}
+
+#prompt
+  absolute top 150px left 5px
+  width 200px
+  margin-left -(@width / 2)
+
+#logo
+  fixed: top left

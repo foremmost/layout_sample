@@ -9,4 +9,3 @@ class Front extends _front{
 	
 }
 new Front();
-console.log('test')

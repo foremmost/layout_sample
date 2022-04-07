@@ -8,5 +8,7 @@ npm install browser-sync -g && ^
 npm install gulp-concat -g && ^
 npm install gulp-flatten -g && ^
 npm install gulp-clean-css -g && ^
-npm install gulp-js-minify -g
-
+npm install terser -g && ^
+npm install sass -g && ^
+npm install gulp-stylus -g && ^
+npm install gulp-autoprefixer

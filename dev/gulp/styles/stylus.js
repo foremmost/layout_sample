@@ -5,24 +5,24 @@ const
 	browserSync = require('browser-sync'),
 	reload = browserSync.reload,
 	stylus = require('gulp-stylus');
-const _stylus = {
-	compress: false,
-	pathFrom: '../stylus/main.styl',
-	pathTo: '../../build/',
-	outputFile: 'front.css'
-}
+	config = {
+		compress: false,
+		pathFrom: '../stylus/main.styl',
+		pathTo: '../../build/',
+		outputFile: 'front.css'
+	};
 module.exports =  function stylusSheets(){
-	return src(_stylus['pathFrom'])
+	return src(config['pathFrom'])
 		.pipe(stylus({
-			compress: _stylus['compress']
+			compress: config['compress']
 		}))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 5 version'],
 			grid: true
 		}))
 		.pipe(
-			concat(_stylus['outputFile'])
+			concat(config['outputFile'])
 		)
-		.pipe(dest(_stylus['pathTo']))
+		.pipe(dest(config['pathTo']))
 		.pipe(reload({stream:true}))
 }
