@@ -3,6 +3,7 @@ const
 	concat = require('gulp-concat'),
 	autoprefixer = require('gulp-autoprefixer'),
 	browserSync = require('browser-sync'),
+	gcmq = require('gulp-group-css-media-queries'),
 	reload = browserSync.reload,
 	stylus = require('gulp-stylus');
 	config = {
@@ -11,18 +12,21 @@ const
 		pathTo: '../../build/',
 		outputFile: 'front.css'
 	};
+
+
 module.exports =  function stylusSheets(){
 	return src(config['pathFrom'])
 		.pipe(stylus({
 			compress: config['compress']
 		}))
 		.pipe(autoprefixer({
-			overrideBrowserslist: ['last 5 version'],
+			overrideBrowserslist: ['last 1 version'],
 			grid: true
 		}))
 		.pipe(
 			concat(config['outputFile'])
 		)
+		.pipe(gcmq())
 		.pipe(dest(config['pathTo']))
 		.pipe(reload({stream:true}))
 }
