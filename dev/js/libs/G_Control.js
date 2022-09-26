@@ -1,79 +1,56 @@
 import { G_Bus } from "./G_Bus.js";
-let triggerWithEvent = (data,currentAction) =>{
-	if (!data['item'])  return;
-	let rawActions = data['item'].dataset[currentAction].split(';');
-	rawActions.forEach( (action)=>{
-		G_Bus.trigger(action,data);
-	});
-}
+
+let prepareHandler = (e,dataEvent)=>{
+		let
+			item = e.target;
+
+		if(!item || !item.closest) return void 0;
+		let citem = item.closest(`[data-${dataEvent}]`);
+		if(!citem) return void 0;
+		return triggerWithEvent({'item':citem,'event':e},dataEvent);
+	},
+	triggerWithEvent = (data,currentAction) =>{
+		if (!data['item'])  return void 0;
+		let
+			rawActions = data['item'].getAttribute(`data-${currentAction}`).split(';');
+		for(let rAction of rawActions){
+			let rawAction = rAction.split(':'),
+				component = rawAction.splice(0,1)[0];
+			for(let action of rawAction){
+				G_Bus.trigger(component,action,data);
+			}
+		}
+	}
 class _G_Control{
 	constructor(params={}){
 		const _ = this;
 		_.container = params?.container ?? document;
 		_.handle();
 	}
+
 	clickHandler(e){
-		const _ = this;
-		let item = e.target;
-		if(!item) return;
-		while(item != _) {
-			if( item.hasAttribute('data-click') ){
-				triggerWithEvent({'item':item,'event':e},'click');
-				return;
-			}
-			item = item.parentNode;
+		try{
+			return prepareHandler(e,'click');
+		}catch(e){
+			console.log(new Error(e));
 		}
-	}
-	contextHandler(e){
-		const _ = this;
-		e.preventDefault();
-		let item = e.target;
-		if(!item) return;
-		if(e.which == 3){
-			while(item != _) {
-				if( ('context' in item.dataset) ){
-					triggerWithEvent({'item':item,'event':e},'context');
-					return;
-				}
-				item = item.parentNode;
-			}
-		}
+
 	}
 	focusOutHandler(e){
-		let item = e.target;
-		if( ('outfocus' in item.dataset) ){
-			triggerWithEvent({item:item,event:e},'outfocus');
-			return;
-		}
+		return prepareHandler(e,'outfocus');
 	}
-	changeHandler(e){
-		let item = e.target;
-		if( item.hasAttribute('data-change') ){
-			triggerWithEvent({'item':item,'event':e},'change');
-			return void 0;
-		}
-	}
+	changeHandler(e){return prepareHandler(e,'change');}
 	inputHandler(e){
-		let item = e.target;
-		if( ('input' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'input');
-			return;
-		}
+		return prepareHandler(e,'input');
 	}
 	keyUpHandler(e){
-		let item = e.target;
-		if( ('keyup' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'keyup');
-			return;
-		}
+		return prepareHandler(e,'keyup');
+	}
+	keyDownHandler(e){
+		return prepareHandler(e,'keydown');
 	}
 	submitHandler(e){
-		e.preventDefault();
-		let item = e.target;
-		if( ('submit' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'submit');
-			return;
-		}
+		return prepareHandler(e,'submit');
 	}
 	scrollHandler(e){
 		let item = e.target;
@@ -83,75 +60,39 @@ class _G_Control{
 		}
 	}
 	overHandler(e){
-		let item = e.target;
-		if( ('over' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'over');
-			return;
-		}
+		return prepareHandler(e,'over');
 	}
 	dragStartHandler(e){
-		let item = e.target;
-		if( ('dragStart' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'dragStart');
-			return;
-		}
+		return prepareHandler(e,'dragStart');
 	}
 	dragOverHandler(e){
-		let item = e.target;
-		if( ('dragOver' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'dragOver');
-			return;
-		}
+		return prepareHandler(e,'dragOver');
 	}
 	dragEnterHandler(e){
-		let item = e.target;
-		if( ('dragEnter' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'dragEnter');
-			return;
-		}
+		return prepareHandler(e,'dragEnter')
 	}
 	dragLeaveHandler(e){
-		let item = e.target;
-		if( ('dragLeave' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'dragLeave');
-			return;
-		}
+		return prepareHandler(e,'dragLeave');
 	}
 	dropHandler(e){
-		let item = e.target;
-		if( ('drop' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'drop');
-			return;
-		}
+		return prepareHandler(e,'drop');
 	}
 	outHandler(e){
-		let item = e.target;
-		if( ('out' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'out');
-			return;
-		}
+		return prepareHandler(e,'out');
 	}
 	leaveHandler(e){
-		let item = e.target;
-		if(! (item instanceof HTMLElement)) return;
-		if(!item.hasAttribute('data-leave')) return;
-		if( ('leave' in item.dataset) ){
-			triggerWithEvent({'item':item,'event':e},'leave');
-			return;
-		}
+		return prepareHandler(e,'leave');
 	}
-
-
-
 	handle(){
 		const _  = this;
+		_.container.addEventListener('click', _.clickHandler);
 		_.container.addEventListener('focusout',_.focusOutHandler);
 		_.container.addEventListener('submit',_.submitHandler);
-		_.container.addEventListener('click', _.clickHandler);
-		_.container.addEventListener('contextmenu', _.contextHandler);
+		//_.container.addEventListener('contextmenu', _.contextHandler);
 		_.container.addEventListener('change',_.changeHandler);
 		_.container.addEventListener('input',_.inputHandler);
 		_.container.addEventListener('keyup',_.keyUpHandler);
+		_.container.addEventListener('keydown',_.keyDownHandler);
 		_.container.addEventListener('mouseover',_.overHandler);
 		_.container.addEventListener('mouseout',_.outHandler);
 		_.container.addEventListener('mouseleave',_.leaveHandler);

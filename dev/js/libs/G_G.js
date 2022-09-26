@@ -10,7 +10,7 @@ export default class G_G{
 		_.stateName = Symbol('state');
 		let validator = {
 			get:(target,key) =>{
-				if (typeof target[key] === 'object') {
+				if (typeof target[key] === 'object' && !_.isNull(target[key])) {
 					if(!target['isProxy']){
 						target['isProxy'] = false;
 						return new Proxy(target[key], validator)
@@ -21,16 +21,23 @@ export default class G_G{
 				return target[key];
 			},
 			set:(t,p,v)=>{
+
 				Reflect.set(t,p,v);
 				if(!_.deepEqual(t,_.tempObj)){
 					_.tempObj = Object.assign({},t);
 				}
+
 				_.update([p]);
 				return true;
 			}
 		}
+
 		_[_.stateName] = new Proxy({},validator);
 		_.start(props);
+	}
+	isNull(value){
+		const _ =this;
+		return value === null;
 	}
 	isObjects(obj1,obj2){
 		return (typeof obj1 === 'object') && (typeof obj2 === 'object');
@@ -73,25 +80,25 @@ export default class G_G{
 	}
 	defineDefineMethod(props){
 		const _ = this;
-		return new Promise( (resolve) =>{
+		return new Promise( async (resolve) =>{
 			if(!( (props?.define ?? 'define') in _) ){
 				throw Error('G_G: No define method declared');
 			}else{
-				resolve(_[props?.define ?? 'define']());
+				let method = await _[props?.define ?? 'define']();
+				resolve(method);
 			}
 		})
 	}
-	defineInitMethod(props){
-		const _ = this;
-		return new Promise( (resolve) =>{
-			if(!( (props?.init ?? 'init') in _) ){
-				throw Error('G_G: No initialization method declared');
-			}else{
-				resolve(_[props?.init ?? 'init']());
-			}
-		})
-	}
-
+	/*	defineInitMethod(props){
+			const _ = this;
+			return new Promise( (resolve) =>{
+				if(!( (props?.init ?? 'init') in _) ){
+					throw Error('G_G: No initialization method declared');
+				}else{
+					resolve(_[props?.init ?? 'init']());
+				}
+			})
+		}*/
 
 	set(state){
 		const _ = this;
@@ -112,7 +119,13 @@ export default class G_G{
 			fragment.append(...parser.body.children);
 			return fragment;
 		}
-		return parser.body.children;
+
+		return [...parser.body.children];
+	}
+	markupElement(domStr){
+		const _ = this;
+		let parser = new DOMParser().parseFromString(domStr,'text/html');
+		return parser.body.children[0];
 	}
 	f(selector){
 		let searchedItems =  document.querySelectorAll(selector);
@@ -130,62 +143,95 @@ export default class G_G{
 		}
 	}
 	/* Working with Dom methods */
-
+	catchDepObj(dep){
+		const _ = this;
+		let obj = {};
+		_[_.handlersName].forEach( (fnObj,index) => {
+			let keys = Object.values(fnObj);
+			for(let innerProp in fnObj) {
+				if(fnObj.dep === dep){
+					let stateProps = keys[1].split(',');
+					for(let prop of stateProps){
+						obj[prop] = _[_.stateName][prop];
+					}
+					break;
+				}
+			}
+		});
+		return obj;
+	}
 	update(props){
 		const _ = this;
+		if(!_[_.handlersName].length){
+			return  void 0;
+		}
+		//console.log(_[_.handlersName]);
 		if(!_.initedUpdate){
 			_[_.handlersName].forEach( fnObj => {
+				let obj;
 				for(let innerProp in fnObj) {
-					fnObj[innerProp]();
+					if(innerProp == ""){
+						obj = Object.assign({},_[_.stateName]);
+					}
+					if(innerProp == 'dep') obj = _.catchDepObj(fnObj[innerProp]);
+				}
+				for(let innerProp in fnObj) {
+					if(innerProp == 'dep') continue;
+					fnObj[innerProp](obj);
 				}
 			});
 		}
 		if( (!props)  ){
-			/*_[_.handlersName].forEach( fnObj => {
-				for(let innerProp in fnObj) {
-
-					fnObj[innerProp]();
-				}
-			});*/
 			return void 0;
 		}
-		_[_.handlersName].forEach( fnObj => {
-			for(let innerProp in fnObj){
-				if(~props.indexOf(innerProp)){
-					fnObj[innerProp]();
-				}else if(innerProp === '')	{
 
-					fnObj[innerProp]();
+		_[_.handlersName].forEach( fnObj => {
+			let obj;
+			for(let innerProp in fnObj) {
+				if(innerProp == ""){
+					obj = Object.assign({},_[_.stateName]);
+				}
+				if(innerProp == 'dep') obj = _.catchDepObj(fnObj[innerProp]);
+			}
+			for(let innerProp in fnObj){
+				if(innerProp == 'dep') continue;
+				if(~props.indexOf(innerProp)){
+					fnObj[innerProp](obj);
+				}else if(innerProp === '')	{
+					fnObj[innerProp](obj);
 				}
 			}
 		});
-
 		//
-
 	}
 	_(fn,deps = []){
 		const _ = this;
 		if(!fn) return false;
 		if(deps.length){
-			deps.forEach( (dep)=>{
-				let propObj = { [dep.toString()] : fn  };
-				if(!(~_[_.handlersName].indexOf(propObj))){
-					_[_.handlersName].push(propObj);
-				}
-			});
+			let
+				objDep = deps+'',
+				propObj = { [deps[0].toString()] : fn,dep: objDep};
+			if(!(~_[_.handlersName].indexOf(propObj))){
+				_[_.handlersName].push(propObj);
+			}
+			/*	deps.forEach( (dep)=>{
+					let propObj = { [dep.toString()] : fn,dep: objDep};
+					if(!(~_[_.handlersName].indexOf(propObj))){
+						_[_.handlersName].push(propObj);
+					}
+				});*/
 		}else{
 			let propObj = { [deps.toString()] : fn  };
 			if(!(~_[_.handlersName].indexOf(propObj))){
 				_[_.handlersName].push(propObj);
 			}
 		}
-
 	}
 
 	async start(props){
 		const _ = this;
 		await _.defineDefineMethod(props);
-		await _.defineInitMethod(props);
+		//await _.defineInitMethod(props);
 		await _.update();
 		_.initedUpdate = true;
 	}
