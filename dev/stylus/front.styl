@@ -1,0 +1,179 @@
+body
+	font: 400 16px Barlow
+
+.section
+	padding 16px 24px 0
+	+desktop()
+		padding 16px 40px
+		width 100%
+.row
+	df({
+		df:'.row'
+	})
+.head
+	&-row
+		align-items: center
+	&-logo
+		max-width 142px
+		& svg
+			height 32px
+	&-burger
+		w 28px
+		&_item,&:after,&:before
+			content ''
+			wh 28px 2px
+			background RGB($pdark_blue)
+			display block
+		&_item
+			margin 6px 0
+		+desktop()
+			display none
+	&-menu
+		&-cont
+			display none
+			+desktop()
+				display block
+				margin 0 auto
+		&_item
+			&.-dropdown
+				display flex
+				align-items center
+				column-gap: 14.35px
+			span svg
+				wh 12px 7px
+			//span
+			//	margin 0 6.35px
+		+desktop()
+			display flex
+			column-gap 40px
+			font 500 16px/19.2px Barlow
+	&-login
+		display none
+		+desktop()
+			display flex
+			column-gap 16px
+	&-actions
+		margin-left auto
+		+desktop()
+			margin-left 0
+	&-mobile
+		&-menu
+			&-cont
+				--header_height: 48px
+				wh 100% calc( 100vh - var(--header_height))
+				top calc( var(--header_height) + 20px)
+				position absolute
+				padding 0 20px
+				left: 0
+				background-color RGB($pwhite)
+				z-index 999
+				+desktop()
+					display: none
+			display: flex
+			flex-direction column
+			&.-show
+				visibility visible
+			&_item
+				padding 8px
+				margin-bottom 24px
+				font 500 16px/19.2px Barlow
+		&-sublist
+			margin-top: -16px
+		&-subitem
+			df({
+				df: '.head-mobile-subitem'
+				ali: center
+			})
+			border-radius 8px
+			padding 8px
+			column-gap: 8px
+			padding-left: 16px
+			margin-bottom: 8px
+			&_icon
+				wh 19px 17px
+				use
+					fill RGB($pdark_gray)
+			&_value
+				font 500 16px/19.2px Barlow
+				color RGB($pdark_gray)
+
+.-bg
+	background url('../img/login.jpg')
+.login
+	text-align: center
+	&-wh
+		wh(100vw,100vh)
+		display: flex
+		align-items: center
+		justify-content: center
+	&-logo
+		wh 287px 64px
+	&-form
+		background RGB($pwhite)
+		border 1.5px solid RGBA($plight_blue, .2)
+		box-shadow 0px 4px 16px RGBA($plight_blue, .16)
+
+		max-width 590px
+		margin 100px auto
+		padding 40px 20px 60px
+		&.-with-bg
+			w 590px
+			margin 0 0 0 491px
+		+desktop()
+			margin calc((100vh - 607px) / 2) auto 0
+			padding 80px 80px 123px
+		.inpt
+			margin-bottom 16px
+			position relative
+			&:last-of-type
+				margin-bottom: 0
+		.link
+			text-align: right
+			color RGB($ublue)
+		.subtitle
+			margin-bottom 24px
+			+desktop()
+				margin-top 8px
+		.btn-eye
+			position absolute
+			top 20px
+			right 16px
+			& svg
+				wh 16px 10px
+		.tar,.tal
+			margin 8px 0 24px
+			font 400 14px/18px Barlow
+			color RGB($pdark_gray)
+			+desktop()
+				margin-top 16px
+				font 400 16px/19.2px Barlow
+		&-actions
+			margin-top 16px
+			font 400 14px/18px Barlow
+			color RGB($pdark_gray)
+			.link
+				color RGB($ublue)
+				margin-left 8px
+			+desktop()
+				font 400 16px/19.2px Barlow
+		.forgot-btn
+			margin 10px 0
+			+desktop()
+				margin 24px 0 16px
+.copy
+	text-align: center
+	color RGB($pdark_gray)
+	+desktop()
+		position: fixed
+		left: 0
+		right: 0
+		margin auto
+		bottom: 41px
+.menu-active
+	border-radius 8px
+	background-color RGBA($plight_blue,.2)
+	.menu_icon
+		use
+			fill RGB($pdark_blue)
+	.menu_value
+		color RGB($pdark_blue)
