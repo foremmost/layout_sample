@@ -1,0 +1,42 @@
+extends template/main
+append vars
+	-
+		page_title = 'Profile'
+block content
+	.row
+		include template/aside-profile
+		main
+			section.profile-content
+				h1.title Membership
+				h2.subtitle Plan
+				.table-cont
+					table.table
+						tbody
+							tr
+								td
+									| Type
+								td
+									| Family Plan
+								td
+							tr
+								td
+									| Billing Period
+								td
+									| Monthly
+								td
+							tr
+								td
+									| Renews on
+								td
+									| Mar 20, 2024
+								td
+
+							tr
+								td
+									| Payment Method
+								td
+									| ****0138
+								td
+									a(href='#').link Change
+
+				a(href='#').link.-small Cancel membership

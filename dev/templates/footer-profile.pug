@@ -1,0 +1,87 @@
+footer.foot
+	.section
+		.copy
+			span
+				| @copy; Indetimaxxx 2024. All rights reserved
+		div(hidden)
+			#member-popup
+				h5.title-popup Delete member?
+				p,text
+					| Would you like to delete this monitored member from your account?
+				button.btn.-blue Delete
+				button.btn Keep Member
+			#change-email
+				h5.title-popup Change email
+				p,text
+					| Enter and confirm your new email. Once updated, use your new email to sign in to your Identimaxx account.
+				form
+					label.inpt
+						input(type='email' placeholder='New email address')
+					label.inpt
+						input(type='email' placeholder='Confirm email address')
+				button.btn.-blue Save
+				button.btn Cancel
+			#change-password
+				h5.title-popup Change password
+				form
+					label.inpt
+						input(type='password' placeholder='Enter new password')
+						button.btn-eye
+							svg
+								use(xlink:href='/img/sprite.svg#eye')
+					label.inpt
+						input(type='password' placeholder='Confirm new password')
+						button.btn-eye
+							svg
+								use(xlink:href='/img/sprite.svg#eye')
+				button.btn.-blue Save
+				button.btn Cancel
+			#update-method
+				form
+					.row
+						.inpt
+							span.inpt-placeholder First Name
+							input(type='text')
+						.inpt
+							span.inpt-placeholder Last Name
+							input(type='text')
+					.inpt.-full
+						span.inpt-placeholder Card Number
+						input(type='text')
+					.row
+						.inpt
+							span.inpt-placeholder MM/YY
+							input(type='text')
+						.inpt
+							span.inpt-placeholder
+								em CCV
+								i
+									svg
+										use(xlink-href='/img/sprite.svg#info')
+									strong
+										| CVV/CSC is the 3-4 last numbers on the back of your cards
+							input(type='text')
+					.inpt.-full
+						span.inpt-placeholder Billing street address
+						input(type='text')
+					.inpt.-full
+						span.inpt-placeholder Billing street address (Line 2)(optional)
+						input(type='text')
+					.row
+						.inpt
+							span.inpt-placeholder State
+							label.select
+								span.select-head
+									span.select-option
+								span.select-body
+						.inpt
+							span.inpt-placeholder Zip Code
+							input(type='text')
+					p.text
+						| By choosing to update payment, we will ONLY authorize your card to validate,
+						| you will not be charged. Your bank may inform you of this authorization.
+						| You agree that your card will automatically be charged according to the
+						| terms of your subscription. By clicking "Update",
+						| you agree to the #[a.link Terms of Service] and acknowledge the #[a.link Privacy Policy].
+					button.btn.-blue Save
+					button.btn Cancel

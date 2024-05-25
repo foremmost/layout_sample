@@ -1,0 +1,64 @@
+extends template/main
+append vars
+	-
+		page_title = 'Profile'
+block content
+	.row
+		include template/aside-profile
+		main
+			section.profile-content
+				h1.title BEnefits
+				p.text
+					| As a member of Identimaxx you are entitled benefits under the Master Policy referenced below.
+					| This Summary Description of Benefits does not state all the terms, conditions, and exclusions of the Policy.
+				.profile-benefits
+					.profile-benefits-aside
+						a(href='#').profile-benefits-link Summary
+						a(href='#').profile-benefits-link General Information
+						a(href='#').profile-benefits-link Limit of Insurance
+						a(href='#').profile-benefits-link Filling a Claim
+						a(href='#').profile-benefits-link Benefits
+						a(href='#').profile-benefits-link Stolen Identity Event
+						a(href='#').profile-benefits-link Limits of Insurance
+						a(href='#').profile-benefits-link Deductible
+						a(href='#').profile-benefits-link Other Insurance
+						a(href='#').profile-benefits-link Duplicate Coraverages
+					.profile-benefits-content
+						h3.subtitle
+							| Summary Description of Benefits for the Personal Internet & Identity Coverage Master Policy
+						p.profile-benefit-text
+							| This Summary is provided to inform you that as a member of PrivacyMaxx you are entitled benefits under the Master
+							| Policy referenced below. This Summary Description of Benefits does not state all the terms, conditions, and exclusions
+							| of the Policy. Your benefits will be subject to all of the terms, conditions, and exclusions of the Master Policy,
+							| even if they are not mentioned in this Summary. A complete copy of the Policy will be provided upon request.
+						p.profile-benefit-text
+							| The Master Policy of Personal Internet Identity Coverage has been issued to:
+							| Privacy Maxx, LLC.(the Master Policy Holder), Policy Number [7080220 and 29106852 respectively]
+							| underwritten by insurance company subsidiaries or affiliates of American International Group, Inc.,to
+							| provide benefits as described in this Summary.
+						h3.subtitle General Information
+						p.profile-benefit-text
+							| Should you have any questions regarding the Membership Program provided by the Master Policyholder,
+							| or wish to view a complete copy of the Master Policy,
+							| please call the customer service number located in your membership materials or at 1-800-854-6147.
+						h3.subtitle Limit of Insurance
+						ul.profile-benefits-list
+							li
+								strong Aggregate Limit of Insurance:
+								span  $25,000 or $1,000,000 per policy period
+							li
+								strong Lost Wages:
+								span $1,500 per week, for 5 weeks maximum
+							li
+								strong Initial Legal Consultation:
+								span $2,000 per policy period
+							li
+								strong Travel Expenses:
+								span $2,000 per policy period
+							li
+								strong Elder Care and Child Care:
+								span - $1,000 per policy period
+							li
+								strong Deductible:
+								span $0 per policy period (depending on your service plan level)
+						h3.subtitle Filing a Claim

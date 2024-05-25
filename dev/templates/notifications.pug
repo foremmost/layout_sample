@@ -1,0 +1,41 @@
+extends template/main
+append vars
+	-
+		page_title = 'Profile'
+block content
+	.row
+		include template/aside-profile
+		main
+			section.profile-content
+				h1.title Notifications
+				h2.subtitle Preferences
+				p.text
+					| Select how you would like to receive important alerts related to your account.
+				.profile-notify
+					svg
+						use(xlink-href='/img/sprite.svg#email')
+					.profile-notify-title
+						strong Email
+					label.select
+						span.select-head
+							span.select-option john@aol.com
+						span.select-body
+					label.checkbox
+						input(type='checkbox')
+						span News & Information
+					label.checkbox
+						input(type='checkbox')
+						span Critical Alerts
+					label.checkbox
+						input(type='checkbox')
+						span Payment Information
+				.profile-notify
+					svg
+						use(xlink-href='/img/sprite.svg#text')
+					.profile-notify-title
+						strong Text Messages
+						span Receive SMS alerts by verifying your number
+					label.select
+						span.select-head
+							span.select-option (123) 456 7891
+						span.select-body
