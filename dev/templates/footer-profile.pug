@@ -3,85 +3,109 @@ footer.foot
 		.copy
 			span
 				| @copy; Indetimaxxx 2024. All rights reserved
-		div(hidden)
-			#member-popup
-				h5.title-popup Delete member?
-				p,text
-					| Would you like to delete this monitored member from your account?
-				button.btn.-blue Delete
-				button.btn Keep Member
-			#change-email
-				h5.title-popup Change email
-				p,text
-					| Enter and confirm your new email. Once updated, use your new email to sign in to your Identimaxx account.
-				form
-					label.inpt
+		.popup#popup
+			#popup-inner.popup-inner
+				#popup-head.popup-head
+				#popup-body.popup-body
+				button.popup-close(data-click="front:closePopup")
+					svg
+						use(xlink:href='/img/sprite.svg#close')
+		div(hidden)#popup-temp
+			.member-popup#member-popup
+				h5.title-popup.block-title Delete member?
+				p.text.member-text
+					| Would you like to delete this monitored
+					br
+					| member from your account?
+				.member-buttons
+					button.btn.-blue Delete
+					button.btn Keep Member
+			.change-email.member-popup#change-email
+				h5.title-popup.block-title Change email
+				p.text.member-text
+					| Enter and confirm your new email. Once updated, use your new
+					br
+					| email to sign in to your Identimaxx account.
+				form.change-form
+					label.inpt.change-inpt
 						input(type='email' placeholder='New email address')
-					label.inpt
+					label.inpt.change-inpt
 						input(type='email' placeholder='Confirm email address')
-				button.btn.-blue Save
-				button.btn Cancel
-			#change-password
-				h5.title-popup Change password
-				form
-					label.inpt
+					.change-buttons
+						button.btn.-blue Save
+						button.btn Cancel
+			.change-password.member-popup#change-password
+				h5.title-popup.block-title Change password
+				form.change-form
+					label.inpt.change-inpt
 						input(type='password' placeholder='Enter new password')
 						button.btn-eye
 							svg
 								use(xlink:href='/img/sprite.svg#eye')
-					label.inpt
+					label.inpt.change-inpt
 						input(type='password' placeholder='Confirm new password')
 						button.btn-eye
 							svg
 								use(xlink:href='/img/sprite.svg#eye')
-				button.btn.-blue Save
-				button.btn Cancel
-			#update-method
-				form
-					.row
+					.change-buttons
+						button.btn.-blue Save
+						button.btn Cancel
+			.change-method.member-popup#change-method
+				h5.title-popup.block-title Update payment method
+				form.change-form
+					.row.jusb.change-row
 						.inpt
 							span.inpt-placeholder First Name
 							input(type='text')
 						.inpt
 							span.inpt-placeholder Last Name
 							input(type='text')
-					.inpt.-full
-						span.inpt-placeholder Card Number
-						input(type='text')
-					.row
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Card Number
+							input(type='text')
+					.row.change-row
 						.inpt
 							span.inpt-placeholder MM/YY
 							input(type='text')
-						.inpt
-							span.inpt-placeholder
+						.inpt.change-inpt
+							span.inpt-placeholder.change-inpt-placeholder
 								em CCV
-								i
+								i.change-inpt-popup
 									svg
-										use(xlink-href='/img/sprite.svg#info')
+										use(xlink:href='/img/sprite.svg#info')
 									strong
-										| CVV/CSC is the 3-4 last numbers on the back of your cards
+										| CVV/CSC is the 3-4 last numbers
+										br
+										| on the back of your cards
 							input(type='text')
-					.inpt.-full
-						span.inpt-placeholder Billing street address
-						input(type='text')
-					.inpt.-full
-						span.inpt-placeholder Billing street address (Line 2)(optional)
-						input(type='text')
-					.row
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Billing street address
+							input(type='text')
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Billing street address (Line 2)(optional)
+							input(type='text')
+					.row.change-row
 						.inpt
 							span.inpt-placeholder State
-							label.select
+							label.select.change-select
 								span.select-head
-									span.select-option
+									span.select-option &nbsp;
+									svg
+										use(xlink:href='/img/sprite.svg#chevron_right')
 								span.select-body
 						.inpt
 							span.inpt-placeholder Zip Code
 							input(type='text')
-					p.text
+					p.text.change-text
 						| By choosing to update payment, we will ONLY authorize your card to validate,
 						| you will not be charged. Your bank may inform you of this authorization.
 						| You agree that your card will automatically be charged according to the
 						| terms of your subscription. By clicking "Update",
 						| you agree to the #[a.link Terms of Service] and acknowledge the #[a.link Privacy Policy].
-					button.btn.-blue Save
-					button.btn Cancel
+					.change-buttons.change-buttons-update
+						button.btn.-blue Save
+						button.btn Cancel
+	script(src='/front.js' type='module')

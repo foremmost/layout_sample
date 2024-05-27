@@ -3,52 +3,54 @@ append vars
 	-
 		page_title = 'Profile'
 block content
-	.row
+	.row.profile-row
 		include template/aside-profile
 		main
 			section.profile-content
 				h1.title Account Details
-				h2.subtitle Personal
-				.table-cont
-					table.table
-						tbody
-							tr
-								td
-									| Email
-								td
-									| john@aol.com
-								td
-									a(href='#').link Verify
-							tr
-								td
-									| Password
-								td
-									| ********
-								td
-									a(href='#').link Change
-							tr
-								td
-									| Date of Birth
-								td
-									| 01/01/24
-								td
+				.profile-table-details
+					h2.block-title Personal
+					.table-cont.profile-table
+						table.table
+							tbody
+								tr
+									td
+										| Email
+									td
+										| john@aol.com
+									td
+										a(href='#' data-click="front:showForm" data-popup='#change-email').link Verify
+								tr
+									td
+										| Password
+									td
+										| ********
+									td
+										a(href='#' data-click="front:showForm" data-popup='#change-password').link Change
+								tr
+									td
+										| Date of Birth
+									td
+										| 01/01/24
+									td
 
-							tr
-								td
-									| Name
-								td
-									| John Doe
-								td
-							tr
-								td
-									| Address
-								td
-									| 10410 W Prairie Hills Cir, Sun City, Az 64130
-								td
-							tr
-								td
-									| Phone Number
-								td
-									| (123) 456 7891
-								td
-				button.btn.-blue Update Details
+								tr
+									td
+										| Name
+									td
+										| John Doe
+									td
+								tr
+									td
+										| Address
+									td
+										| 10410 W Prairie Hills Cir, Sun City, Az 64130
+									td
+								tr
+									td
+										| Phone Number
+									td
+										| (123) 456 7891
+									td
+					button.btn.-blue Update Details
+	include footer-profile

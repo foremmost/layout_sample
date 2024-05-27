@@ -177,3 +177,256 @@ body
 			fill RGB($pdark_blue)
 	.menu_value
 		color RGB($pdark_blue)
+.block
+	w(735px)
+	max-width 735px
+	margin-top 20px
+	margin-bottom 40px
+	padding 40px
+	background RGB($pwhite)
+	border 1.5px solid RGBA($plight_blue,.2)
+	box-shadow 0px 4px 16px RGBA($plight_blue,.16)
+	border-radius 8px
+	&.-small
+		padding: 24px
+	&-title
+		font 500 24px/32px Barlow
+	&.-pb0
+		padding-bottom 12px
+.profile
+	&-row
+		padding 0 40px
+		margin-top 69px
+	&-content
+		max-width 1079px
+	&-aside
+		margin-right 202px
+		&-item
+			display flex
+			align-items center
+			padding 11px 21px 10px
+			column-gap 16px
+			border-radius 8px
+			margin-bottom 24px
+			color RGB($pdark_gray)
+			font-weight 500
+			svg
+				wh(14px)
+				use
+					fill RGB($pdark_gray)
+			&.active
+				background-color RGBA($plight_blue,.2)
+				color RGB($pdark_blue)
+				svg use
+					fill RGB($pdark_blue)
+	&-block
+		&-row
+			display flex
+			justify-content space-between
+			margin-top 24px
+			margin-bottom 16px
+			column-gap 16px
+			.inpt
+				w(50%)
+	&-table
+		margin-top 6px
+		.table
+			w(100%)
+			td,th
+				padding 18px 0 16px
+			tr
+				border-bottom 1px solid RGB($plight_gray)
+			thead
+				text-align left
+			tbody
+				tr
+					&:last-child
+						border: 0
+		&-details
+			margin-top 40px
+			.table
+				margin-bottom: 40px
+				td,th
+					font 400 16px Barlow
+					padding 24px 0
+					&:first-child
+						w(153px)
+						color RGB($pdark_gray)
+		&-membership
+			w(398px)
+			margin-bottom 20px
+			.table
+				margin-bottom 0
+			tbody
+				tr:last-child
+					border-bottom 1px solid RGB($plight_gray) !important
+			th,td
+				&:last-child
+					text-align: right
+	&-notify
+		&-text
+			margin-top 24px
+		&-row
+			margin-top 40px
+		&-select,&-checkbox
+			margin-top 16px
+		&-checkbox
+			padding 0 4px
+			margin-bottom 8px
+		&-title
+			display flex
+			align-items center
+			column-gap 19px
+			strong
+				font 500 16px/19.2px Barlow
+			svg
+				wh(25px,20px)
+				use
+					fill RGB($pdark_blue)
+			span
+				font 400 13px Barlow
+				display block
+				color RGB($pdark_gray)
+		&-checkboxes
+			padding-bottom 24px
+			margin-bottom 24px
+			border-bottom 1.5px solid RGBA($plight_blue,.2)
+	&-benefits
+		display: flex
+		&-text,&-links,&-content
+			margin-top: 40px
+		&-links
+			display: flex
+			flex-direction column
+			row-gap 24px
+		&-aside
+			w(424px)
+			flex 0 0 424px
+		&-link
+			font 400 16px/19.2px Barlow
+			display: block
+			color RGB($pdark_blue)
+			text-decoration: underline
+		&-content
+			height calc(100vh - 250px - 115px)
+			overflow: hidden
+			overflow-y: scroll
+			max-width 744px
+			padding-right: 150px
+			.block-title
+				margin-bottom: 16px
+			&-text,&-list
+				margin-bottom 16px
+				&+.block-title
+					margin-top 40px
+.popup
+	wh(100vw,100vh)
+	background-color RGB(0,0,0,.5)
+	position fixed
+	display flex
+	align-items center
+	justify-content center
+	left 0
+	top 0
+	visibility hidden
+	opacity 0
+	&.-opened
+		visibility visible
+		opacity 1
+	&-inner
+		w 480px
+		position: relative
+		&.-large
+			w(735px)
+			.popup-body
+				padding 0 40px
+	&-close
+		position absolute
+		right 13px
+		top 13px
+		svg
+			wh(14px)
+
+	&-body
+		padding 0 23px
+		background-color RGB($pwhite)
+		border 1.5px solid RGBA($plight_blue, .2)
+		box-shadow 0px 4px 16px RGBA($plight_blue, .16)
+		border-radius 8px
+.member
+	&-popup
+		padding 40px 0
+		text-align center
+	&-text
+		margin-top 8px
+	&-buttons
+		margin-top 32px
+.change
+	&-inpt
+		position: relative
+		&-placeholder
+			display flex
+			align-items center
+			justify-content space-between
+		&-popup
+			position: relative
+			wh 18px
+			svg
+				wh(18px)
+				use
+					wh(18px)
+					fill RGB($pdark_blue)
+			&:hover
+				strong
+					opacity 1
+					visibility visible
+			strong
+				width 217px
+				font 400 13px/15.6px Barlow
+				padding 8px 16px
+				border-radius 8px
+				position absolute
+				top -55px
+				right -18px
+				background-color RGB($pdark_blue)
+				color RGB($pwhite)
+				opacity: 0
+				visibility: hidden
+				&:after
+					wh(8px)
+					transform rotate(45deg)
+					position: absolute
+					bottom -4px
+					right 24px
+					content ''
+					display block
+					background RGB($pdark_blue)
+	&-email,&-password,&-method
+		text-align left
+	&-form
+		display flex
+		flex-direction: column
+		row-gap 16px
+		margin-top: 24px
+		.btn
+			w(120px)
+	&-row
+		column-gap 16px
+		color RGB($pdark_gray)
+		.inpt
+			w(50%)
+			&.-full
+				w(100%)
+	&-buttons
+		margin-top 8px
+		&-update
+			margin-top 40px
+	&-text
+		font 400 16px/19.2px Barlow
+	&-select
+		.select-head
+			background-color RGBA(var(--plight_blue), 0.08)
+			border: 0
+.table
+	&-actions
+		text-align center

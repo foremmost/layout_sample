@@ -9,22 +9,36 @@ svg
 	display: block
 	max-width 100%
 
+body
+	color RGB($pdark_blue)
 .btn
 	border 2px solid RGB($pdark_blue)
 	border-radius 8px
 	padding 6px 16px
 	font 500 16px/19.2px Barlow
+	position: relative
 	&.-blue
 		background-color RGB($pdark_blue)
 		color RGB($pwhite)
 		fill RGB($pwhite)
 	&.-full
 		w 100%
-
+	&-table
+		&,svg
+			wh(19px)
+		use
+			fill RGB($ured)
+	&-eye
+		position absolute
+		top 16px
+		right 20px
+		svg
+			wh(18px)
 .inpt
 	display: block
 	input
-		padding 16px
+		w(100%)
+		padding 14px 16px
 		border-radius 8px
 		border none
 		background-color RGBA($plight_blue, 0.08)
@@ -33,6 +47,14 @@ svg
 	&.-full
 		input
 			w 100%
+	&-placeholder
+		display flex
+		margin-bottom 8px
+.link
+	color RGB($ublue)
+	&.-small
+		font-size 13px
+		text-decoration underline
 .title
 	font 500 24px/30px Barlow
 	+desktop()
@@ -42,6 +64,43 @@ svg
 	color RGB($pdark_gray)
 	+desktop()
 		font 400 16px/19.2px Barlow
+.text
+	font 400 16px/19.2px Barlow
+	color RGB($pdark_gray)
+.table
+	border-collapse collapse
+.select,.checkbox
+	display: block
+.select
+	&-head
+		display flex
+		align-items: center
+		justify-content space-between
+		padding 15px
+		padding-right 23px
+		background RGB($pwhite)
+		border 1.5px solid RGBA($plight_blue,.2)
+		border-radius 8px
+		color RGBA($pdark_gray)
+		svg
+			wh(12px)
+			transform rotate(90deg)
+			use
+				fill RGBA($pdark_gray)
+.checkbox
+	display flex
+	align-items center
+	column-gap 8px
+	font 500 16px/19.2px Barlow
+	color RGB($pdark_gray)
+	input
+		display: none
+	&:before
+		wh(17px)
+		border-radius 2px
+		border 2px solid  RGB($pdark_gray)
+		content ''
+		display block
 .tar
 	text-align right
 .tal
@@ -50,3 +109,25 @@ svg
 	align-items: center
 .jus
 	justify-content center
+.jusb
+	justify-content space-between
+.-mt24
+	margin-top 24px
+.-mr80
+	margin-right 80px
+::-webkit-scrollbar {
+	border-radius 3px
+	width 2px
+}
+
+::-webkit-scrollbar-track {
+	background: RGB($plight_gray);
+	width 2px
+}
+::-webkit-scrollbar-thumb {
+	background RGB($pdark_gray)
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}

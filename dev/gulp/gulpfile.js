@@ -11,7 +11,7 @@ var series = gulp.series;
 import stylusSheets from './styles/stylus.js'
 //import sassSheets from './styles/sass.js';
 import pugTpl from './templates/pug.js';
-//import jsScripts from './scripts/js.js';
+import jsScripts from './scripts/js.js';
 import liveReload from './live/liveReload.js';
 // Gulp File 2.0
 const
@@ -19,10 +19,8 @@ const
 	stylesObservePath = '../stylus/**/*.styl',
 	htmlObservePath = '../templates/**/*.pug',
 	scriptsObservePath = '../js/**/*.js';
-//	stylusSheets = require('./styles/stylus.js'),
-	//	sassSheets = require('./styles/sass.js'),
 	//pugTpl = require('./templates/pug.js'),
-	//jsScripts = require('./scripts/js.js'),
+//	jsScripts = require('./scripts/js.js'),
 	//liveReload = require('./live/liveReload.js');
 
 
@@ -30,7 +28,7 @@ function observe(){
  // watch([sassObservePath],sassSheets);
   watch([stylesObservePath],stylusSheets);
   watch([htmlObservePath],pugTpl);
- // watch([scriptsObservePath],jsScripts);
+ watch([scriptsObservePath],jsScripts);
 }
 
 function fonts(){
@@ -70,5 +68,5 @@ function clean(){
 
 
 //export const sass= parallel([observe,pugTpl,liveReload,/*sassSheets*/,fonts,images]);
-export default parallel([pugTpl,liveReload,stylusSheets,fonts,images,observe]);
+export default parallel([pugTpl,liveReload,stylusSheets,fonts,images,jsScripts,observe]);
 

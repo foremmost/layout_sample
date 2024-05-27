@@ -3,14 +3,15 @@ append vars
 	-
 		page_title = 'Profile'
 block content
-	.row
+	.row.profile-row
 		include template/aside-profile
 		main
 			section.profile-content
 				h1.title Add Member
-				.block
+				.block.profile-block
 					p.text
 						| Protect the people you care about most. Parents, siblings, or chosen family.
+						br
 						| You can add up to 10 adults and unlimited kids. Add a new member below.
 					.profile-block-row
 						label.inpt
@@ -19,46 +20,43 @@ block content
 							input(type='text' placeholder='Last Name')
 					label.inpt
 						input(type='email' placeholder='Email')
-				.block
-					h2.subtitle Current Members
-					.table-cont
+					.-mt24
+						button.btn.-blue.-full
+							span Submit
+				.block.-small.-pb0
+					h2.block-title Current Members
+					.table-cont.profile-table
 						table.table
 							thead
 								tr
 									th First Name
 									th Last Name
 									th Email
-									th Delete
+									th.table-actions
+										| Delete
 							tbody
 								tr
 									td John
 									td Doe
 									td john@aol.com
-									td
-										.btn-table
+									td.table-actions
+										button.btn-table
 											svg
-												use(xlink-href='/img/sprite.svg#delete')
+												use(xlink:href='/img/sprite.svg#delete')
 								tr
 									td John
 									td Doe
 									td john@aol.com
-									td
-										.btn-table
+									td.table-actions
+										button.btn-table
 											svg
-												use(xlink-href='/img/sprite.svg#delete')
+												use(xlink:href='/img/sprite.svg#delete')
 								tr
 									td John
 									td Doe
 									td john@aol.com
-									td
-										.btn-table
+									td.table-actions
+										button.btn-table
 											svg
-												use(xlink-href='/img/sprite.svg#delete')
-								tr
-									td John
-									td Doe
-									td john@aol.com
-									td
-										.btn-table
-											svg
-												use(xlink-href='/img/sprite.svg#delete')
+												use(xlink:href='/img/sprite.svg#delete')
+	include footer-profile

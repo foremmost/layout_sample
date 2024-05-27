@@ -3,40 +3,41 @@ append vars
 	-
 		page_title = 'Profile'
 block content
-	.row
+	.row.profile-row
 		include template/aside-profile
 		main
 			section.profile-content
 				h1.title Membership
-				h2.subtitle Plan
-				.table-cont
-					table.table
-						tbody
-							tr
-								td
-									| Type
-								td
-									| Family Plan
-								td
-							tr
-								td
-									| Billing Period
-								td
-									| Monthly
-								td
-							tr
-								td
-									| Renews on
-								td
-									| Mar 20, 2024
-								td
+				.profile-table-details
+					h2.block-title Plan
+					.table-cont.profile-table.profile-table-membership
+						table.table
+							tbody
+								tr
+									td
+										| Type
+									td
+										| Family Plan
+									td
+								tr
+									td
+										| Billing Period
+									td
+										| Monthly
+									td
+								tr
+									td
+										| Renews on
+									td
+										| Mar 20, 2024
+									td
 
-							tr
-								td
-									| Payment Method
-								td
-									| ****0138
-								td
-									a(href='#').link Change
-
-				a(href='#').link.-small Cancel membership
+								tr
+									td
+										| Payment Method
+									td
+										| ****0138
+									td
+										a(href='#' data-click="front:showForm" data-popup='#change-method' data-islarge ).link Change
+					a(href='#').link.-small Cancel membership
+	include footer-profile
