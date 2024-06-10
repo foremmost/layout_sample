@@ -300,18 +300,20 @@ body
 			flex-direction column
 			row-gap 24px
 		&-aside
-			w(424px)
-			flex 0 0 424px
+			w(calc( (424 / 1105) * 100% ))
+			flex 0 0 calc( (424 / 1105) * 100% )
 		&-link
 			font 400 16px/19.2px Barlow
 			display: block
 			color RGB($pdark_blue)
 			text-decoration: underline
 		&-content
+			w(calc( (744 / 1105) * 100% ))
+			flex 0 0 calc( (744 / 1105) * 100% )
+			padding-left: 82px
 			height calc(100vh - 250px - 115px)
 			overflow: hidden
 			overflow-y: scroll
-			max-width 744px
 			padding-right: 150px
 			.block-title
 				margin-bottom: 16px
@@ -336,6 +338,8 @@ body
 	&-inner
 		w 480px
 		position: relative
+		max-height 85vh
+		overflow: auto
 		&.-large
 			w(735px)
 			.popup-body
@@ -353,6 +357,43 @@ body
 		border 1.5px solid RGBA($plight_blue, .2)
 		box-shadow 0px 4px 16px RGBA($plight_blue, .16)
 		border-radius 8px
+	&-half
+		display: flex
+		position: fixed
+		right: 0
+		top: 0
+		opacity: 0
+		visibility: hidden
+		&.-opened
+			opacity: 1
+			visibility visible
+		&-left,&-right
+			wh(50vw,100vh)
+		&-left
+			left: 0
+			background-color RGBA(0,0,0,.25)
+		&-right
+			padding-top: 201px
+			padding-left: 56px
+		&-form
+			max-width 530px
+			margin-top: 40px
+			.profile-block-row
+				margin: 0
+			.inpt
+				margin-bottom: 8px
+				input
+					font 400 16px Barlow
+					color RGB($pdark_gray)
+			.btn
+				margin-top: 40px
+		.popup-close
+			transform translate(13px,-51px)
+			position: relative
+			display: block
+			use
+				fill RGB($pdark_gray)
+
 .member
 	&-popup
 		padding 40px 0

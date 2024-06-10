@@ -52,5 +52,35 @@ block content
 									td
 										| (123) 456 7891
 									td
-					button.btn.-blue Update Details
+					button.btn.-blue(data-click="front:showHalf") Update Details
+			#update-form.popup-half
+				.popup-half-left
+				.popup-half-right
+					button.popup-close(data-click="front:closeHalf")
+						svg
+							use(xlink:href='/img/sprite.svg#close')
+					h2.block-title Update your personal information
+					form.popup-half-form
+						.row.profile-block-row
+							label.inpt
+								input(type='text'  value='John')
+							label.inpt
+								input(type='text'  value='Doe')
+						label.inpt.-full
+							input(type='text'  value='10410 W Prairie Hills Cir, Sun City, Az 64130')
+						label.inpt.-full
+							input(type='text'  value='Sarasota')
+						.row.change-row
+							.inpt
+								label.select.change-select
+									span.select-head
+										span.select-option Florida
+										svg
+											use(xlink:href='/img/sprite.svg#chevron_right')
+									span.select-body
+							.inpt
+								input(type='text' value='64130')
+						label.inpt.-full
+							input(type='text'  value='(123) 456 7891')
+						button.btn Update
 	include footer-profile

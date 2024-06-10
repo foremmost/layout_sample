@@ -9,7 +9,7 @@ class Front extends G_G{
   define(){
     const _ = this;
     _.componentName = 'front';
-    G_Bus.on(_,['closePopup','showForm']);
+    G_Bus.on(_,['closePopup','showForm','showHalf','closeHalf']);
   }
   showForm({item}){
     const _  =this;
@@ -39,6 +39,14 @@ class Front extends G_G{
     if(large){
       popupInner.classList.add('-large');
     }
+  }
+  showHalf({item}){
+    const _ =  this;
+    _.f('#update-form').classList.add('-opened')
+  }
+  closeHalf({item}){
+    const _ =  this;
+    _.f('#update-form').classList.remove('-opened')
   }
   closePopup(){
     const _ = this;
