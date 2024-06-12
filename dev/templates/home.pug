@@ -10,7 +10,7 @@ block content
                     .home-row.row
                         .link.-plus
                             svg
-                                use(xlink:href='/img/sprite.svg#add_circle')
+                                use(xlink:href='/img/sprite.svg#add')
                             span Add Family Member
                         .home-row-titles.row
                             .home-row_info
@@ -28,7 +28,7 @@ block content
                             .white-block_head
                                 h5.white-block_title.row
                                     svg
-                                        use(xlink:href='/img/sprite.svg#profile')
+                                        use(xlink:href='/img/sprite.svg#id_card')
                                     span Identity Protection
                                 .white-block-status.-active.row
                                     svg
@@ -71,12 +71,12 @@ block content
                             .white-block_head
                                 h5.white-block_title.row
                                     svg
-                                        use(xlink:href='/img/sprite.svg#profile')
+                                        use(xlink:href='/img/sprite.svg#credit_score')
                                     span Credit Monitoring
                                 .white-block-status.-inactive.row
                                     svg
                                         use(xlink:href='/img/sprite.svg#error')
-                                    span Active
+                                    span Inactive
                             .white-block-body
                                 .white-block-alerts
                                     | Monitor your credit efforlessly with our
@@ -139,12 +139,12 @@ block content
                             .white-block_head
                                 h5.white-block_title.row
                                     svg
-                                        use(xlink:href='/img/sprite.svg#profile')
+                                        use(xlink:href='/img/sprite.svg#disable_visible')
                                     span Privacy Protect
                                 .white-block-status.-inactive.row
                                     svg
                                         use(xlink:href='/img/sprite.svg#error')
-                                    span Active
+                                    span Inactive
                             .white-block-body
                                 .white-block-alerts
                                     | Protect your privacy online with our service,
@@ -170,12 +170,50 @@ block content
                             | methods, combining historic identity theft victim
                             | data with over a thousand relevant factors to power advanced AI algorithms.
                         button.btn Check my score
-                        .block.-little
+                        .wh-block.-little
                             h6.block-title My Vault
-                            button.block-btn
-                                svg
-                                    use(xlink:href='/img/sprite.svg#directions_car')
-                                span License
+                            .wh-block-buttons
+                                button.block-btn
+                                    svg
+                                        use(xlink:href='/img/sprite.svg#directions_car')
+                                    span License
+                                button.block-btn
+                                    svg
+                                        use(xlink:href='/img/sprite.svg#directions_car')
+                                    span Email
+                                button.block-btn
+                                    svg
+                                        use(xlink:href='/img/sprite.svg#directions_car')
+                                    span Phone
+                                button.block-btn
+                                    svg
+                                        use(xlink:href='/img/sprite.svg#directions_car')
+                                    span SSN
+                                button.block-btn
+                                    svg
+                                        use(xlink:href='/img/sprite.svg#directions_car')
+                                    span Credit
+                                button.block-btn
+                                    svg
+                                        use(xlink:href='/img/sprite.svg#directions_car')
+                                    span Savings
+                            a.wh-all(href='#')
+                                | View All Items
+                .row.gray-bottom-row
+                    .gray-block.gray-bottom-block
+                        h6.gray-block-title Lost Wallet Service
+                            p.gray-text
+                                | In the event that you misplace or your wallet is stolen,we will
+                                br
+                                | assist you in securing your lost cards and important information.
+                            a.btn Learn More
+                    .gray-block.gray-bottom-block
+                        h6.gray-block-title Client Support
+                            p.gray-text
+                                | If you need assistance, our support team is here to help you with
+                                | any questions or concerns you may have.
+                            a.btn Get Help
+
 
 
 

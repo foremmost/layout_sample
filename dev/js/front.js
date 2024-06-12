@@ -42,7 +42,13 @@ class Front extends G_G{
   }
   showHalf({item}){
     const _ =  this;
-    _.f('#update-form').classList.add('-opened')
+    let popupId = item.getAttribute('data-popup');
+    let isLarge = item.hasAttribute('data-islarge');
+    if(!popupId){
+      popupId = '#update-form'
+    }
+    console.log(_.f(popupId))
+    _.f(popupId).classList.add('-opened')
   }
   closeHalf({item}){
     const _ =  this;

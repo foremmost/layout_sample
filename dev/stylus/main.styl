@@ -34,6 +34,8 @@ body
 		right 20px
 		svg
 			wh(18px)
+	&.-plus
+		border 2px solid RGB($pdark_blue)
 .inpt
 	display: block
 	input
@@ -56,15 +58,16 @@ body
 		font-size 13px
 		text-decoration underline
 	&.-plus
+		padding-left: 21px
 		display: flex
 		align-items: center
 		color RGB($pdark_blue)
 		font 500 16px/19.2px Barlow
 		svg
-			wh 24px
+			wh 14px
+			margin-right: 12px
 		svg use
 			fill RGB($pdark_blue)
-			stroke RGB($pdark_blue)
 .title
 	font 500 24px/30px Barlow
 	+desktop()
@@ -125,6 +128,10 @@ body
 	margin-top 24px
 .-mr80
 	margin-right 80px
+.nopad
+	padding: 0
+.max-527
+	max-width 527px
 ::-webkit-scrollbar {
 	border-radius 3px
 	width 2px

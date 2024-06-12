@@ -478,6 +478,7 @@ body
 		+desktop()
 			w calc( 100% - 480px)
 			margin 0 240px
+			padding: 53px 0 0
 	&-row
 		w 100%
 		align-items: center
@@ -497,7 +498,9 @@ body
 	&-items
 		margin-top 32px
 	&-block
+		position: relative
 		min-width 504px
+		max-width 504px
 		border-radius 8px
 		padding 24px
 		margin-bottom: 16px
@@ -505,6 +508,8 @@ body
 		border 1.5px solid RGBA($plight_blue,.2)
 		background-color RGB($pwhite)
 		box-shadow 0 4px 16px RGBA($plight_blue,.16)
+		&.-large
+			padding-bottom: 24px
 		&_head
 			display: flex
 			align-items: center
@@ -517,11 +522,15 @@ body
 				color RGB($plight_ocher)
 			svg
 				wh 16px
+				margin-right: 6px
 		&_title
+			display: flex
+			align-items: center
+			column-gap: 8px
 			font 500 24px/32px Barlow
 			color RGB($pdark_blue)
 			svg
-				wh 24px
+				wh 19px 15px
 		&-list
 			margin-top: 16px
 			&-item
@@ -548,6 +557,16 @@ body
 					margin-top: 8px
 					&.-short
 						w 50%
+				&_right
+					padding-right: 41px
+					padding-left: 41px
+				&_title
+					font 500 16px/19.2px Barlow
+					padding-top: 53px
+				&_text
+					font-weight: 400
+					color RGB($pdark_gray)
+					margin 8px 0 44px
 				span,strong
 					display: block
 				span
@@ -559,10 +578,255 @@ body
 					margin-bottom: 4px
 			&-item_image
 				flex 0 0 calc( 16px + 16px + 40px)
+				display: flex
+				justify-content center
 				svg
-					wh 40px
+					wh 31px 30px
+					use
+						fill: RGB($plight_blue)
 		&-alerts
 			margin-top: 16px
 			font 400 16px/19.2px Barlow
 			color RGB($pdark_gray)
+		&-rating_img
+			position: relative
+			display: flex
+			align-items: center
+			justify-content: center
+			flex-wrap wrap
+			text-align: center
+			&,img
+				wh 223px 160px
+			img
+				position: absolute
+				left: 0
+				top: 0
+			&_scoreStart,&_scoreEnd
+				position: absolute
+				bottom: -21px
+			&_scoreStart
+				left: 0
+			&_scoreEnd
+				right: 0
+			&_score,&_scoreTitle,&_scoreRating
+				w 100%
+			&_score
+				text-align: center
+				padding-top: 50px
+				color: RGB($pdark_blue)
+				letter-spacing -0.97px
+				font 500 60px/68px Heebo
+			&_scoreTitle
+				font 400 16px/24px Heebo
+			&_scoreRating
+				margin-top: 7px
+				font 500 20px/32px Heebo
+				text-transform: uppercase
+				color: #F1C531
+			&_scoreCircle
+				position: absolute
+				top: 30px
+				right: 20px
+				z-index 100
+				wh 21px
+				display: flex
+				align-items: center
+				justify-content center
+				background-color #fff
+				box-shadow 0 1px 4px RGBA(0,0,0,.20)
+				&,span
+					border-radius 100%
+				span
+					wh 13px
+					display: block
+					background-color #F1C531
 
+	&-upgrade
+		wh 100%
+		padding 30px 0
+		border-radius 8px
+		color: #fff
+		flex-wrap wrap
+		text-align: center
+		position: absolute
+		top 0
+		left 0
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color RGBA($pdark_blue,.6)
+		backdrop-filter: blur(8px)
+		&-title
+			font 600 24px/32px Barlow
+		&-text
+			w 100%
+		&-btn
+			font 500 16px/19.2px Barlow
+			color: #fff
+			border-radius 8px
+			padding: 8px 16px
+			border: 2px solid #fff
+.gray
+	&-block
+		padding-left: 46px
+		&-title
+			font 500 24px/32px Barlow
+			padding-bottom: 24px
+			border-bottom 1.5px solid RGBA($plight_blue,.2)
+	&-actions
+		display: flex
+		align-items: center
+		padding: 24px 0
+		span
+			font 400 16px/19.2px Barlow
+			color RGBA($pdark_blue,.8)
+		strong
+			margin-left: auto
+		em
+			font 700 16px/19.2px Barlow
+			color #F3B82C
+			text-transform: uppercase
+			margin-left: 18px
+	&-text
+		font 400 16px/19.2px Barlow
+		color RGB($pdark_gray)
+		margin-bottom: 24px
+	&-bottom
+		&-row
+			column-gap: 16px
+			max-width 1024px
+			margin-top: 24px
+			padding-top: 40px
+			border-top 1.5px solid RGBA($plight_blue,.2)
+		&-block
+			max-width 504px
+			min-width 504px
+			padding-left: 0
+			.gray-text
+				margin-top: 8px
+
+.wh
+	&-block
+		margin-top: 32px
+		border-radius 8px
+		padding: 24px 24px 0
+		background-color: #fff
+		border 1.5px solid RGBA($plight_blue,.2)
+		box-shadow 0 4px 16px RGBA($plight_blue,.16)
+		&-buttons
+			display: flex
+			justify-content space-between
+			flex-wrap wrap
+			column-gap: 8px
+			margin-top: 16px
+			margin-bottom: 16px
+	&-all
+		display: block
+		text-align: center
+		padding: 18px 0
+		color RGB($pdark_gray)
+		font 500 16px/19.2px Barlow
+		&:before
+			display: block
+			content: ''
+			wh calc(100% + 48px) 2px
+			transform translate(-24px,-12px)
+			background RGBA($plight_blue,.2)
+.block
+	&-btn
+		w calc(50% - 4px)
+		padding 9px 0 10px
+		border-radius 8px
+		display: flex
+		align-items: center
+		column-gap: 11px
+		justify-content center
+		border 1.5px solid RGBA($plight_blue,.2)
+		margin-bottom: 8px
+		font 500 16px/19.2px Barlow
+		color RGBA($pdark_blue)
+		svg
+			wh 17px 15px
+			use
+				fill: RGB($plight_blue)
+
+.breads
+	&,&-item
+		color RGB($pdark_gray)
+		font 400 13px/15.6px Barlow
+	&-item
+		&.-home
+			text-decoration: underline
+	&-delim
+		margin 0 8px
+.identity
+	&-select,&-list
+		min-width 583px
+	&-list
+		box-shadow 0 2px 8px RGBA($plight_blue,.24)
+		margin-top: 16px
+		border-radius 8px
+	&-select
+		margin-top: 40px
+		position: relative
+		.select-head
+			background-color: #fff
+			box-shadow 0 2px 8px RGBA($plight_blue,.24)
+		.select-body
+			w 100%
+			display block
+			position: absolute
+			top: 48px
+			margin-top 8px
+			border-radius 8px
+			padding 19px 27px
+			opacity: 0
+			visibility hidden
+			&.-active
+				opacity: 1
+				visibility visible
+				box-shadow 0 4px 24px RGBA($plight_blue,.24)
+				background-color: #fff
+			&_item
+				font-weight 500
+				color RGB($pdark_gray)
+				padding: 8px 0
+				display: flex
+				align-items: center
+				column-gap: 11px
+				label
+					&:before
+						display: block
+						content: ''
+						border-radius 3px
+						wh 17px
+						border: 2px solid RGB($pdark_blue)
+				input
+					display: none
+
+	&-more
+		margin-top: 16px
+	&-content
+		margin-top 40px
+	&-right
+		padding: 50px 0 0 56px
+.list
+	margin: 20px 0
+	padding: 20px 0
+	border-top 1px solid RGBA($plight_blue,.2)
+	border-bottom 1px solid RGBA($plight_blue,.2)
+	li
+		margin-bottom 8px
+	strong
+		display inline-block
+		w 163px
+		font-weight 500
+	span
+		color RGB($pdark_gray)
+#address-form
+	.subtitle
+		color RGB($pdark_blue)
+		font-weight: 500
+		margin-bottom: 8px
+	.text,.btn
+		margin-top 16px
