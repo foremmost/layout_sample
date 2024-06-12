@@ -471,3 +471,98 @@ body
 .table
 	&-actions
 		text-align center
+
+
+.home
+	&-section
+		+desktop()
+			w calc( 100% - 480px)
+			margin 0 240px
+	&-row
+		w 100%
+		align-items: center
+		border-bottom 1.5px solid RGBA($plight_blue,.2)
+		padding-bottom: 18px
+		&-titles
+			-webkit-column-gap: 32px
+			-moz-column-gap: 32px
+			column-gap: 32px
+			margin-left: auto
+		&_info
+			&>span,&>strong
+				font 400 16px/19.2px Barlow
+			&>span
+				color RGB($pdark_gray)
+.white
+	&-items
+		margin-top 32px
+	&-block
+		min-width 504px
+		border-radius 8px
+		padding 24px
+		margin-bottom: 16px
+		margin-right: 16px
+		border 1.5px solid RGBA($plight_blue,.2)
+		background-color RGB($pwhite)
+		box-shadow 0 4px 16px RGBA($plight_blue,.16)
+		&_head
+			display: flex
+			align-items: center
+			justify-content: space-between
+		&-status
+			font 700 13px/15.6px Barlow
+			color RGB($ugreen)
+			text-transform: uppercase
+			&.-inactive
+				color RGB($plight_ocher)
+			svg
+				wh 16px
+		&_title
+			font 500 24px/32px Barlow
+			color RGB($pdark_blue)
+			svg
+				wh 24px
+		&-list
+			margin-top: 16px
+			&-item
+				display: flex
+				align-items: center
+				padding: 16px 0
+				&.-empty
+					padding: 16px
+					background-color RGBA($plight_blue,.08)
+					border-radius 8px
+					.white-block-list-item_circle
+						wh(40px)
+						border-radius 100%
+						background-color RGBA($plight_blue,.20)
+				&_header,&_line
+					background-color RGBA($plight_blue,.20)
+					border-radius 100px
+				&_content
+					w 100%
+				&_header
+					wh 96px 16px
+				&_line
+					wh 100% 6px
+					margin-top: 8px
+					&.-short
+						w 50%
+				span,strong
+					display: block
+				span
+					font 400 13px/15.6px Barlow
+					color RGB($pdark_gray)
+				strong
+					font 500 16px/19.2px Barlow
+					color RGB($pdark_blue)
+					margin-bottom: 4px
+			&-item_image
+				flex 0 0 calc( 16px + 16px + 40px)
+				svg
+					wh 40px
+		&-alerts
+			margin-top: 16px
+			font 400 16px/19.2px Barlow
+			color RGB($pdark_gray)
+
