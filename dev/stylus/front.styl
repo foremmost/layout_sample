@@ -995,3 +995,27 @@ body
 			margin-top: 24px
 	&-right
 		padding-top: 40px
+	&-subtitle
+		font 500 24px Barlow
+		color RGB($pdark_blue)
+		+desktop()
+			margin-top: 85px
+	&-steps
+		&-list
+			display: flex
+			column-gap: 64px
+			margin-top: 40px
+	&-item
+		max-width 240px
+		&_title,&_text
+			margin-top: 8px
+		&_title
+			font 500 16px Barlow
+			color RGB($pdark_blue)
+			strong
+				font-weight: 500
+			span
+				margin-left: 9px
+		&_text
+			padding-left: 19px
+			color RGB($pdark_gray)
