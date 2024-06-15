@@ -38,14 +38,20 @@ body
 		border 2px solid RGB($pdark_blue)
 .inpt
 	display: block
-	input
+	input,textarea
 		w(100%)
 		padding 14px 16px
 		border-radius 8px
-		border none
+		border 1px solid transparent
 		background-color RGBA($plight_blue, 0.08)
+		color RGB($pdark_gray)
 		&::placeholder
 			color RGB($pdark_gray)
+	&.-error
+		input
+			border 1px solid RGB($ured)
+
+
 	&.-full
 		input
 			w 100%
@@ -68,6 +74,10 @@ body
 			margin-right: 12px
 		svg use
 			fill RGB($pdark_blue)
+	&.-blue
+		color RGB($pdark_blue)
+		text-decoration: underline
+
 .title
 	font 500 24px/30px Barlow
 	+desktop()
@@ -132,6 +142,12 @@ body
 	padding: 0
 .max-527
 	max-width 527px
+.error
+	&-text
+		margin-top: 8px
+		display: block
+		font 400 13px/15.6px Barlow
+		color RGB($ured)
 ::-webkit-scrollbar {
 	border-radius 3px
 	width 2px

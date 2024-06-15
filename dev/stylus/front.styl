@@ -369,6 +369,8 @@ body
 			visibility visible
 		&-left,&-right
 			wh(50vw,100vh)
+
+			overflow-y: auto
 		&-left
 			left: 0
 			background-color RGBA(0,0,0,.25)
@@ -460,6 +462,9 @@ body
 				w(100%)
 	&-buttons
 		margin-top 8px
+		display: flex
+		align-items: center
+		column-gap: 10px
 		&-update
 			margin-top 40px
 	&-text
@@ -830,3 +835,163 @@ body
 		margin-bottom: 8px
 	.text,.btn
 		margin-top 16px
+
+.vault
+	&-title
+		w 100%
+		margin 40px 0
+		font 500 32px/38px Barlow
+	&-accordeon
+		+desktop()
+			min-width 583px
+		margin-top 24px
+		&-item
+			w 100%
+			position: relative
+			padding 16px
+			background #FFF
+			border 2px solid RGBA($plight_blue, 0.2)
+			box-shadow 0px 4px 16px RGBA($plight_blue, 0.16)
+			border-radius 8px
+			margin-bottom 16px
+			font 500 16px/19px Barlow
+			&_arr
+				position: absolute
+				right: 20px
+				top: 22px
+				svg
+					wh 14px 9px
+			&_head
+				align-items: center
+				column-gap: 8px
+			&_img
+				padding: 0 4px
+				svg
+					wh 17px 15px
+					use
+						fill RGB($plight_blue)
+			&_input
+				padding: 16px 0
+				position: relative
+				input
+					wh 100% 48px
+					display: block
+					border-radius 8px
+					padding-left: 16px
+					border: 0
+					background-color RGBA($plight_blue,.08)
+					color: RGBA($pdark_gray,1)
+					font-weight: 400
+					//background-color red
+			&_action
+				position: absolute
+				right: 26px
+				top: 32px
+				svg
+					wh 4px 16px
+			&_body
+				padding-top: 16px
+				.link.-plus
+					padding-left: 0
+	&-tabs
+		display flex
+		column-gap 24px
+		border-bottom: 2px solid RGB($plight_gray)
+	&-tab
+		font 500 16px/24px Barlow
+		color RGB($pdark_blue)
+		padding-bottom 8px
+		position: relative
+		&:after
+			wh 100% 2px
+			content: ''
+			display: block
+			position: absolute
+			bottom: -2px
+		&.-active:after
+			background RGB($plight_ocher)
+	&-img
+		margin 40px 0
+	&-right
+		+desktop()
+			padding-left 80px
+		.subtitle
+			font 500 24px/28px Barlow
+			color RGB($pdark_blue)
+			&.-little
+				font 500 16px/19px Barlow
+	&-text
+		margin-top: 10px
+	&-ensure
+		margin-top: 40px
+		border-top: 1px solid RGB($plight_gray)
+		padding-top: 40px
+		display: flex
+		align-items: center
+		column-gap: 8px
+		&_img
+			padding: 0 10px
+		&_title,&_text
+			color RGB($pdark_gray)
+			max-width 395px
+		&_title
+			font 600 16px/15.6px Barlow
+.-whiteshadow
+	.member-popup
+		padding: 0
+	.popup-half-left
+		background-color transparent
+	.popup-half-right
+		background-color: #fff
+		box-shadow 0 2px 8px RGBA($plight_blue,.24)
+		+desktop()
+			w 1019px
+.driver
+	+desktop()
+		max-width 584px
+.support
+	&-left
+		+desktop()
+			max-width 338px
+	&-form
+		position: relative
+		margin-top: 0
+		z-index: 0
+		background-color: #fff
+		padding: 40px
+		border: 2px solid RGBA($plight_blue, 0.2)
+		box-shadow: 0px 4px 16px RGBA($plight_blue, 0.16)
+		border-radius: 8px
+.report
+	.popup-half-right
+		+desktop()
+			w 1190px
+		padding-top: 150px
+	&-left
+		+desktop()
+			w 368px
+	&-title
+		margin-bottom: 0
+	&-subtitle.subtitle
+		font-size: 24px
+		line-height: 28px
+		color RGB($pdark_blue)
+	&-text
+		margin-top: 24px
+		strong
+			color RGB($pdark_blue)
+			font-weight: 400
+	.profile-benefits-content-text
+		margin-top: 16px
+		color RGB($pdark_gray)
+	.block-subtitle
+		margin-top: 16px
+		font 500 18px Barlow
+.lost
+	&-left
+		+desktop()
+			max-width 460px
+		.btn
+			margin-top: 24px
+	&-right
+		padding-top: 40px

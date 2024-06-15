@@ -1,5 +1,6 @@
 import G_G from "./libs/G_G.js";
 import { G_Bus } from "./libs/G_Control.js";
+
 class Front extends G_G{
   constructor(){
     super();
@@ -10,11 +11,13 @@ class Front extends G_G{
     const _ = this;
     _.componentName = 'front';
     G_Bus.on(_,['closePopup','showForm','showHalf','closeHalf']);
+
   }
   showForm({item}){
     const _  =this;
     let popupId = item.getAttribute('data-popup');
     let isLarge = item.hasAttribute('data-islarge');
+
     if(isLarge){
       _.showPopup(popupId,true);
     }else{
@@ -31,6 +34,7 @@ class Front extends G_G{
       popup = _.f('#popup');
     if(!popup) return void 0;
     popup.classList.add('-opened');
+
     let
       popupInner = popup.querySelector('#popup-inner'),
       popupBody = popup.querySelector('#popup-body');
@@ -38,6 +42,8 @@ class Front extends G_G{
     popupBody.append(_.popupContent);
     if(large){
       popupInner.classList.add('-large');
+    }else{
+      popupInner.classList.remove('-large');
     }
   }
   showHalf({item}){
@@ -47,8 +53,7 @@ class Front extends G_G{
     if(!popupId){
       popupId = '#update-form'
     }
-    console.log(_.f(popupId))
-    _.f(popupId).classList.add('-opened')
+    _.f(popupId)?.classList.add('-opened')
   }
   closeHalf({item}){
     const _ =  this;

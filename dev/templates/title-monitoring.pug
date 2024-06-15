@@ -185,21 +185,78 @@ block content
 											td John Doe
 											td 10410 W Prairie Hills Cir, Sun City, Az 64130
 											td.table-actions
-												button.btn-table
+												button.btn-table(data-click="front:showForm" data-popup='#stop-monitoring')
 													svg
 														use(xlink:href='/img/sprite.svg#delete')
 										tr
 											td John Doe
 											td S1023 COUNTY ROAD G, WONEWOC, WI 53968
 											td.table-actions
-												button.btn-table
+												button.btn-table(data-click="front:showForm" data-popup='#stop-monitoring')
 													svg
 														use(xlink:href='/img/sprite.svg#delete')
-						button.link.-plus.btn
+						button.link.-plus.btn(data-click="front:showForm" data-popup="#add-property" data-islarge)
 							svg
 								use(xlink:href='/img/sprite.svg#add')
 							span
 								| Add Property
 		script(src='/front.js' type='module')
-
+	.popup#popup
+		#popup-inner.popup-inner
+			#popup-head.popup-head
+			#popup-body.popup-body
+			button.popup-close(data-click="front:closePopup")
+				svg
+					use(xlink:href='/img/sprite.svg#close')
+	div(hidden)#popup-temp
+		.member-popup#stop-monitoring
+			h5.title-popup.block-title Stop Monitoring this?
+			p.text.member-text
+				| Would you like to remove this individual/
+				br
+				| property from our monitoring list?
+			.member-buttons
+				button.btn.-blue Stop Monitoring
+				button.btn Keep Monitoring
+		.change-method.member-popup#add-property
+			h5.title-popup.block-title Add Property
+			form.change-form
+				.row.jusb.change-row
+					.inpt
+						span.inpt-placeholder First Name
+						input(type='text')
+					.inpt
+						span.inpt-placeholder Last Name
+						input(type='text')
+				.change-row
+					.inpt.-full
+						span.inpt-placeholder Address
+						input(type='text')
+				.row.change-row
+					.inpt.-full
+						span.inpt-placeholder City
+						label.select.change-select
+							span.select-head
+								span.select-option &nbsp;
+								svg
+									use(xlink:href='/img/sprite.svg#chevron_right')
+							span.select-body
+				.change-row.row
+					.inpt
+						span.inpt-placeholder State
+						label.select.change-select
+							span.select-head
+								span.select-option &nbsp;
+								svg
+									use(xlink:href='/img/sprite.svg#chevron_right')
+							span.select-body
+					.inpt
+						span.inpt-placeholder Zip Code
+						input(type='text')
+				.change-row
+					.inpt.-full
+						span.inpt-placeholder Phone
+						input(type='text')
+				.change-buttons.change-buttons-update
+					button.btn.-blue.-full Submit
 

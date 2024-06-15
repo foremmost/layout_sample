@@ -1,0 +1,105 @@
+extends template/main
+append vars
+	-
+		page_title = 'My Vault'
+block content
+	main
+		section.vault
+			.section.home-section
+				.breads
+					a(href='#').breads-item.-home Home
+					span.breads-delim >
+					a(href='#').breads-item My Vault
+				h5.white-block_title.vault-title
+					span My Vault
+				.vault-row.row
+					.vault-left
+						nav.vault-tabs
+							button.vault-tab
+								| Personal
+							button.vault-tab
+								| Financial
+							button.vault-tab.-active
+								| Auto
+							button.vault-tab
+								| Other
+						.vault-left-content
+							.vault-accordeon
+								.vault-accordeon-item
+									.vault-accordeon-item_head.row
+										.vault-accordeon-item_img
+											svg
+												use(xlink:href='/img/sprite.svg#directions_car')
+										.vault-accordeon-item_title 2023 Hyundai Elantra
+										button.vault-accordeon-item_arr
+											svg
+												use(xlink:href='/img/sprite.svg#directions_car')
+									.vault-accorderon-item_body
+								.vault-accordeon-item
+									.vault-accordeon-item_head.row
+										.vault-accordeon-item_img
+											svg
+												use(xlink:href='/img/sprite.svg#directions_car')
+										.vault-accordeon-item_title 2023 Genesis G70
+										button.vault-accordeon-item_arr
+											svg
+												use(xlink:href='/img/sprite.svg#expand_more')
+									.vault-accorderon-item_body
+								.vault-accordeon-item
+									.vault-accordeon-item_head.row
+										.vault-accordeon-item_img
+											svg
+												use(xlink:href='/img/sprite.svg#news')
+										.vault-accordeon-item_title Vehicle 3
+										button.vault-accordeon-item_arr
+											svg
+												use(xlink:href='/img/sprite.svg#expand_more')
+									.vault-accordeon-item_body
+										button.link.-plus
+											svg
+												use(xlink:href='/img/sprite.svg#add')
+											span Add vehicle information
+							button.btn.-plus.link
+								svg
+									use(xlink:href='/img/sprite.svg#add')
+								span Add new vehicle
+					.vault-right
+		script(src='/front.js' type='module')
+	.popup-half.-opened.-whiteshadow
+		.popup-half-left
+		.popup-half-right
+			button.popup-close(data-click="front:closeHalf")
+				svg
+					use(xlink:href='/img/sprite.svg#close')
+			.change-method.member-popup.driver
+				h5.title-popup.block-title Vehicle 3
+				form.change-form
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Vin Number
+							input(type='text' )
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Title holder
+							input(type='text')
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Make
+							input(type='text' value="Name of company tat made the car")
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Model
+							input(type='text')
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder Year
+							input(type='text')
+					.change-row
+						.inpt.-full
+							span.inpt-placeholder License Plate
+							input(type='text')
+					.change-buttons
+						button.btn.-blue Save
+						button.btn Cancel
+
+
