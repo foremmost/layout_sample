@@ -15,21 +15,63 @@ block content
 						h5.white-block_title.vault-title
 							span Identity Risk Score
 						.risk-score
-							.risk-score-digit 710
-							.risk-score-state Medium
-							.risk-score-img
-								img(src='/img/risk.png')
-								button.risk-score-btn
-						.block-subtitle How does ot work?
-						p.text
+							.row.risk-score-row
+								.risk-score-digit 710
+								.risk-score-state Medium
+								.risk-score-img
+									img(src='/img/score.svg')
+									button.risk-score-btn
+						.block-subtitle.risk-subtitle How does ot work?
+						p.text.risk-text
 							| Our scoring models use predictive statistical methods, combining historic identity theft victim data with over a thousand relevant factors to power advanced AI algorithms. We also provide actionable guidance based on each score to help reduce your risk.
-						p.text
+						p.text.risk-text
 							| We extracted a huge data set of historic victim, recovery, breach, account, demographic, and online data to train our machine learning prediction models.
 						.risk-data
-							.risk-data-head
+							.risk-data-head.row
 								span Historic Victim Data
 								svg
 									use(xlink:href='/img/sprite.svg#expand_more')
+							.risk-data-body
+								.risk-data-body-item.row
+									svg.risk-data-body-item_img
+										use(xlink:href='/img/sprite.svg#check2')
+									.risk-data-body-item_content
+										h5.risk-data-body-item_title 2,425,486
+										.risk-data-body-item_subtitle ID Theft Customers
+										p.risk-data-body-item_text
+											| We built our 6 ID Risk Score models by aggregating data from over 2.4 million
+											| customers across
+											| 102 different identity theft protection and monitoring brands that we power.
+								.risk-data-body-item.row
+									svg.risk-data-body-item_img
+										use(xlink:href='/img/sprite.svg#check2')
+									.risk-data-body-item_content
+										h5.risk-data-body-item_title 2,425,486
+										.risk-data-body-item_subtitle ID Theft Customers
+										p.risk-data-body-item_text
+											| We built our 6 ID Risk Score models by aggregating data from over 2.4 million
+											| customers across
+											| 102 different identity theft protection and monitoring brands that we power.
+								.risk-data-body-item.row
+									svg.risk-data-body-item_img
+										use(xlink:href='/img/sprite.svg#check2')
+									.risk-data-body-item_content
+										h5.risk-data-body-item_title 2,425,486
+										.risk-data-body-item_subtitle ID Theft Customers
+										p.risk-data-body-item_text
+											| We built our 6 ID Risk Score models by aggregating data from over 2.4 million
+											| customers across
+											| 102 different identity theft protection and monitoring brands that we power.
+								.risk-data-body-item.row
+									svg.risk-data-body-item_img
+										use(xlink:href='/img/sprite.svg#check2')
+									.risk-data-body-item_content
+										h5.risk-data-body-item_title 2,425,486
+										.risk-data-body-item_subtitle ID Theft Customers
+										p.risk-data-body-item_text
+											| We built our 6 ID Risk Score models by aggregating data from over 2.4 million
+											| customers across
+											| 102 different identity theft protection and monitoring brands that we power.
 					.vault-right.lost-right
 						h2.block-title Tips to reduce your risk
 						ul.risk-list
@@ -61,20 +103,21 @@ block content
 								.risk-list-item_content
 									.risk-list-item-title Keep Your Devices Secure
 									.risk-list-item-text Use security software and keep your devices updated to protect against malware and viruses.
-							li.risk-list-item
+								img(src='/img/risk.svg').risk-list-svg
+							li.risk-list-item.-full
 								.risk-list-item_img
 									svg
 										use(xlink:href='/img/sprite.svg#encrypted')
 								.risk-list-item_content
 									.risk-list-item-title Enable Two-Factor Authentication
 									.risk-list-item-text Add an extra layer of security to your accounts by enabling two-factor authentication.
-							li.risk-list-item
+							li.risk-list-item.-full
 								.risk-list-item_img
 									svg
 										use(xlink:href='/img/sprite.svg#key')
 								.risk-list-item_content
 									.risk-list-item-title Use Strong, Unique Passwords
 									.risk-list-item-text Use complex passwords for your online accounts and avoid using the same password across multiple sites.
-						img(src='/img/risk.svg')
+
 		script(src='/front.js' type='module')
 
