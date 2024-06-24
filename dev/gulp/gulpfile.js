@@ -45,18 +45,7 @@ async function images(){
 		gifsicle({interlaced: true}),
 		mozjpeg({quality: 75, progressive: true}),
 		optipng({optimizationLevel: 5}),
-		svgo({
-			plugins: [
-				{
-					name: 'removeViewBox',
-					active: true
-				},
-				{
-					name: 'cleanupIDs',
-					active: false
-				}
-			]
-		})]
+		]
 	))
 	.pipe(dest('../../build/img'))
 }
