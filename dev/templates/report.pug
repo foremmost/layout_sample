@@ -28,9 +28,12 @@ block content
 								a(href='#').link.-blue 805 Elenora Hills, New Yesenia, NC 62065
 					.vault-right
 		script(src='/front.js' type='module')
-	.popup-half.-opened.-whiteshadow.report
+	.popup-half.-opened.-whiteshadow.report#license
 		.popup-half-left
 		.popup-half-right
+			button.popup-close(data-click="front:closeHalf" data-popup='#license')
+				svg
+					use(xlink:href='/img/sprite.svg#close')
 			.change-method.member-popup.driver
 				h5.title-popup.block-title 10410 W PRAIRIE HILLS CIR, SUN CITY, AZ
 					br

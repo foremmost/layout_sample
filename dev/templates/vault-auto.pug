@@ -58,8 +58,8 @@ block content
 										button.link.-plus
 											svg
 												use(xlink:href='/img/sprite.svg#add')
-											span Add phone number
-							button.btn.-plus.link
+											span Add vehicle information
+							button.btn.-plus.link(data-click="front:showHalf" data-popup='#license')
 								svg
 									use(xlink:href='/img/sprite.svg#add')
 								span Add new vehicle
@@ -85,10 +85,10 @@ block content
 									| your data and sensitive files with our top-tier encryption.
 
 		script(src='/front.js' type='module')
-	.popup-half.-opened.-whiteshadow
+	.popup-half.-opened.-whiteshadow#license
 		.popup-half-left
 		.popup-half-right
-				button.popup-close(data-click="front:closeHalf")
+				button.popup-close(data-click="front:closeHalf" data-popup='#license')
 					svg
 						use(xlink:href='/img/sprite.svg#close')
 				.change-method.member-popup.driver

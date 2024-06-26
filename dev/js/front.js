@@ -34,7 +34,7 @@ class Front extends G_G{
       popup = _.f('#popup');
     if(!popup) return void 0;
     popup.classList.add('-opened');
-
+    document.body.style.overflow = 'hidden';
     let
       popupInner = popup.querySelector('#popup-inner'),
       popupBody = popup.querySelector('#popup-body');
@@ -50,6 +50,7 @@ class Front extends G_G{
     const _ =  this;
     let popupId = item.getAttribute('data-popup');
     let isLarge = item.hasAttribute('data-islarge');
+    document.body.style.overflow = 'hidden';
     if(!popupId){
       popupId = '#update-form'
     }
@@ -57,7 +58,11 @@ class Front extends G_G{
   }
   closeHalf({item}){
     const _ =  this;
-    _.f('#update-form').classList.remove('-opened')
+    let popupId = item.getAttribute('data-popup');
+    if(!popupId){
+      popupId = '#update-form'
+    }
+    _.f(popupId)?.classList.remove('-opened')
   }
   closePopup(){
     const _ = this;
