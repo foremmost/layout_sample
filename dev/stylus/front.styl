@@ -44,12 +44,48 @@ body
 				column-gap: 14.35px
 			span svg
 				wh 12px 7px
-			//span
-			//	margin 0 6.35px
+			position: relative
+			&:after
+				wh 100% 40px
+				content: ''
+				position: absolute
+				top: 0
+			&:hover
+				&>.head-menu_sublist
+					opacity: 1
+					visibility visible
 		+desktop()
 			display flex
 			column-gap 40px
 			font 500 16px/19.2px Barlow
+
+		&_sublist
+			display: none
+			+desktop()
+				w 256px
+				position: absolute
+				z-index 100
+				display: block
+				padding 8px
+				padding-bottom: 0
+				top: 28px
+				left: 0
+				background: #fff
+				box-shadow 0 4px 24px RGBA($plight_blue,.2)
+				border 2px solid RGBA($plight_blue,.2)
+				border-radius 8px
+				opacity: 0
+				visibility hidden
+				.head-mobile-subitem:hover
+					cursor: pointer
+					background-color: RGB($plight_blue,.2)
+					.head-mobile-subitem_icon use
+						fill RGB($pdark_blue)
+					span
+						color:  RGB($pdark_blue)
+				.head-mobile-subitem_icon
+					flex 0 0 19px
+
 	&-login
 		display none
 		+desktop()
@@ -57,8 +93,45 @@ body
 			column-gap 16px
 	&-actions
 		margin-left auto
+		.-bottom
+			position relative
+			margin-top 16px
+			text-align center
+			justify-content center
+			svg
+				wh 7px 12px
+				use
+					fill RGB($pdark_gray)
+			&:hover
+				svg	use
+					fill RGB($pdark_blue)
+			&:before
+				content: ''
+				position: absolute
+				top: -8px
+				left: -8px
+				wh calc(100% + (8px * 2)) 2px
+				background-color RGBA($plight_blue,.2)
+		&-link
+			cursor: pointer
+			display: flex
+			align-items: center
+			font-weight: 500
+		&-menu
+			display: none
+			+desktop()
+				display: flex
+				column-gap: 30px
+		.head-menu_sublist
+			w 212px
+			left initial
+			right: 0
 		+desktop()
 			margin-left 0
+		&-user
+			wh 25px
+			.head-menu_sublist
+				w 256px
 	&-mobile
 		&-menu
 			&-cont
@@ -91,7 +164,7 @@ body
 				ali: center
 			})
 			border-radius 8px
-			padding 8px
+			padding 10px 8px 11px
 			column-gap: 8px
 			padding-left: 16px
 			margin-bottom: 8px
@@ -102,6 +175,8 @@ body
 			&_value
 				font 500 16px/19.2px Barlow
 				color RGB($pdark_gray)
+
+
 
 .-bg
 	background url('../img/login.jpg')
@@ -228,21 +303,28 @@ body
 			padding 0 40px
 	&-content
 		max-width 1079px
-	&-aside
+		padding-top: 24px
 		+desktop()
+			padding-top: 0px
+	&-aside
+		width: 100%
+		overflow hidden
+		padding 0 24px
+		overflow-x auto
+		+desktop()
+			padding: 0
 			margin-right 202px
+			max-width 213px
 		&-nav
-			w 360px
+			w fit-content
 			overflow-x auto
 			display: flex
 			background-color RGB($pwhite)
 			border 2px solid RGBA($plight_blue,.2)
 			padding: 4px
 			border-radius 8px
-			margin-bottom: 24px
 			+desktop()
 				display: initial
-				margin-bottom: 0
 				background-color: transparent
 				border: none
 				padding: 0
@@ -283,12 +365,15 @@ body
 					w(50%)
 	&-table
 		margin-top 6px
+		+desktop()
+			margin-top: 40px
 		.table
 			w(100%)
 			td,th
 				padding 18px 0 16px
 			tr
 				border-bottom 1px solid RGB($plight_gray)
+
 			thead
 				text-align left
 			tbody
@@ -312,8 +397,10 @@ body
 						w(153px)
 						color RGB($pdark_gray)
 		&-membership
-			w(398px)
+			w(100%)
 			margin-bottom 20px
+			+desktop()
+				w(398px)
 			.table
 				margin-bottom 0
 			tbody
@@ -352,28 +439,36 @@ body
 			border-bottom 1.5px solid RGBA($plight_blue,.2)
 	&-benefits
 		display: flex
+		flex-wrap wrap
+		+desktop()
+			flex-wrap nowrap
 		&-text,&-links,&-content
 			margin-top: 40px
 		&-links
-			display: flex
+			display: none
 			flex-direction column
 			row-gap 24px
+			+desktop()
+				display: flex
 		&-aside
-			w(calc( (424 / 1105) * 100% ))
-			flex 0 0 calc( (424 / 1105) * 100% )
+			+desktop()
+				w(calc( (424 / 1105) * 100% ))
+				flex 0 0 calc( (424 / 1105) * 100% )
 		&-link
 			font 400 16px/19.2px Barlow
 			display: block
 			color RGB($pdark_blue)
 			text-decoration: underline
 		&-content
-			w(calc( (744 / 1105) * 100% ))
-			flex 0 0 calc( (744 / 1105) * 100% )
-			padding-left: 82px
-			height calc(100vh - 250px - 115px)
-			overflow: hidden
-			overflow-y: scroll
-			padding-right: 150px
+			w 100%
+			+desktop()
+				w(calc( (744 / 1105) * 100% ))
+				flex 0 0 calc( (744 / 1105) * 100% )
+				height calc(100vh - 250px - 115px)
+				overflow: hidden
+				overflow-y: scroll
+				padding-right: 150px
+				padding-left: 82px
 			.block-title
 				margin-bottom: 16px
 			&-text,&-list
@@ -396,14 +491,20 @@ body
 		visibility visible
 		opacity 1
 	&-inner
-		w 480px
+		w calc( 100% - 48px)
 		position: relative
 		max-height 85vh
 		overflow: auto
+		+desktop()
+			w 480px
 		&.-large
-			w(735px)
+			w calc( 100% - 48px)
+			+desktop()
+				w 735px
 			.popup-body
-				padding 0 40px
+				padding 0 24px
+				+desktop()
+					padding 0 40px
 	&-close
 		position absolute
 		right 13px
@@ -533,8 +634,16 @@ body
 		display: flex
 		align-items: center
 		column-gap: 10px
+		flex-wrap wrap
+		+desktop()
+			flex-wrap nowrap
 		&-update
 			margin-top 40px
+		.btn
+			w 100%
+			margin-bottom: 8px
+			+desktop()
+				w initial
 	&-text
 		font 400 16px/19.2px Barlow
 	&-select
@@ -788,6 +897,7 @@ body
 			font 400 16px/19.2px Barlow
 			color RGBA($pdark_blue,.8)
 		strong
+			font-weight: 600
 			margin-left: auto
 		em
 			font 700 16px/19.2px Barlow
@@ -1151,6 +1261,8 @@ body
 			padding-top: 40px
 		img
 			w 100%
+			+desktop()
+				max-width 215px
 	&-subtitle
 		font 500 24px Barlow
 		color RGB($pdark_blue)
@@ -1299,7 +1411,7 @@ body
 			.white-block_title
 				order 0
 
-.block
+.block,.details
 	padding 0
 	border 0
 	background transparent
@@ -1324,7 +1436,7 @@ body
 			grid-template-areas: "info actions" "info2 actions"
 			background: RGB($pwhite);
 			padding: 19px 24px
-			border: 1.5px solid RGBA($plight_blue, 0.2);
+			border: 2px solid RGBA($plight_blue, 0.2);
 			box-shadow: 0px 4px 16px RGBA($plight_blue, 0.16);
 			border-radius 8px
 			margin-top: 16px
@@ -1352,3 +1464,66 @@ body
 			max-width 40px
 			+desktop()
 				border-left: none
+.details
+	w 100%
+	+desktop()
+		w initial
+		border: 0
+		background-color: transparent
+		box-shadow: none
+		padding: 0
+	&-table
+		td:nth-child(2)
+			display flex
+		td.table-links
+			grid-area actions
+			padding-right: 0
+			+desktop()
+				text-align: right
+	.table
+		td,td:nth-child(2)
+			+desktop()
+				padding: 24px 0
+		tr
+			padding: 16px 0
+			box-shadow none
+			border none
+			border-radius 0px
+			border-bottom 2px solid RGBA($plight_blue, 0.2);
+
+	.btn
+		w 100%
+		+desktop()
+			w initial
+
+.foot
+	color RGB($pdark_gray)
+	border-top 2px solid RGBA($plight_blue,.2)
+	&-site
+		display: none
+		+desktop()
+			display: block
+	&-row
+		justify-content space-between
+		padding: 40px 0
+		+desktop()
+			padding 24px 40px
+	&-menu
+		display: flex
+		align-items: center
+		column-gap: 9px
+		+desktop()
+			column-gap: 16px
+		.dot
+			wh 3px
+			flex 0 0 3px
+			border-radius 100%
+			background-color: RGB($pdark_gray)
+	&-copy
+		text-align: center
+		w 100%
+		display: block
+		margin-top: 16px
+		+desktop()
+			w initial
+			margin-top: 0

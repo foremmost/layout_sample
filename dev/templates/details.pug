@@ -5,12 +5,12 @@ append vars
 block content
 	.row.profile-row
 		include template/aside-profile
-		main
+		main.details
 			section.profile-content
 				h1.title Account Details
 				.profile-table-details
 					h2.block-title Personal
-					.table-cont.profile-table
+					.table-cont.profile-table.details-table
 						table.table
 							tbody
 								tr
@@ -18,40 +18,40 @@ block content
 										| Email
 									td
 										| john@aol.com
-									td
+									td.table-links
 										a(href='#' data-click="front:showForm" data-popup='#change-email').link Verify
 								tr
 									td
 										| Password
 									td
 										| ********
-									td
+									td.table-links
 										a(href='#' data-click="front:showForm" data-popup='#change-password').link Change
 								tr
 									td
 										| Date of Birth
 									td
 										| 01/01/24
-									td
+									td.table-links
 
 								tr
 									td
 										| Name
 									td
 										| John Doe
-									td
+									td.table-links
 								tr
 									td
 										| Address
 									td
 										| 10410 W Prairie Hills Cir, Sun City, Az 64130
-									td
+									td.table-links
 								tr
 									td
 										| Phone Number
 									td
 										| (123) 456 7891
-									td
+									td.table-links
 					button.btn.-blue(data-click="front:showHalf") Update Details
 			#update-form.popup-half
 				.popup-half-left

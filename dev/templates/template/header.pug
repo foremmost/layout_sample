@@ -14,19 +14,107 @@ header.head
 						span
 							svg
 								use(xlink:href='/img/sprite.svg#more')
+						ul.head-menu_sublist
+							li.head-mobile-subitem
+								svg.head-mobile-subitem_icon
+									use(xlink:href='/img/sprite.svg#id_card')
+								span.head-mobile-subitem_value
+									| Identity Protection
+							li.head-mobile-subitem
+								svg.head-mobile-subitem_icon.menu_icon
+									use(xlink:href='/img/sprite.svg#credit_score')
+								span.head-mobile-subitem_value.menu_value
+									| Credit Monitoring
+							li.head-mobile-subitem.-active
+								svg.head-mobile-subitem_icon
+									use(xlink:href='/img/sprite.svg#news')
+								span.head-mobile-subitem_value
+									| Title Monitoring
+							li.head-mobile-subitem
+								svg.head-mobile-subitem_icon
+									use(xlink:href='/img/sprite.svg#disable_visible')
+								span.head-mobile-subitem_value
+									| Privacy Protect
 					li.head-menu_item.-dropdown
 						a(href='#') My Vault
 						span
 							svg
 								use(xlink:href='/img/sprite.svg#more')
+						ul.head-menu_sublist
+							li.head-mobile-subitem
+								svg.head-mobile-subitem_icon
+									use(xlink:href='/img/sprite.svg#person')
+								span.head-mobile-subitem_value
+									| Personal
+							li.head-mobile-subitem
+								svg.head-mobile-subitem_icon.menu_icon
+									use(xlink:href='/img/sprite.svg#exchange')
+								span.head-mobile-subitem_value.menu_value
+									| Financial
+							li.head-mobile-subitem
+								svg.head-mobile-subitem_icon.menu_icon
+									use(xlink:href='/img/sprite.svg#directions_car')
+								span.head-mobile-subitem_value.menu_value
+									| Auto
+							li.head-mobile-subitem.-active
+								svg.head-mobile-subitem_icon
+									use(xlink:href='/img/sprite.svg#lock')
+								span.head-mobile-subitem_value
+									| Other
 					li.head-menu_item
 						a(href='#') Support
 			.head-actions
-				.head-login.row
-					button.btn
-						span Sign Up
-					button.btn.-blue
-						span Sign In
+				//.head-login.row
+								//	button.btn
+								//		span Sign Up
+								//	button.btn.-blue
+								//		span Sign In
+				.head-actions-menu
+					a(href='#').head-actions-link Support
+					.head-actions-link.head-menu_item.-dropdown
+						a(href='#') John Doe
+						span
+							svg
+								use(xlink:href='/img/sprite.svg#more')
+						ul.head-menu_sublist
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value
+									| John Doe
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value.menu_value
+									| Richard Doe
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value.menu_value
+									| Myriam Anne
+									br
+									| Richardson
+							li.head-mobile-subitem.-bottom
+								svg(style='width:14px')
+									use(xlink:href='/img/sprite.svg#add')
+								span.head-mobile-subitem_value
+									| Add Family Member
+
+					.head-actions-link.head-menu_item.-dropdown.head-actions-user
+						svg
+							use(xlink:href='/img/sprite.svg#account_circle')
+						ul.head-menu_sublist
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value
+									| Account Details
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value.menu_value
+									| Membership
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value.menu_value
+									| Notifications
+							li.head-mobile-subitem
+								span.head-mobile-subitem_value
+									| Benefits
+							li.head-mobile-subitem.-bottom
+								span.head-mobile-subitem_value
+									| Button
+								svg
+									use(xlink:href='/img/sprite.svg#chevron_right')
 				button.head-burger
 					span.head-burger_item
 			.head-mobile-menu-cont
@@ -34,7 +122,8 @@ header.head
 					li.head-mobile-menu_item.head-menu_item
 						a(href='#') Home
 					li.head-mobile-menu_item.-dropdown.head-menu_item.menu-active
-						a(href='#').menu_value My Services
+						a(href='#').menu_value
+							| My Services
 						span
 							svg
 								use(xlink:href='/img/sprite.svg#more')

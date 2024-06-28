@@ -5,12 +5,12 @@ append vars
 block content
 	.row.profile-row
 		include template/aside-profile
-		main
+		main.details
 			section.profile-content
 				h1.title Membership
 				.profile-table-details
 					h2.block-title Plan
-					.table-cont.profile-table.profile-table-membership
+					.table-cont.profile-table.profile-table-membership.details-table
 						table.table
 							tbody
 								tr
@@ -18,26 +18,25 @@ block content
 										| Type
 									td
 										| Family Plan
-									td
+									td.table-links
 								tr
 									td
 										| Billing Period
 									td
 										| Monthly
-									td
+									td.table-links
 								tr
 									td
 										| Renews on
 									td
 										| Mar 20, 2024
-									td
-
+									td.table-links
 								tr
 									td
 										| Payment Method
 									td
 										| ****0138
-									td
+									td.table-links
 										a(href='#' data-click="front:showForm" data-popup='#change-method' data-islarge ).link Change
 					a(href='#').link.-small Cancel membership
 	include footer-profile
