@@ -54,6 +54,7 @@ body
 				&>.head-menu_sublist
 					opacity: 1
 					visibility visible
+					display: block
 		+desktop()
 			display flex
 			column-gap 40px
@@ -61,30 +62,30 @@ body
 
 		&_sublist
 			display: none
-			+desktop()
-				w 256px
-				position: absolute
-				z-index 100
-				display: block
-				padding 8px
-				padding-bottom: 0
-				top: 28px
-				left: 0
-				background: #fff
-				box-shadow 0 4px 24px RGBA($plight_blue,.2)
-				border 2px solid RGBA($plight_blue,.2)
-				border-radius 8px
-				opacity: 0
-				visibility hidden
-				.head-mobile-subitem:hover
-					cursor: pointer
-					background-color: RGB($plight_blue,.2)
-					.head-mobile-subitem_icon use
-						fill RGB($pdark_blue)
-					span
-						color:  RGB($pdark_blue)
-				.head-mobile-subitem_icon
-					flex 0 0 19px
+			//+desktop()
+			w 256px
+			position: absolute
+			z-index 100
+			display: block
+			padding 8px
+			padding-bottom: 0
+			top: 28px
+			left: 0
+			background: #fff
+			box-shadow 0 4px 24px RGBA($plight_blue,.2)
+			border 2px solid RGBA($plight_blue,.2)
+			border-radius 8px
+			opacity: 0
+			visibility hidden
+			.head-mobile-subitem:hover
+				cursor: pointer
+				background-color: RGB($plight_blue,.2)
+				.head-mobile-subitem_icon use
+					fill RGB($pdark_blue)
+				span
+					color:  RGB($pdark_blue)
+			.head-mobile-subitem_icon
+				flex 0 0 19px
 
 	&-login
 		display none
@@ -118,14 +119,22 @@ body
 			align-items: center
 			font-weight: 500
 		&-menu
-			display: none
+			position: absolute
+			width: 100%
+			right: 20px
+			display: flex
+			top 70px
+			justify-content: flex-end;
+			column-gap: 30px
 			+desktop()
-				display: flex
-				column-gap: 30px
+				w initial
+				position static
+				top: 0
 		.head-menu_sublist
 			w 212px
 			left initial
 			right: 0
+
 		+desktop()
 			margin-left 0
 		&-user
