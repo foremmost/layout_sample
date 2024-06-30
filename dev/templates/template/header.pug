@@ -115,13 +115,13 @@ header.head
 									| Button
 								svg
 									use(xlink:href='/img/sprite.svg#chevron_right')
-				button.head-burger
+				button.head-burger(data-click="front:showMobileMenu")
 					span.head-burger_item
 			.head-mobile-menu-cont
 				ul.head-mobile-menu.row
 					li.head-mobile-menu_item.head-menu_item
 						a(href='#') Home
-					li.head-mobile-menu_item.-dropdown.head-menu_item.menu-active
+					li.head-mobile-menu_item.-dropdown.head-menu_item(data-click="front:openMenuItem")
 						a(href='#').menu_value
 							| My Services
 						span
@@ -148,7 +148,7 @@ header.head
 								use(xlink:href='/img/sprite.svg#news')
 							span.head-mobile-subitem_value
 								| Privacy Protect
-					li.head-mobile-menu_item.-dropdown.head-menu_item
+					li.head-mobile-menu_item.-dropdown.head-menu_item(data-click="front:openMenuItem")
 						a(href='#') My Vault
 						span
 							svg
@@ -169,7 +169,7 @@ header.head
 								use(xlink:href='/img/sprite.svg#lock')
 							span.head-mobile-subitem_value
 								| Other
-					li.head-mobile-menu_item.-dropdown.head-menu_item
+					li.head-mobile-menu_item.-dropdown.head-menu_item(data-click="front:openMenuItem")
 						a(href='#') Profile
 						span
 							svg

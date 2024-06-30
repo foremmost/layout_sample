@@ -16,12 +16,14 @@ block content
 							span Identity Risk Score
 						.risk-score
 							.row.risk-score-row
+								.risk-score-ba
+									span
 								.risk-score-digit 710
 								.risk-score-state Medium
 								.risk-score-img
 									img(src='/img/score.svg')
 									button.risk-score-btn
-						.block-subtitle.risk-subtitle How does ot work?
+						.block-subtitle.risk-subtitle How does it work?
 						p.text.risk-text
 							| Our scoring models use predictive statistical methods, combining historic identity theft victim data with over a thousand relevant factors to power advanced AI algorithms. We also provide actionable guidance based on each score to help reduce your risk.
 						p.text.risk-text
@@ -122,4 +124,4 @@ block content
 									.risk-list-item-text Use complex passwords for your online accounts and avoid using the same password across multiple sites.
 
 		script(src='/front.js' type='module')
-
+	include footer-profile

@@ -10,7 +10,7 @@ class Front extends G_G{
   define(){
     const _ = this;
     _.componentName = 'front';
-    G_Bus.on(_,['closePopup','showForm','showHalf','closeHalf']);
+    G_Bus.on(_,['closePopup','showForm','showHalf','closeHalf','showMobileMenu','openMenuItem']);
 
   }
   showForm({item}){
@@ -56,12 +56,28 @@ class Front extends G_G{
     }
     _.f(popupId)?.classList.add('-opened')
   }
+  showMobileMenu({item}){
+    const _ =  this;
+    let mobileMenu = _.f(".head-mobile-menu-cont");
+    if (mobileMenu.classList.contains('-show')) {
+      mobileMenu.classList.remove('-show');
+      document.body.style.overflow = 'auto';
+    } else {
+      mobileMenu.classList.add('-show');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+  openMenuItem({item}){
+    const _ = this;
+    item.classList.toggle('menu-active')
+  }
   closeHalf({item}){
     const _ =  this;
     let popupId = item.getAttribute('data-popup');
     if(!popupId){
       popupId = '#update-form'
     }
+    document.body.style.overflow = 'auto';
     _.f(popupId)?.classList.remove('-opened')
   }
   closePopup(){
@@ -70,6 +86,7 @@ class Front extends G_G{
       popup = _.f('#popup');
     if(!popup) return void 0;
     popup.classList.remove('-opened');
+    document.body.style.overflow = 'auto';
     _.f('#popup-temp').append(_.popupContent);
   }
 }
