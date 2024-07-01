@@ -195,16 +195,29 @@ body
 				color RGB($pdark_gray)
 
 
-
+		&-info
+			margin-top calc( 100vh - 593px)
+			&_item
+				display: flex !important
+				margin-bottom: 16px
+			.home-row_info
+				margin-bottom: 8px
+			&-button
+				margin-top: 16px
+			&-button .btn
+				w 100%
+				justify-content center
 .-bg
 	background url('../img/login.jpg')
 .login
 	text-align: center
 	&-wh
-		wh(100vw,100vh)
+		wh(100vw,90vh)
 		display: flex
 		align-items: center
 		justify-content: center
+		+desktop()
+			wh(100vw,100vh)
 	&-logo
 		wh 215px 48px
 		margin-top 80px
@@ -254,7 +267,7 @@ body
 			margin 8px 0 24px
 			font 400 14px/18px Barlow
 			color RGB($pdark_gray)
-			text-align: center
+			text-align: right
 			+desktop()
 				text-align left
 				margin-top 16px
@@ -403,6 +416,9 @@ body
 				display: none
 				+desktop()
 					display table-cell
+		&.-vis
+			td:nth-child(2)
+				display: table-cell
 		&-details
 			+desktop()
 				margin-top 40px
@@ -497,6 +513,9 @@ body
 					+desktop()
 						margin-top 40px
 
+			&-list
+				strong
+					font-weight 500
 .popup
 	wh(100vw,100vh)
 	background-color RGB(0,0,0,.5)
@@ -729,7 +748,6 @@ body
 		border 1.5px solid RGBA($plight_blue,.2)
 		background-color RGB($pwhite)
 		box-shadow 0 4px 16px RGBA($plight_blue,.16)
-
 		+desktop()
 			margin-right: 16px
 			min-width 504px
@@ -767,7 +785,7 @@ body
 			svg
 				wh 19px 15px
 			+desktop()
-				order 1
+				order 0
 				margin-top: 0
 		&-list
 			margin-top: 16px
@@ -781,6 +799,12 @@ body
 					.white-block-list-item_title
 						+desktop()
 							padding-top: 0
+					.white-block-list-item_right
+						w 100%
+						+desktop()
+							w initial
+					.white-block-rating_img
+						margin 0 auto
 
 				+desktop()
 					flex-wrap nowrap
@@ -1076,7 +1100,7 @@ body
 				column-gap: 11px
 				+desktop()
 					padding: 8px 0
-				label
+				.checkbox span
 					&:before
 						display: block
 						content: ''
@@ -1096,10 +1120,12 @@ body
 			+desktop()
 				margin-top: 40px
 	&-right
+		w 100%
 		order -1
 		display: flex
 		flex-direction column
 		+desktop()
+			w initial
 			display: block
 			order 0
 			padding: 20px 0 0 56px
@@ -1359,6 +1385,10 @@ body
 		&_text
 			padding-left: 19px
 			color RGB($pdark_gray)
+	.btn
+		w 100%
+		+desktop()
+			w initial
 .risk
 	&-score
 		&-row
@@ -1476,11 +1506,13 @@ body
 				color: RGB($pdark_gray)
 .n404
 	&-content
-		height calc( 100vh - 67px)
+		height calc( 100vh - 107px)
 		display: flex
 		align-items: center
 		justify-content: center
 		flex-direction column
+		+desktop()
+			height calc( 100vh - 67px)
 	&-img
 		display: block
 		margin 40px 0
@@ -1614,9 +1646,10 @@ body
 		+desktop()
 			display: block
 	&-row
-		justify-content space-between
+		justify-content center
 		padding: 40px 0
 		+desktop()
+			justify-content space-between
 			padding 24px 40px
 	&-menu
 		display: flex
@@ -1648,3 +1681,5 @@ body
 		display: none
 		+desktop()
 			display: block
+.copy
+	padding-bottom: 40px

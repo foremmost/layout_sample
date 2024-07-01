@@ -25,7 +25,11 @@ block content
 									span.select-option john@aol.com
 									svg
 										use(xlink:href='/img/sprite.svg#chevron_right')
-								span.select-body
+								span.select-body.-show
+									span.select-body-item.-active
+										strong john@aol.com
+									button.select-body-item.-action
+										| Change email
 							.profile-notify-checkboxes
 								label.checkbox.profile-notify-checkbox.-mt24
 									input(type='checkbox')
@@ -46,5 +50,7 @@ block content
 						label.select.profile-notify-select
 							span.select-head
 								span.select-option (123) 456 7891
+								svg
+									use(xlink:href='/img/sprite.svg#chevron_right')
 							span.select-body
 	include footer-profile

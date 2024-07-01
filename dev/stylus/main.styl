@@ -36,6 +36,11 @@ body
 			wh(18px)
 	&.-plus
 		border 2px solid RGB($pdark_blue)
+	&.-white-color
+		color: #fff !important
+		text-decoration: none !important
+		use
+			fill #fff !important
 .inpt
 	display: block
 	input,textarea
@@ -93,6 +98,7 @@ body
 .select,.checkbox
 	display: block
 .select
+	position: relative
 	&-head
 		display flex
 		align-items: center
@@ -108,20 +114,47 @@ body
 			transform rotate(90deg)
 			use
 				fill RGBA($pdark_gray)
+	&-body
+		w 100%
+		position: absolute
+		padding: 8px
+		background-color: #fff
+		top calc(100% + 8px)
+		border 2px solid RGBA($plight_blue,.2)
+		border-radius 8px
+		display: none
+		&.-show
+			display: block
+		&-item
+			display: block
+			padding: 8px 16px
+			border-radius 8px
+			margin-bottom: 8px
+			&:last-child
+				margin-bottom: 0
+			&.-active,&:hover
+				background-color RGBA($plight_blue,.2)
+			&.-action
+				color: RGB($pdark_gray)
+
 .checkbox
-	display flex
-	align-items center
-	column-gap 8px
 	font 500 16px/19.2px Barlow
 	color RGB($pdark_gray)
+	span
+		display flex
+		align-items center
+		column-gap 8px
 	input
 		display: none
-	&:before
+	span:before
 		wh(17px)
 		border-radius 2px
 		border 2px solid  RGB($pdark_gray)
 		content ''
 		display block
+		//background url('../img/checkbox.png')
+	input:checked+span:before
+		background url('../img/checkbox.png') no-repeat center
 .tar
 	text-align right
 .tal
