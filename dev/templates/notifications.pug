@@ -20,15 +20,15 @@ block content
 								svg
 									use(xlink:href='/img/sprite.svg#mail')
 								strong Email
-							label.select.profile-notify-select
+							.select.profile-notify-select(data-click='front:openSelect')
 								span.select-head
 									span.select-option john@aol.com
 									svg
 										use(xlink:href='/img/sprite.svg#chevron_right')
-								span.select-body.-show
+								span.select-body
 									span.select-body-item.-active
 										strong john@aol.com
-									button.select-body-item.-action
+									button.select-body-item.-action(type='button')
 										| Change email
 							.profile-notify-checkboxes
 								label.checkbox.profile-notify-checkbox.-mt24
@@ -41,16 +41,22 @@ block content
 									input(type='checkbox')
 									span Payment Information
 					.profile-notify
-						.profile-notify-title
+						.profile-notify-title.-second
 							svg
 								use(xlink:href='/img/sprite.svg#chat')
 							em
 								strong Text Messages
 								span Receive SMS alerts by verifying your number
-						label.select.profile-notify-select
+						.select.profile-notify-select(data-click='front:openSelect')
 							span.select-head
 								span.select-option (123) 456 7891
 								svg
 									use(xlink:href='/img/sprite.svg#chevron_right')
 							span.select-body
+								span.select-body-item.-active
+									strong (123) 456 7891
+								span.select-body-item
+									strong (123) 456 7891
+								span.select-body-item
+									strong (123) 456 7891
 	include footer-profile

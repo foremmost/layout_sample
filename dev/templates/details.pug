@@ -63,24 +63,30 @@ block content
 					form.popup-half-form
 						.row.profile-block-row
 							label.inpt
-								input(type='text'  value='John')
+								input(type='text'  value='John' placeholder="Name")
 							label.inpt
-								input(type='text'  value='Doe')
+								input(type='text'  value='Doe' placeholder='Last Name')
 						label.inpt.-full
-							input(type='text'  value='10410 W Prairie Hills Cir, Sun City, Az 64130')
+							input(type='text'  value='10410 W Prairie Hills Cir, Sun City, Az 64130' placeholder='Address')
 						label.inpt.-full
-							input(type='text'  value='Sarasota')
+							input(type='text'  value='Sarasota' placeholder='City')
 						.row.change-row
 							.inpt
-								label.select.change-select
+								label.select.change-select(data-click='front:openSelect')
 									span.select-head
 										span.select-option Florida
 										svg
 											use(xlink:href='/img/sprite.svg#chevron_right')
 									span.select-body
+										span.select-body-item.-active
+											strong Florida
+										span.select-body-item
+											strong Florida
+										span.select-body-item
+											strong Florida
 							.inpt
-								input(type='text' value='64130')
+								input(type='text' value='64130' placeholder='Postal Code')
 						label.inpt.-full
-							input(type='text'  value='(123) 456 7891')
+							input(type='text'  value='(123) 456 7891' placeholder='Phone Number')
 						button.btn Update
 	include footer-profile

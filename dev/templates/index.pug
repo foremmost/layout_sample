@@ -16,12 +16,12 @@ html(lang='ru')
 								label.inpt.-full
 									input(type='email' placeholder='Email')
 								label.inpt.-full
-									input(type='password' placeholder='Password')
-									button.btn-eye
+									input(type='password' placeholder='Password' id="pwd")
+									button.btn-eye(data-click="front:showPassword" type='button' data-for="#pwd")
 										svg
 											use(xlink:href='/img/sprite.svg#eye')
 								.tar
-									a.link(href='/reset.html') Forgot Password
+									a.link(href='/reset.html') Forgot Password?
 								button.btn.-blue.-full
 									span Sign In
 								.login-form-actions

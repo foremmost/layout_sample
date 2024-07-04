@@ -6,7 +6,10 @@ html(lang='ru')
 	include  style
 	body
 		.set
-			include header
+			-if(adheader)
+				include header-l
+			-else
+				include header
 			block main
 				block aside
 				block content

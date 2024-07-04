@@ -11,16 +11,30 @@ svg
 
 body
 	color RGB($pdark_blue)
+	background RGB($palewhite)
 .btn
 	border 2px solid RGB($pdark_blue)
 	border-radius 8px
 	padding 8px 16px 9px
 	font 500 16px/19.2px Barlow
 	position: relative
+	transition .35s ease
+	&:hover
+		border-color: RGB($plight_blue)
+		color: RGB($plight_blue)
+	&:active
+		border-color: RGB($plight_blue,.8)
+		color: RGB($plight_blue,.8)
 	&.-blue
 		background-color RGB($pdark_blue)
 		color RGB($pwhite)
 		fill RGB($pwhite)
+		&:hover
+			background-color: RGB($plight_blue)
+			border-color: RGB($plight_blue)
+		&:focus
+			background-color: RGBA($plight_blue,.4)
+			border-color: transparent
 	&.-full
 		w 100%
 	&-table
@@ -32,8 +46,10 @@ body
 		position absolute
 		top 16px
 		right 20px
+		z-index 100
 		svg
 			wh(18px)
+			fill RGB($pdark_gray)
 	&.-plus
 		border 2px solid RGB($pdark_blue)
 	&.-white-color
@@ -99,6 +115,7 @@ body
 	display: block
 .select
 	position: relative
+	cursor: pointer
 	&-head
 		display flex
 		align-items: center
@@ -116,15 +133,22 @@ body
 				fill RGBA($pdark_gray)
 	&-body
 		w 100%
+		z-index 500
 		position: absolute
 		padding: 8px
 		background-color: #fff
 		top calc(100% + 8px)
 		border 2px solid RGBA($plight_blue,.2)
 		border-radius 8px
-		display: none
+		opacity: 0
+		visibility: hidden
+		top 0
+		transition .35s ease
 		&.-show
-			display: block
+			top calc(100% + 8px)
+			opacity: 1
+			visibility: visible
+
 		&-item
 			display: block
 			padding: 8px 16px

@@ -32,6 +32,7 @@ body
 		+desktop()
 			display none
 	&-menu
+
 		&-cont
 			display none
 			+desktop()
@@ -39,6 +40,7 @@ body
 				margin 0 auto
 		&_item
 			&.-dropdown
+				cursor: pointer
 				display flex
 				align-items center
 				column-gap: 14.35px
@@ -120,6 +122,9 @@ body
 			display: flex
 			align-items: center
 			font-weight: 500
+			color RGB($pdark_blue)
+			+desktop()
+				margin-right: 16px
 			&:first-child
 				display: none
 				+desktop()
@@ -136,6 +141,7 @@ body
 				w initial
 				position static
 				top: 0
+				align-items: center
 		.head-menu_sublist
 			w 212px
 			left initial
@@ -269,7 +275,7 @@ body
 			color RGB($pdark_gray)
 			text-align: right
 			+desktop()
-				text-align left
+				//text-align left
 				margin-top 16px
 				font 400 16px/19.2px Barlow
 		&-actions
@@ -377,6 +383,7 @@ body
 				display: none
 				+desktop()
 					display: block
+					wh 15px 20px
 			&.active
 				background-color RGBA($plight_blue,.2)
 				color RGB($pdark_blue)
@@ -468,6 +475,9 @@ body
 				font 400 13px Barlow
 				display block
 				color RGB($pdark_gray)
+			&.-second
+				svg
+					wh(25px)
 		&-checkboxes
 			padding-bottom 24px
 			margin-bottom 24px
@@ -494,11 +504,16 @@ body
 			display: block
 			color RGB($pdark_blue)
 			text-decoration: underline
+			&:hover
+				color RGB($plight_blue)
+				text-decoration: none
+			&:active
+				color RGB($pdark_blue)
 		&-content
 			w 100%
 			+desktop()
-				w(calc( (744 / 1105) * 100% ))
-				flex 0 0 calc( (744 / 1105) * 100% )
+				w(calc( (800 / 1105) * 100% ))
+				flex 0 0 calc( (800 / 1105) * 100% )
 				height calc(100vh - 250px - 115px)
 				overflow: hidden
 				overflow-y: scroll
@@ -551,7 +566,7 @@ body
 		top 13px
 		svg
 			wh(14px)
-
+			fill RGB($pdark_gray)
 	&-body
 		padding 0 23px
 		background-color RGB($pwhite)
@@ -566,19 +581,25 @@ body
 		opacity: 0
 		visibility: hidden
 		z-index: 999
+		transition .35s ease
 		&.-opened
 			opacity: 1
 			visibility visible
+			right: 0
+			.popup-half-right
+				transform translateX(0%) translateY(120px)
 		&-left,&-right
 			overflow-y: auto
 			wh(100vw, 100vh)
 			+desktop()
-				wh(50vw,100vh)
+				wh(50vw,calc(100vh - 64px))
+				transform translateY(64px)
 		&-left
 			left: 0
 			background-color RGBA(0,0,0,.25)
 		&-right
-			transform translateY(120px)
+			transition .35s ease
+			transform translateX(-50%) translateY(120px)
 			background-color #fff
 			padding 40px 24px 80px
 			+desktop()
@@ -621,6 +642,9 @@ body
 		margin-top 8px
 	&-buttons
 		margin-top 32px
+		display: flex
+		column-gap: 8px
+		justify-content: center
 .change
 	&-inpt
 		position: relative
@@ -695,7 +719,7 @@ body
 			w 100%
 			margin-bottom: 8px
 			+desktop()
-				w initial
+				w 120px
 				margin-bottom: 0
 			&.-full
 				+desktop()
@@ -709,7 +733,9 @@ body
 .table
 	&-actions
 		text-align center
-
+	&-links
+		.link
+			font-weight: 500
 
 .home
 	&-section
@@ -1475,10 +1501,11 @@ body
 		&-svg
 			display: none
 			+desktop()
+				width 410px !important
 				display: block
 				position: absolute
-				bottom: -280px
-				right: -50px
+				bottom: -330px
+				right: -60px
 				max-width 410px !important
 		&-item
 			position: relative
@@ -1504,6 +1531,8 @@ body
 			&-text
 				margin-top: 8px
 				color: RGB($pdark_gray)
+				+desktop()
+					w 292px
 .n404
 	&-content
 		height calc( 100vh - 107px)
@@ -1527,6 +1556,9 @@ body
 			transform rotate(180deg)
 	&-need
 		color RGB($pdark_gray)
+	&-title
+		+desktop()
+			font-size: 40px !important
 .title
 	&-head
 		max-width 583px
@@ -1621,6 +1653,8 @@ body
 			+desktop()
 				text-align: right
 	.table
+		td:first-child
+			font-weight: 400
 		td,td:nth-child(2)
 			+desktop()
 				padding: 24px 0
@@ -1676,6 +1710,8 @@ body
 		padding-top: 100px
 		position: relative
 		z-index:  1000
+		+desktop()
+			transform translateY(64px)
 .mem
 	&-title
 		display: none
@@ -1683,3 +1719,9 @@ body
 			display: block
 .copy
 	padding-bottom: 40px
+	+desktop()
+		padding-bottom: 0
+.reset
+	&-form
+		+desktop()
+			padding: 149px 80px

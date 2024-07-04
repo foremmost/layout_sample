@@ -10,8 +10,29 @@ class Front extends G_G{
   define(){
     const _ = this;
     _.componentName = 'front';
-    G_Bus.on(_,['closePopup','showForm','showHalf','closeHalf','showMobileMenu','openMenuItem']);
+    G_Bus.on(_,[
+        'closePopup','showForm','showHalf','closeHalf','showMobileMenu','openMenuItem',
+        'showPassword','openSelect'
+    ]);
 
+  }
+  openSelect({item}){
+    const _ = this;
+    let body = item.querySelector('.select-body');
+    console.log(item)
+    if(body.classList.contains('-show')){
+      body.classList.remove('-show')
+    }else{
+      body.classList.add('-show')
+    }
+  }
+  showPassword({item}){
+    const _ = this;
+    let id = item.getAttribute('data-for');
+    let elem = _.f(id), icon = item.querySelector('use');
+    elem.type = (elem.type === 'text') ? 'password' : 'text';
+    (elem.type === 'text') ?
+        icon.setAttribute("xlink:href",'/img/sprite.svg#eye') : icon.setAttribute("xlink:href",'/img/sprite.svg#visibility_off')
   }
   showForm({item}){
     const _  =this;

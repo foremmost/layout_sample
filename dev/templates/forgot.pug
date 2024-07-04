@@ -2,12 +2,13 @@ extends template/main
 append vars
 	-
 		page_title = 'Login'
+		adheader=true
 block content
 	main
 		section.login
 			.section
 				.login-form-cont
-					form.login-form
+					form.login-form.reset-form
 						h1.title Forgot Password?
 						h2.subtitle.
 							#[span Enter your email to reset your password]
