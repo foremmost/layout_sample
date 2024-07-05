@@ -172,7 +172,7 @@ block content
 					.identity-right
 						.block.-small.-pb0
 							h2.block-title Properties Monitored
-							.table-cont.profile-table.-vis
+							.table-cont.profile-table.-vis.monit-table
 								table.table
 									thead
 										tr
@@ -201,14 +201,8 @@ block content
 							span
 								| Add Property
 		script(src='/front.js' type='module')
-	.popup#popup
-		#popup-inner.popup-inner
-			#popup-head.popup-head
-			#popup-body.popup-body
-			button.popup-close(data-click="front:closePopup")
-				svg
-					use(xlink:href='/img/sprite.svg#close')
-	div(hidden)#popup-temp
+
+	div(hidden)
 		.member-popup#stop-monitoring
 			h5.title-popup.block-title Stop Monitoring this?
 			p.text.member-text

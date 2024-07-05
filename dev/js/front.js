@@ -12,9 +12,13 @@ class Front extends G_G{
     _.componentName = 'front';
     G_Bus.on(_,[
         'closePopup','showForm','showHalf','closeHalf','showMobileMenu','openMenuItem',
-        'showPassword','openSelect'
+        'showPassword','openSelect','toggleHistoric'
     ]);
 
+  }
+  toggleHistoric({item}){
+    const _ = this;
+    _.f('.risk-data-body').classList.toggle('-show')
   }
   openSelect({item}){
     const _ = this;
@@ -57,8 +61,8 @@ class Front extends G_G{
     popup.classList.add('-opened');
     document.body.style.overflow = 'hidden';
     let
-      popupInner = popup.querySelector('#popup-inner'),
-      popupBody = popup.querySelector('#popup-body');
+      popupInner = _.f('#popup-inner'),
+      popupBody = _.f('#popup-body');
     _.popupContent = _.f(`${popupId}`)
     popupBody.append(_.popupContent);
     if(large){
