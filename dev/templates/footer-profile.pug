@@ -41,7 +41,7 @@ footer.foot
 						input(type='email' placeholder='Confirm email address')
 					.change-buttons
 						button.btn.-blue Save
-						button.btn Cancel
+						button.btn(data-click="front:closePopup") Cancel
 			.change-password.member-popup#change-password
 				h5.title-popup.block-title Change password
 				form.change-form
@@ -57,7 +57,7 @@ footer.foot
 								use(xlink:href='/img/sprite.svg#eye')
 					.change-buttons
 						button.btn.-blue Save
-						button.btn Cancel
+						button.btn(data-click="front:closePopup") Cancel
 			.change-method.member-popup#change-method
 				h5.title-popup.block-title Update payment method
 				form.change-form

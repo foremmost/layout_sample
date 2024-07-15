@@ -19,7 +19,7 @@ block content
 									td
 										| john@aol.com
 									td.table-links
-										a(href='#' data-click="front:showForm" data-popup='#change-email').link Verify
+										a(href='#' data-click="front:showForm" data-popup='#change-email').link Change
 								tr
 									td
 										| Password
@@ -54,11 +54,11 @@ block content
 									td.table-links
 					button.btn.-blue(data-click="front:showHalf") Update Details
 			#update-form.popup-half
-				.popup-half-left
+				.popup-half-left(data-click="front:closeHalf")
 				.popup-half-right
-					button.popup-close(data-click="front:closeHalf")
+					button.popup-close.-half(data-click="front:closeHalf")
 						svg
-							use(xlink:href='/img/sprite.svg#close')
+							use(xlink:href='/img/sprite.svg#lclose')
 					h2.block-title Update your personal information
 					form.popup-half-form
 						.row.profile-block-row

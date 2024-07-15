@@ -18,7 +18,7 @@ block content
 						.profile-notify-row
 							.profile-notify-title
 								svg
-									use(xlink:href='/img/sprite.svg#mail')
+									use(xlink:href='/img/sprite.svg#nmail')
 								strong Email
 							.select.profile-notify-select(data-click='front:openSelect')
 								span.select-head
@@ -43,7 +43,7 @@ block content
 					.profile-notify
 						.profile-notify-title.-second
 							svg
-								use(xlink:href='/img/sprite.svg#chat')
+								use(xlink:href='/img/sprite.svg#nchat')
 							em
 								strong Text Messages
 								span Receive SMS alerts by verifying your number
@@ -57,6 +57,6 @@ block content
 									strong (123) 456 7891
 								span.select-body-item
 									strong (123) 456 7891
-								span.select-body-item
-									strong (123) 456 7891
+								button.select-body-item.-action(type='button')
+									| Change number
 	include footer-profile

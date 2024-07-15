@@ -10,19 +10,19 @@ block content
 				.login-form-cont
 					form.login-form
 						h1.title Setup New Password
-						h2.subtitle.
+						h2.subtitle.-resetlink.
 							#[span Have you already reset the password?]  #[a.link(href='/login.html') Sign In]
 						label.inpt.-full
-							input(type='password' placeholder='Password')
-							button.btn-eye
+							input(type='password' placeholder='Password' id="pwd")
+							button.btn-eye(data-click="front:showPassword" type='button' data-for="#pwd")
 								svg
 									use(xlink:href='/img/sprite.svg#eye')
 						label.inpt.-full
-							input(type='password' placeholder='Reset Password')
-							button.btn-eye
+							input(type='password' placeholder='Reset Password' id="#rpwd")
+							button.btn-eye(data-click="front:showPassword" type='button' data-for="#rpwd")
 								svg
 									use(xlink:href='/img/sprite.svg#eye')
-						.tal.
+						.tal.-resetal.
 							By clicking Submit, you agree to
 							#[a.link Terms of Service], including  our
 							#[a.link Privacy Policy]
