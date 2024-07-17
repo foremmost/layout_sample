@@ -94,7 +94,13 @@ class Front extends G_G{
   }
   openMenuItem({item}){
     const _ = this;
-    item.classList.toggle('menu-active')
+    if (item.classList.contains('menu-active')) {
+			item.classList.remove('menu-active');
+    } else {
+	    let activeItem = _.f('.head-mobile-menu_item.menu-active');
+			if (activeItem) activeItem.classList.remove('menu-active');
+			item.classList.add('menu-active')
+    }
   }
   closeHalf({item}){
     const _ =  this;
