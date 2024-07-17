@@ -35,7 +35,7 @@ class Front extends G_G{
     let id = item.getAttribute('data-for');
     let elem = _.f(id), icon = item.querySelector('use');
     elem.type = (elem.type === 'text') ? 'password' : 'text';
-    (elem.type === 'text') ?
+    (elem.type !== 'text') ?
         icon.setAttribute("xlink:href",'/img/sprite.svg#eye') : icon.setAttribute("xlink:href",'/img/sprite.svg#visibility_off')
   }
   showForm({item}){

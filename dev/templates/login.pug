@@ -14,12 +14,12 @@ block content
 						label.inpt.-full
 							input(type='email' placeholder='Email')
 						label.inpt.-full
-							input(type='password' placeholder='Password' id="pwd")
-							button.btn-eye(data-click="front:showPassword" type='button' data-for="#pwd")
+							input#pwdz(type='password' placeholder='Password')
+							button.btn-eye(data-click="front:showPassword" type='button' data-for="#pwdz")
 								svg
 									use(xlink:href='/img/sprite.svg#eye')
 						.tar
-							a.link(href='/reset.html') Forgot Password?
+							a.link(href='/forgot.html') Forgot Password?
 						button.btn.-blue.-full
 							span Sign In
 						.login-form-actions

@@ -14,8 +14,8 @@ block content
 						label.inpt.-full
 							input(type='email' placeholder='Email')
 						label.inpt.-full
-							input(type='password' placeholder='Password')
-							button.btn-eye
+							input#pwd(type='password' placeholder='Password')
+							button.btn-eye(data-click="front:showPassword" type='button' data-for="#pwd")
 								svg
 									use(xlink:href='/img/sprite.svg#eye')
 						.tal.
@@ -27,4 +27,4 @@ block content
 						.login-form-actions
 							span Already a member?
 							a(href='/login').link Sign In
-	include template/footer
+	include footer-profile

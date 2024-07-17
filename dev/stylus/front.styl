@@ -172,8 +172,12 @@ body
 	&-mobile
 		&-menu
 			&-cont
-				--header_height: 48px
-				wh 100% calc( 100vh - var(--header_height))
+				--header_height: 72px
+				wh 100% calc( 100vh - var(--header_height) - 30px)
+				df({
+					df: '.head-mobile-menu-cont'
+				})
+				flex-direction column
 				top calc( var(--header_height) + 20px)
 				position absolute
 				padding 0 20px
@@ -215,7 +219,7 @@ body
 
 
 		&-info
-			margin-top calc( 100vh - 593px)
+			margin-top auto
 			&_item
 				display: flex !important
 				margin-bottom: 16px
@@ -256,7 +260,7 @@ body
 		box-shadow 0 4px 16px RGBA($plight_blue, .16)
 		max-width 590px
 		margin 80px auto 0
-		padding 40px 20px
+		padding 40px 23px
 		&.-with-bg
 			w 100%
 			+desktop()
@@ -279,23 +283,32 @@ body
 				text-align: right
 		.subtitle
 			margin-bottom 24px
+			letter-spacing -.06px
 			+desktop()
 				margin-top 8px
 			.link
 				display: block
 				text-align center
-		.btn-eye
-			position absolute
-			top 16px
-			right 16px
+		.btn
+			margin-top 24px
+			&-eye
+				position absolute
+				top 16px
+				right 16px
 		.tar,.tal
-			margin 8px 0 24px
 			font 400 16px/19.2px Barlow
 			color RGB($pdark_gray)
-			text-align: right
 			+desktop()
 				//text-align left
 				margin-top 16px
+		.tar
+			margin-top 8px
+			text-align: right
+		.tal
+			margin-top 16px
+			text-align center
+			+tablet()
+				text-align left
 		&-actions
 			margin-top 16px
 			font 400 16px/19.2px Barlow
@@ -303,14 +316,11 @@ body
 			letter-spacing -.06px
 			.link
 				color RGB($ublue)
-				margin-left 8px
 				letter-spacing initial
+				&:not(:first-child)
+					margin-left 8px
 			+desktop()
 				font 400 16px/19.2px Barlow
-		.forgot-btn
-			margin 10px 0
-			+desktop()
-				margin 24px 0 16px
 .copy
 	text-align: center
 	color RGB($pdark_gray)
@@ -1855,8 +1865,4 @@ body
 		td,th
 			&:first-child
 				font-weight: 400 !important
-.-resetlink a
-	display: inline !important
-.tal.-resetal
-	text-align: left
 

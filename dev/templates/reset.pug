@@ -2,7 +2,7 @@ extends template/main
 append vars
 	-
 		page_title = 'Login'
-		adheader=true
+		adheader = true
 block content
 	main
 		section.login
@@ -10,8 +10,9 @@ block content
 				.login-form-cont
 					form.login-form
 						h1.title Setup New Password
-						h2.subtitle.-resetlink.
-							#[span Have you already reset the password?]  #[a.link(href='/login.html') Sign In]
+						h2.subtitle.-resetlink
+							span Have you already reset the password?
+							a.link(href='/login.html') Sign In
 						label.inpt.-full
 							input(type='password' placeholder='Password' id="pwd")
 							button.btn-eye(data-click="front:showPassword" type='button' data-for="#pwd")
@@ -28,4 +29,4 @@ block content
 							#[a.link Privacy Policy]
 						button.btn.-blue.-full
 							span Submit
-	include template/footer
+	include footer-profile
