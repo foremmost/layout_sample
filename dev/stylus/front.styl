@@ -173,11 +173,12 @@ body
 		&-menu
 			&-cont
 				--header_height: 72px
-				wh 100% calc( 100vh - var(--header_height) - 30px)
+				wh 100% calc( 100vh - var(--header_height) - 20px)
 				df({
 					df: '.head-mobile-menu-cont'
 				})
 				flex-direction column
+				overflow-y auto
 				top calc( var(--header_height) + 20px)
 				position absolute
 				padding 0 20px
@@ -197,8 +198,9 @@ body
 				margin-bottom 24px
 				font 500 16px/19.2px Barlow
 		&-sublist
-			display: none
-			margin-top: -16px
+			display none
+			margin-top -16px
+			margin-bottom 24px
 		&-subitem
 			df({
 				df: '.head-mobile-subitem'
@@ -220,6 +222,7 @@ body
 
 		&-info
 			margin-top auto
+			margin-bottom 65px
 			&_item
 				display: flex !important
 				margin-bottom: 16px
