@@ -221,19 +221,23 @@ body
 				w 100%
 				justify-content center
 .-bg
-	background url('../img/login.jpg')
+	background-image url('../img/login-mobile.jpg')
+	background-size 100%
+	background-position center top
+	background-repeat no-repeat
+	+tablet()
+		background-image url('../img/login.jpg')
 .login
 	text-align: center
 	&-wh
 		wh(100vw,90vh)
-		display: flex
-		align-items: center
-		justify-content: center
+		display flex
+		justify-content center
 		+desktop()
 			wh(100vw,100vh)
 	&-logo
 		wh 215px 48px
-		margin-top 80px
+		margin-top 64px
 		+desktop()
 			wh 287px 64px
 			margin-top: 0
@@ -241,9 +245,9 @@ body
 		border-radius 8px
 		background RGB($pwhite)
 		border 1.5px solid RGBA($plight_blue, .2)
-		box-shadow 0px 4px 16px RGBA($plight_blue, .16)
+		box-shadow 0 4px 16px RGBA($plight_blue, .16)
 		max-width 590px
-		margin 100px auto
+		margin 80px auto 0
 		padding 40px 20px 60px
 		&.-with-bg
 			w 100%
@@ -253,6 +257,8 @@ body
 		+desktop()
 			margin calc((100vh - 607px) / 2) auto 0
 			padding 80px 80px 123px
+		.title
+			margin-bottom 8px
 		.inpt
 			margin-bottom 16px
 			position relative
@@ -278,20 +284,21 @@ body
 				wh 18px
 		.tar,.tal
 			margin 8px 0 24px
-			font 400 14px/18px Barlow
+			font 400 16px/19.2px Barlow
 			color RGB($pdark_gray)
 			text-align: right
 			+desktop()
 				//text-align left
 				margin-top 16px
-				font 400 16px/19.2px Barlow
 		&-actions
 			margin-top 16px
-			font 400 14px/18px Barlow
+			font 400 16px/19.2px Barlow
 			color RGB($pdark_gray)
+			letter-spacing -.06px
 			.link
 				color RGB($ublue)
 				margin-left 8px
+				letter-spacing initial
 			+desktop()
 				font 400 16px/19.2px Barlow
 		.forgot-btn
@@ -1761,6 +1768,8 @@ body
 		+desktop()
 			w initial
 
+.footer
+	margin-top auto
 .foot
 	color RGB($pdark_gray)
 	&:before
