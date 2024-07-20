@@ -406,7 +406,8 @@ body
 		max-width 1079px
 		padding 16px 24px
 		+desktop()
-			padding-top: 0px
+			max-width 1210px
+			padding-top 0
 	&-aside
 		width: 100%
 		overflow hidden
@@ -570,8 +571,10 @@ body
 		flex-wrap wrap
 		+desktop()
 			flex-wrap nowrap
-		&-text,&-links,&-content
-			margin-top: 40px
+		&-text
+			margin-top 24px
+		&-links
+			margin-top 40px
 		&-links
 			display: none
 			flex-direction column
@@ -580,8 +583,8 @@ body
 				display: flex
 		&-aside
 			+desktop()
-				w(calc( (424 / 1105) * 100% ))
-				flex 0 0 calc( (424 / 1105) * 100% )
+				w(398px)
+				flex-shrink 0
 		&-link
 			font 400 16px/19.2px Barlow
 			display: block
@@ -594,23 +597,20 @@ body
 				color RGB($pdark_blue)
 		&-content
 			w 100%
+			margin-top 71px
 			+desktop()
-				w(calc( (800 / 1105) * 100% ))
-				flex 0 0 calc( (800 / 1105) * 100% )
 				height calc(100vh - 250px - 115px)
-				overflow: hidden
-				overflow-y: scroll
-				padding-right: 150px
-				padding-left: 82px
+				margin-top 24px
+				overflow hidden
+				overflow-y scroll
+				padding-right 150px
+				padding-left 82px
 			.block-title
 				margin-bottom: 16px
 			&-text,&-list
 				margin-bottom 16px
 				&+.block-title
-					margin-top 24px
-					+desktop()
-						margin-top 40px
-
+					margin-top 40px
 			&-list
 				strong
 					font-weight 500
