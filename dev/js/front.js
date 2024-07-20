@@ -75,6 +75,7 @@ class Front extends G_G{
     const _ =  this;
     let popupId = item.getAttribute('data-popup');
     let isLarge = item.hasAttribute('data-islarge');
+		window.scrollTo(0,0);
     document.body.style.overflow = 'hidden';
     if(!popupId){
       popupId = '#update-form'

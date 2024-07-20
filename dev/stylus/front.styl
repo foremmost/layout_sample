@@ -538,6 +538,8 @@ body
 	&-notify
 		&-text
 			margin-top 24px
+			+desktop()
+				width 400px
 		&-row
 			margin-top 40px
 		&-select,&-checkbox
@@ -1788,9 +1790,13 @@ body
 				padding: 16px 0
 				border-left: none
 .details,.notifications
-	margin-bottom: 140px
+	margin-bottom: 80px
 	+desktop()
 		margin-bottom: 0
+	&-title
+		display none
+		+desktop()
+			display block
 .details
 	w 100%
 	+desktop()
@@ -1800,10 +1806,6 @@ body
 		box-shadow: none
 		padding: 0
 
-	&-title
-		display none
-		+desktop()
-			display block
 	&.profile-block
 		padding 24px
 	&-table
