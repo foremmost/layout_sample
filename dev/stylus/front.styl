@@ -363,6 +363,9 @@ body
 	&.profile-block
 		padding 40px 24px
 		margin-bottom 80px
+		+desktop()
+			margin-top 40px
+			margin-bottom 40px
 	&.-small
 		+desktop()
 			padding: 24px
@@ -386,6 +389,10 @@ body
 			wh 24px
 			use
 				fill: RGB($plight_blue)
+	.table
+		tr
+			margin-top 16px
+			background RGB($pwhite)
 .profile
 	&-row
 		margin-top 53px
@@ -466,13 +473,11 @@ body
 	&-table
 		margin-top 6px
 		+desktop()
-			margin-top: 0px
+			margin-top: 0
 		.table
 			w(100%)
 			td,th
 				padding 18px 0 16px
-			td:first-child
-				font-weight: 400 !important
 			tr
 				border-bottom 1px solid RGB($plight_gray)
 			thead
@@ -483,6 +488,9 @@ body
 						+desktop()
 							border: 0
 
+		&-surname
+			+desktop()
+				display none
 		td,th
 			&:nth-child(2)
 				display: none
@@ -492,8 +500,16 @@ body
 			td:nth-child(2)
 				display: table-cell
 		&-details
+			margin-top 3px
 			+desktop()
 				margin-top 40px
+			.block-title
+				margin-bottom 8px
+				font 500 32px/38.4px Barlow
+				+desktop()
+					margin-bottom 16px
+					font-size 24px
+					line-height 28.8px
 			.table
 				margin-bottom: 40px
 				td,th
@@ -694,7 +710,6 @@ body
 .member
 	&-popup
 		padding 40px 0
-		text-align center
 		.block-title
 			color: RGB($pdark_blue)
 		.btn
@@ -707,9 +722,19 @@ body
 		margin-top 8px
 	&-buttons
 		margin-top 32px
-		display: flex
-		column-gap: 8px
-		justify-content: center
+		display flex
+		flex-direction column
+		column-gap 8px
+		+desktop()
+			flex-direction row
+			justify-content center
+.delete
+	&-member
+		text-align center
+		.member-text
+			+desktop()
+				width 320px
+				margin 8px auto 0
 .change
 	&-inpt
 		position: relative
@@ -750,8 +775,6 @@ body
 					content ''
 					display block
 					background RGB($pdark_blue)
-	&-email,&-password,&-method
-		text-align left
 	&-form
 		display flex
 		flex-direction: column
@@ -1723,13 +1746,11 @@ body
 			align-items: center
 			grid-template-columns fit-content 1fr
 			grid-template-rows auto
-			grid-template-areas: "info actions" "info2 actions"
-			background: RGB($pwhite);
-			padding: 19px 24px
-			border: 2px solid RGBA($plight_blue, 0.2);
-			box-shadow: 0px 4px 16px RGBA($plight_blue, 0.16);
+			grid-template-areas "info actions" "info2 actions"
+			padding 19px 24px
+			border 2px solid RGBA($plight_blue, 0.2)
+			box-shadow 0 4px 16px RGBA($plight_blue, 0.16)
 			border-radius 8px
-			margin-top: 16px
 			+desktop()
 				display table-row
 				background initial
@@ -1741,13 +1762,13 @@ body
 		td
 			padding: 0 16px 0 0
 			+desktop()
-				padding: 16px 0
+				padding: 18px 0
 			&:first-child
 				font 600 16px/19.2px Barlow
-			&:nth-child(2)
-				padding-top: 8px
+				padding-bottom 8px
 				+desktop()
-					padding: 16px 0
+					padding 18px 0
+					font-weight 400
 		.table-actions
 			grid-area actions
 			display flex
@@ -1773,6 +1794,10 @@ body
 		box-shadow: none
 		padding: 0
 
+	&-title
+		display none
+		+desktop()
+			display block
 	&.profile-block
 		padding 24px
 	&-table
@@ -1786,14 +1811,14 @@ body
 	.table
 		td:first-child
 			font-weight: 400
-		td,td:nth-child(2)
+		td,td:first-child
 			+desktop()
 				padding: 24px 0
 		tr
 			padding: 16px 0
 			box-shadow none
 			border none
-			border-radius 0px
+			border-radius 0
 			border-bottom 2px solid RGBA($plight_blue, 0.2);
 
 	.btn

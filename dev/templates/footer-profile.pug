@@ -19,21 +19,15 @@ footer.foot
 					svg
 						use(xlink:href='/img/sprite.svg#close')
 		div(hidden)#popup-temp
-			.member-popup#member-popup
+			.member-popup.delete-member#member-popup
 				h5.title-popup.block-title Delete member?
-				p.text.member-text
-					| Would you like to delete this monitored
-					br
-					| member from your account?
+				p.text.member-text Would you like to delete this monitored member from your account?
 				.member-buttons
 					button.btn.-blue Delete
 					button.btn Keep Member
 			.change-email.member-popup#change-email
 				h5.title-popup.block-title Change email
-				p.text.member-text
-					| Enter and confirm your new email. Once updated, use your new
-					br
-					| email to sign in to your Identimaxx account.
+				p.text.member-text Enter and confirm your new email. Once updated, use your new email to sign in to your Identimaxx account.
 				form.change-form
 					label.inpt.change-inpt
 						input(type='email' placeholder='New email address')
