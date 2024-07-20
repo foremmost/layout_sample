@@ -805,13 +805,16 @@ body
 			margin-top: 24px
 			flex-wrap nowrap
 		&-update
-			margin-top 40px
+			+desktop()
+				margin-top 40px
 		.btn
 			w 100%
-			margin-bottom: 8px
+			margin-bottom 8px
 			+desktop()
 				w 120px
 				margin-bottom: 0
+			&:last-child
+				margin-bottom 0
 			&.-full
 				+desktop()
 					w 100%
