@@ -419,8 +419,10 @@ body
 			display none
 		+desktop()
 			padding 0
-			margin-right 202px
+			margin-right 50px
 			max-width 213px
+		+desktop-large()
+			margin-right 202px
 		&-nav
 			w fit-content
 			overflow-x auto
@@ -583,8 +585,10 @@ body
 				display: flex
 		&-aside
 			+desktop()
-				w(398px)
+				w(250px)
 				flex-shrink 0
+			+desktop-large()
+				w(398px)
 		&-link
 			font 400 16px/19.2px Barlow
 			display: block
@@ -603,8 +607,10 @@ body
 				margin-top 24px
 				overflow hidden
 				overflow-y scroll
-				padding-right 150px
+				padding-right 100px
 				padding-left 82px
+			+desktop-large()
+				padding-right 214px
 			.block-title
 				margin-bottom: 16px
 			&-text,&-list
@@ -692,8 +698,10 @@ body
 				transform translateY(0px)
 				padding 201px 0 0px 56px
 		&-form
-			max-width 530px
+			max-width 400px
 			margin-top: 40px
+			+desktop-large()
+				max-width 530px
 			.profile-block-row
 				margin: 0
 			.inpt
