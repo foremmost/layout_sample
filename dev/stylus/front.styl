@@ -1550,21 +1550,28 @@ body
 		li
 			margin-bottom 24px
 .lost
+	&-title
+		+desktop()
+			margin-bottom 40px
 	&-left
 		+desktop()
 			max-width 460px
 		.btn
-			margin-top: 24px
-			display: flex
-			align-items: center
-			column-gap: 8px
+			margin-top 24px
+			display flex
+			align-items center
+			justify-content center
+			column-gap 8px
 			svg
 				wh 24px
 	&-right
 		w 100%
+		margin-top 40px
+		padding-bottom 40px
 		+desktop()
 			w initial
-			padding-top: 40px
+			padding-top 40px
+			padding-left 30px
 		img
 			w 100%
 			+desktop()
@@ -1576,19 +1583,22 @@ body
 			margin-top: 85px
 	&-steps
 		&-list
-			column-gap: 64px
-			margin-top: 40px
-			padding-bottom: 80px
+			column-gap 64px
+			margin-top 24px
+			padding-bottom 80px
 			+desktop()
-				display: flex
-				padding-bottom: 0
+				display flex
+				padding-bottom 0
+				margin-top 40px
 	&-item
-		margin-top: 40px
+		margin-top 40px
+		&:first-child
+			margin-top 0
 		+desktop()
 			max-width 240px
 			margin-top: 0
 		&_title,&_text
-			margin-top: 8px
+			margin-top 8px
 		&_title
 			font 500 16px Barlow
 			color RGB($pdark_blue)
