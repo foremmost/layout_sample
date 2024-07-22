@@ -19,7 +19,7 @@ block content
 							| the following is your initial scan report Title Monitoring
 						p.text.report-text
 							| The Property Title Monitoring System detected monitoring information linked to #[strong 3] property records.
-						ul.list
+						ul.list.report-list
 							li.list-item
 								a(href='#').link.-blue 10410 W PRAIRIE HILLS CIR, SUN CITY, AZ 85351 1821
 							li.list-item
@@ -31,10 +31,11 @@ block content
 	.popup-half.-opened.-whiteshadow.report#license
 		.popup-half-left
 		.popup-half-right
+			button.popup-close(data-click="front:closeHalf" data-popup='#license')
+				svg
+					use(xlink:href='/img/sprite.svg#close')
 			.change-method.member-popup.driver
-				h5.title-popup.block-title 10410 W PRAIRIE HILLS CIR, SUN CITY, AZ
-					br
-					| 85351 1821
+				h5.title-popup.block-title 10410 W PRAIRIE HILLS CIR, SUN CITY, AZ 85351 1821
 				br
 				h4.block-title
 					| Alert info

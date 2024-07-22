@@ -17,6 +17,7 @@ body
 	+desktop()
 		flex-wrap nowrap
 .head
+	z-index 1000
 	.btn
 		+desktop()
 			padding 8px 16px 9px
@@ -236,7 +237,6 @@ body
 				justify-content center
 .head,.foot
 	position relative
-	z-index 1000
 .-bg
 	background-image url('../img/login-mobile.jpg')
 	background-size cover
@@ -1512,10 +1512,14 @@ body
 .report
 	&.popup-half
 		top -2px
-	.popup-half-right
-		+desktop()
-			w calc( (1190 / 1920) * 100%)
-			padding-top: 150px
+	.popup
+		&-half-right
+			+desktop()
+				w calc( (1190 / 1920) * 100%)
+				padding-top: 182px
+		&-close
+			+desktop()
+				display none
 	&-left
 		+desktop()
 			w 368px
@@ -1531,11 +1535,20 @@ body
 			color RGB($pdark_blue)
 			font-weight: 400
 	.profile-benefits-content-text
-		margin-top: 16px
+		margin-top 16px
 		color RGB($pdark_gray)
+		&+.block-title
+			margin-top 24px
+			+desktop()
+				margin-top 40px
 	.block-subtitle
 		margin-top: 16px
 		font 500 18px Barlow
+	&-list
+		margin 24px 0
+		padding 24px 0
+		li
+			margin-bottom 24px
 .lost
 	&-left
 		+desktop()
@@ -1925,7 +1938,8 @@ body
 		+desktop()
 			margin-top: 120px
 	+desktop()
-		margin-top: auto
+		margin-top auto
+		z-index 1000
 	&-site
 		+desktop()
 			width: 270px
