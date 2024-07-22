@@ -15,9 +15,9 @@ block content
 				.vault-row.row
 					.vault-left
 						nav.vault-tabs
-							button.vault-tab
-								| Personal
 							button.vault-tab.-active
+								| Personal
+							button.vault-tab
 								| Financial
 							button.vault-tab
 								| Auto
@@ -116,10 +116,8 @@ block content
 							.vault-ensure_img
 								img(src='/img/ensure.svg')
 							.vault-ensure_content
-								h5.vault-ensure_title Ensure your safety with Identimaxx’s vault service.
-								p.vault-ensure_text
-									| The vault serves as your digital lockbox, safeguarding
-									| your data and sensitive files with our top-tier encryption.
+								strong.vault-ensure_title Ensure your safety with Identimaxx’s vault service.
+								span.vault-ensure_text The vault serves as your digital lockbox, safeguarding your data and sensitive files with our top-tier encryption.
 
 		script(src='/front.js' type='module')
 	.popup#popup

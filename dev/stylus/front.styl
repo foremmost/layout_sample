@@ -666,14 +666,19 @@ body
 		box-shadow 0px 4px 16px RGBA($plight_blue, .16)
 		border-radius 8px
 	&-half
-		display: flex
-		position: fixed
-		right: 0
-		top: 0
-		opacity: 0
-		visibility: hidden
-		z-index: 999
+		padding-top 120px
+		display flex
+		position fixed
+		right 0
+		top 0
+		opacity 0
+		visibility hidden
+		background-color #fff
+		z-index 999
 		transition .35s ease
+		+desktop()
+			padding-top 0
+			background none
 		&.-opened
 			opacity: 1
 			visibility visible
@@ -682,7 +687,7 @@ body
 				transform translateX(0%) translateY(0px)
 		&-left,&-right
 			overflow-y: auto
-			wh(100vw, 100vh)
+			wh(100vw, calc(100vh - 120px))
 			+desktop()
 				wh(50vw,100vh)
 				transform translateY(0px)
@@ -1416,8 +1421,12 @@ body
 	&-img
 		margin 40px 0
 	&-right
+		margin-top 80px
+		padding-bottom 80px
 		+desktop()
 			padding-left 80px
+			margin-top 0
+			padding-bottom 0
 		.subtitle
 			font 500 24px/28px Barlow
 			color RGB($pdark_blue)
@@ -1443,7 +1452,10 @@ body
 			max-width 395px
 		&_title
 			font 600 13px/15.6px Barlow
-			margin-bottom: 3px
+			+desktop()
+				display block
+		&_content
+			max-width 317px
 	&-left
 		w 100%
 		+desktop()
@@ -1453,12 +1465,6 @@ body
 			justify-content center
 			+desktop()
 				w initial
-	&-right
-		margin-top: 80px
-		padding-bottom: 40px
-		+desktop()
-			margin-top: 0
-			padding-bottom: 0
 .-whiteshadow
 	.member-popup
 		padding: 0
