@@ -1319,16 +1319,18 @@ body
 		margin-top 24px
 		&-item
 			w 100%
-			position: relative
+			position relative
 			padding 16px
 			background #FFF
 			border 2px solid RGBA($plight_blue, 0.2)
-			box-shadow 0px 4px 16px RGBA($plight_blue, 0.16)
+			box-shadow 0 4px 16px RGBA($plight_blue, 0.16)
 			border-radius 8px
 			margin-bottom 16px
 			font 500 16px/19px Barlow
+			&:last-child
+				margin-bottom 0
 			.link.-plus
-				padding-left: 0
+				padding-left 0
 			&.-show
 				.vault-accordeon-item_arr
 					transform rotate(-90deg)
@@ -1372,7 +1374,7 @@ body
 					padding-left: 0
 			&_actions
 				position: absolute
-				left -10px
+				right -10px
 				z-index 100
 				w 160px
 				padding 6px 21px
@@ -1380,6 +1382,9 @@ body
 				border 2px solid RGBA($plight_blue,.2)
 				box-shadow 0 4px 16px RGBA($plight_blue,.2)
 				border-radius 8px
+				+desktop()
+					right initial
+					left -10px
 				button
 					display: flex
 					align-items: center
@@ -1419,16 +1424,19 @@ body
 			&.-little
 				font 500 16px/19px Barlow
 	&-text
-		margin-top: 10px
+		max-width 466px
+		margin-top 8px
 	&-ensure
-		margin-top: 40px
-		border-top: 1px solid RGB($plight_gray)
-		padding-top: 40px
-		display: flex
-		align-items: center
-		column-gap: 8px
+		margin-top 40px
+		border-top 1px solid RGB($plight_gray)
+		padding-top 40px
+		display flex
+		align-items center
+		column-gap 8px
 		&_img
-			padding: 0 10px
+			width 48px
+			padding 0 10px
+			flex-shrink 0
 		&_title,&_text
 			font-size: 13px
 			color RGB($pdark_gray)
