@@ -1570,11 +1570,13 @@ body
 .risk
 	&-score
 		&-row
+			w 312px
 			align-items: center
 			justify-content: space-between
 			flex-wrap wrap
 			position: relative
 			+desktop()
+				w 460px
 				flex-wrap wrap
 		&-img
 			w 100%
@@ -1587,73 +1589,91 @@ body
 			text-transform: uppercase
 			color RGB(243,184,44)
 		&-ba
-			position: absolute
-			left: calc(50% - 13px)
-			bottom: 34px
+			position absolute
+			left calc(50% - 13px)
+			bottom 47px
 			wh 21px
 			border-radius 100%
-			display: flex
-			align-items: center
-			justify-content: center
-			border-radius 100%
-			background-color: #fff
+			display flex
+			align-items center
+			justify-content center
+			background-color #fff
 			box-shadow 0 1px 4px RGBA($plight_blue)
 			+desktop()
-				bottom 49px
+				bottom 47px
 				left: calc(50% - 19px)
 			span
 				display: block
 				wh 13px
 				border-radius 100%
 				background-color: RGB($uorange)
+		&-icon
+			display none
+			+desktop()
+				display block
+				&-mobile
+					display none
 	&-subtitle
 		font-weight: 500
 		margin-top: 24px
 		+desktop()
 			margin-top: 40px
 	&-text
-		margin-top: 8px
-		margin-bottom: 20px
+		margin-top 8px
+		margin-bottom 20px
+		&:last-child
+			margin-bottom 0
 	&-data
-		margin-top: 40px
-		border-top: 2px solid RGB($plight_gray)
-		padding-top: 40px
+		margin-top 40px
+		margin-bottom 80px
+		order 2
 		&-head
-			font-weight: 500
+			font 500 24px/28.8px Barlow
 			align-items: center
 			column-gap: 20px
 			cursor: pointer
+			+desktop()
+				font-size 16px
+				line-height 19.2px
 			svg
 				wh 12px 8px
 		&-body
-			display: none
-			padding-top: 24px
+			display none
+			padding-top 24px
 			&.-show
-				display: block
+				display block
 			&-item
-				padding 24px
+				padding 16px
 				border 2px solid RGBA($plight_blue,.2)
-				border-radius: 8px
-				column-gap: 16px
-				margin-bottom: 16px
+				border-radius 8px
+				column-gap 16px
+				margin-bottom 16px
 				flex-wrap nowrap
+				+desktop()
+					padding 24px
+				&:last-child
+					margin-bottom 0
 				&_title
 					font 500 24px/28.8px Barlow
 				&_subtitle
 					font 400 16px/19.2px Barlow
 				&_text
-					margin-top: 8px
+					margin-top 8px
 					color RGB($pdark_gray)
 					font 400 16px/19.2px Barlow
 				&_img
-					flex 0 0 32px
-					wh 32px 23px
+					margin 8px 0 0 5px
+					flex 0 0 21px
+					wh 21px 15px
+					+desktop()
+						flex 0 0 32px
+						wh 32px 23px
 
 	&-list
 		display: flex
 		flex-wrap wrap
-		margin-top: 40px
-		column-gap: 42px
+		margin-top 40px
+		column-gap 42px
 		&-svg
 			display: none
 			+desktop()
@@ -1664,10 +1684,17 @@ body
 				right: -60px
 				max-width 410px !important
 		&-item
-			position: relative
-			display: flex
-			column-gap: 8px
-			margin-bottom: 48px
+			position relative
+			display flex
+			column-gap 8px
+			margin-bottom 40px
+			+desktop()
+				w calc(50% - 21px)
+				margin-bottom 48px
+			+desktop-large()
+				w 340px
+			&:last-child
+				margin-bottom 0
 			&.-first
 				+desktop()
 					display: none
@@ -1676,8 +1703,6 @@ body
 				.risk-list-item_content
 					+desktop()
 						w 340px
-			+desktop()
-				w 340px
 			&_img
 				flex 0 0 40px
 				svg
@@ -1689,17 +1714,38 @@ body
 				color: RGB($pdark_gray)
 				+desktop()
 					w 292px
+	&-row
+		display flex
+		flex-direction column
+		+desktop-large()
+			display grid
+			grid-column-gap 107px
+			grid-template-columns 460px 1fr
+			grid-template-areas "left right" "left2 right"
 	&-left
 		+desktop()
-			display: flex
-			max-width 567px
+			max-width initial
+			display flex
+			position relative
+		+desktop-large()
 			&:after
-				content: ''
-				display: block
+				content ''
+				position absolute
 				wh 2px calc( (597 / 1080) * 100vh)
-				margin-top: 120px
-				margin-left: 107px
+				top 120px
+				right -107px
 				background-color RGB($plight_gray)
+	&-right
+		margin-top 40px
+		+desktop()
+			padding-bottom 100px
+		+desktop-large()
+			padding-left 80px
+			grid-area right
+			border-bottom none
+	&-left,&-right
+		padding-bottom 40px
+		border-bottom 2px solid RGB($plight_gray)
 .n404
 	&-content
 		height calc( 100vh - 107px)
