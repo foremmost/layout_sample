@@ -23,7 +23,7 @@ block content
 								span Last Login Date:
 								span  03/15/2024
 				.row.white-items
-					.white-item
+					.white-item.home-white-items
 						.white-block
 							.white-block_head
 								h5.white-block_title.row
@@ -58,7 +58,50 @@ block content
 									li.white-block-list-item
 										.white-block-list-item_image
 											svg
-												use(xlink:href='/img/sprite.svg#encrypted')
+												use(xlink:href='/img/sprite.svg#encryptedBlue')
+										.white-block-list-item_content
+											span Jan 17 at 5:22 AM
+											strong
+												| Your password appeared in multiple data breach
+												| records for jmurack@gmail.com
+									li.white-block-list-item
+										button.btn.-blue
+											| Vie All Alerts
+						.white-block
+							.white-block_head
+								h5.white-block_title.row
+									svg
+										use(xlink:href='/img/sprite.svg#news')
+									span Title Monitoring
+								.white-block-status.-active.row
+									svg
+										use(xlink:href='/img/sprite.svg#check_circle')
+									span Active
+							.white-block-body
+								.white-block-alerts
+									| You have 12 unread alerts.
+								ul.white-block-list
+									li.white-block-list-item
+										.white-block-list-item_image
+											svg
+												use(xlink:href='/img/sprite.svg#request_quote')
+										.white-block-list-item_content
+											span Jan 17 at 5:22 AM
+											strong
+												| Your password appeared in multiple data breach
+												| records for jmurack@gmail.com
+									li.white-block-list-item
+										.white-block-list-item_image
+											svg
+												use(xlink:href='/img/sprite.svg#supervisor_account')
+										.white-block-list-item_content
+											span Jan 17 at 5:22 AM
+											strong
+												| Your password appeared in multiple data breach
+									li.white-block-list-item
+										.white-block-list-item_image
+											svg
+												use(xlink:href='/img/sprite.svg#location_away')
 										.white-block-list-item_content
 											span Jan 17 at 5:22 AM
 											strong
@@ -103,50 +146,6 @@ block content
 												.white-block-rating_img_scoreCircle
 													span
 												img(src='/img/rating.svg')
-					.white-item
-						.white-block
-							.white-block_head
-								h5.white-block_title.row
-									svg
-										use(xlink:href='/img/sprite.svg#news')
-									span Title Monitoring
-								.white-block-status.-active.row
-									svg
-										use(xlink:href='/img/sprite.svg#check_circle')
-									span Active
-							.white-block-body
-								.white-block-alerts
-									| You have 12 unread alerts.
-								ul.white-block-list
-									li.white-block-list-item
-										.white-block-list-item_image
-											svg
-												use(xlink:href='/img/sprite.svg#request_quote')
-										.white-block-list-item_content
-											span Jan 17 at 5:22 AM
-											strong
-												| Your password appeared in multiple data breach
-												| records for jmurack@gmail.com
-									li.white-block-list-item
-										.white-block-list-item_image
-											svg
-												use(xlink:href='/img/sprite.svg#supervisor_account')
-										.white-block-list-item_content
-											span Jan 17 at 5:22 AM
-											strong
-												| Your password appeared in multiple data breach
-									li.white-block-list-item
-										.white-block-list-item_image
-											svg
-												use(xlink:href='/img/sprite.svg#location_away')
-										.white-block-list-item_content
-											span Jan 17 at 5:22 AM
-											strong
-												| Your password appeared in multiple data breach
-												| records for jmurack@gmail.com
-									li.white-block-list-item
-										button.btn.-blue
-											| Vie All Alerts
 						.white-block
 							.white-block_head
 								h5.white-block_title.row
@@ -158,21 +157,16 @@ block content
 										use(xlink:href='/img/sprite.svg#check_circle')
 									span Active
 							.white-block-body
-								.white-block-alerts
-									| We’ve removed 16 pieces of exposed personal
-									br
-									| information for you, minimizing your risk of
-									br
-									| identity theft, hacks and spam.
+								.white-block-alerts We’ve removed 16 pieces of exposed personal information for you, minimizing your risk of identity theft, hacks and spam.
 								br
 								button.btn.-blue.-bi
 									| View Removed Information
-
 					.gray-block
 						h6.gray-block-title ID Risk Score
 						.gray-actions
 							span Breach Risk Score
 							strong 710
+							i
 							em Medium
 						p.gray-text
 							| Our scoring models use predictive statistical
@@ -211,15 +205,10 @@ block content
 				.row.gray-bottom-row
 					.gray-block.gray-bottom-block
 						h6.gray-block-title Lost Wallet Service
-							p.gray-text
-								| In the event that you misplace or your wallet is stolen,we will
-								br
-								| assist you in securing your lost cards and important information.
-							a.btn Learn More
+						p.gray-text In the event that you misplace or your wallet is stolen,we will assist you in securing your lost cards and important information.
+						a.btn Learn More
 					.gray-block.gray-bottom-block
 						h6.gray-block-title Client Support
-							p.gray-text
-								| If you need assistance, our support team is here to help you with
-								| any questions or concerns you may have.
-							a.btn Get Help
+						p.gray-text If you need assistance, our support team is here to help you with any questions or concerns you may have.
+						a.btn Get Help
 	include footer-profile
