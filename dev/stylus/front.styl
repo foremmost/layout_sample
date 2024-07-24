@@ -603,7 +603,7 @@ body
 			w 100%
 			margin-top 71px
 			+desktop()
-				height calc(100vh - 250px - 115px)
+				height calc(100vh - 221px - 73px - 24px - 38px - 69px - 32px)
 				margin-top 24px
 				overflow hidden
 				overflow-y scroll
@@ -965,6 +965,7 @@ body
 				&:last-child
 					padding 16px 0 0
 				&.nopad
+					padding 0
 					flex-wrap wrap
 					+desktop()
 						flex-wrap nowrap
@@ -1004,13 +1005,19 @@ body
 				&_right
 					padding 24px 20px
 					+desktop()
-						padding-right: 41px
-						padding-left: 41px
+						padding-right 40px
+						padding-left 40px
 				&_title
 					font 500 16px/19.2px Barlow
 					padding-top: 16px
 					+desktop()
 						padding-top: 53px
+					&.-with-icon
+						display flex
+						align-items center
+						column-gap 8px
+					svg
+						wh 20px
 				&_text
 					font-weight: 400
 					color RGB($pdark_gray)
@@ -1043,6 +1050,8 @@ body
 			margin-top 16px
 			font 400 16px/19.2px Barlow
 			color RGB($pdark_gray)
+			strong
+				color RGB($pdark_blue)
 		&-rating_img
 			position: relative
 			display: flex
@@ -2089,3 +2098,12 @@ body
 		margin-bottom 0
 		+desktop()
 			margin-bottom 24px
+.credit
+	&-monitoring
+		&-gray
+			margin-top 8px
+			margin-bottom 16px
+			font 400 13px/15.6px Barlow
+			color RGB($pdark_gray)
+			+desktop()
+				margin-bottom 40px
