@@ -11,166 +11,15 @@ block content
 					span.breads-delim >
 					a(href='#').breads-item Title Monitoring
 				.white-block_head.title-head
-					h5.white-block_title
+					h5.title.identity-title
 						span Title Monitoring
 					.white-block-status.-active.row
 						svg
 							use(xlink:href='/img/sprite.svg#check_circle')
 						span Active
 				.identity-content.row
-					.identity-left
-						label.select.identity-select
-							span.select-head
-								span.select-option Filters
-								svg
-									use(xlink:href='/img/sprite.svg#chevron_right')
-							span.select-body
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Address
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Phone
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Name
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Credit
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Criminal
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Internet
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Payday Loan
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Social
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Bankruptcy
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Death
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Location
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Initial
-								.select-body_item
-									label
-										input(type='checkbox')
-										strong
-									span Other
-						ul.identity-list
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#mark_as_unread')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| Your password appeared in a data leak
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#money_off')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| Your password appeared in multiple data breach
-										br
-										| records for jmurack@gmail.com
-							li.white-block-list-item(data-click="front:showHalf" data-popup='#address-form')
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#credit_score')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| Your email address for “Infostealer Naz.API Logs”
-										br
-										| appeared in a data leak
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#captive_portal')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to AllWebLeads
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#badge')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Equifax
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#group')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to OldPhonebook
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#call')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Lexis Nexis - Know X
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#badge')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Lexis Nexis - Know X
-							li.white-block-list-item
-								.white-block-list-item_image
-									svg
-										use(xlink:href='/img/sprite.svg#location_on')
-								.white-block-list-item_content
-									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Lexis Nexis - Know X
-						button.btn.-full.-blue.identity-more
-							| Load More
 					.identity-right
-						.block.-small.-pb0
+						.block.monitoring-block
 							h2.block-title Properties Monitored
 							.table-cont.profile-table.-vis.monit-table
 								table.table
@@ -187,21 +36,145 @@ block content
 											td.table-actions
 												button.btn-table(data-click="front:showForm" data-popup='#stop-monitoring')
 													svg
-														use(xlink:href='/img/sprite.svg#delete')
+														use(xlink:href='/img/sprite.svg#cancel')
 										tr
 											td John Doe
 											td S1023 COUNTY ROAD G, WONEWOC, WI 53968
 											td.table-actions
 												button.btn-table(data-click="front:showForm" data-popup='#stop-monitoring')
 													svg
-														use(xlink:href='/img/sprite.svg#delete')
+														use(xlink:href='/img/sprite.svg#cancel')
 						button.link.-plus.btn(data-click="front:showForm" data-popup="#add-property" data-islarge)
 							svg
 								use(xlink:href='/img/sprite.svg#add')
 							span
 								| Add Property
+					.identity-left
+						.select.identity-select(data-click="front:openSelect")
+							span.select-head
+								span.select-option Filters
+								svg
+									use(xlink:href='/img/sprite.svg#chevron_right')
+							span.select-body
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Address
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Phone
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Name
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Credit
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Criminal
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Internet
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Payday Loan
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Social
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Bankruptcy
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Death
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Location
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Initial
+								.select-body_item
+									label.checkbox
+										input(type='checkbox')
+										span Other
+						ul.identity-list
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#mark_as_unread')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong Your password appeared in a data leak
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#money_off')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong Your password appeared in multiple data breach records for jmurack@gmail.com
+							li.white-block-list-item(data-click="front:showHalf" data-popup='#address-form')
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#credit_score')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong Your email address for “Infostealer Naz.API Logs” appeared in a data leak
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#captive_portal')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong We completed your 1st remove request to AllWebLeads
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#badge')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong We completed your 1st remove request to Equifax
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#group')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong We completed your 1st remove request to OldPhonebook
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#call')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong We completed your 1st remove request to Lexis Nexis - Know X
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#badge')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong We completed your 1st remove request to Lexis Nexis - Know X
+							li.white-block-list-item
+								.white-block-list-item_image
+									svg
+										use(xlink:href='/img/sprite.svg#location_on')
+								.white-block-list-item_content
+									span Jan 17 at 5:22 AM
+									strong We completed your 1st remove request to Lexis Nexis - Know X
+						button.btn.-full.-blue.identity-more
+							| Load More
 		script(src='/front.js' type='module')
-
 	div(hidden)
 		.member-popup#stop-monitoring
 			h5.title-popup.block-title Stop Monitoring this?

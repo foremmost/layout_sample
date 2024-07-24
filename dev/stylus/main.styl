@@ -112,10 +112,10 @@ body
 .table
 	border-collapse collapse
 .select,.checkbox
-	display: block
+	display block
 .select
-	position: relative
-	cursor: pointer
+	position relative
+	cursor pointer
 	&-head
 		display flex
 		align-items: center
@@ -134,19 +134,19 @@ body
 	&-body
 		w 100%
 		z-index 1500
-		position: absolute
-		padding: 8px
-		background-color: #fff
+		position absolute
+		padding 8px
+		background-color #fff
 		border 2px solid RGBA($plight_blue,.2)
 		border-radius 8px
-		opacity: 0
-		visibility: hidden
+		opacity 0
+		visibility hidden
 		top 0
 		transition .35s ease
 		&.-show
-			top calc(100% + 8px)
-			opacity: 1
-			visibility: visible
+			top 100%
+			opacity 1
+			visibility visible
 		&-item
 			w 100%
 			text-align: left
@@ -162,7 +162,7 @@ body
 				color: RGB($pdark_gray)
 
 		.checkbox input:checked+span:before
-			background: url('/img/check_blue.png') no-repeat center !important
+			background url('/img/check_blue.png') no-repeat center !important
 .checkbox
 	font 500 16px/19.2px Barlow
 	color RGB($pdark_gray)
@@ -196,7 +196,7 @@ body
 .-mr80
 	margin-right 80px
 .nopad
-	padding: 0
+	padding 0
 .max-527
 	max-width 527px
 .error

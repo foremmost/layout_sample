@@ -1,7 +1,7 @@
 extends template/main
 append vars
 	-
-		page_title = 'Home'
+		page_title = 'Identity'
 block content
 	main
 		section.identity
@@ -10,15 +10,15 @@ block content
 					a(href='#').breads-item.-home Home
 					span.breads-delim >
 					a(href='#').breads-item Identity Protection
+				.white-block_head.title-head
+					h5.title.identity-title
+						span Identity Protection
+					.white-block-status.-active.row
+						svg
+							use(xlink:href='/img/sprite.svg#check_circle')
+						span Active
 				.identity-content.row
 					.identity-left
-						.white-block_head
-							h5.white-block_title
-								span Identity Protection
-							.white-block-status.-active.row
-								svg
-									use(xlink:href='/img/sprite.svg#check_circle')
-								span Active
 						.select.identity-select(data-click="front:openSelect")
 							span.select-head
 								span.select-option Filters
@@ -157,7 +157,6 @@ block content
 										| We completed your 1st remove request to Lexis Nexis - Know X
 						button.btn.-full.-blue.identity-more
 							| Load More
-					.identity-right
 	include footer-profile
 
 

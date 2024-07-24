@@ -629,6 +629,7 @@ body
 	justify-content center
 	left 0
 	top 0
+	z-index 1000
 	visibility hidden
 	opacity 0
 	&.-opened
@@ -1246,22 +1247,41 @@ body
 			text-decoration: underline
 	&-delim
 		margin 0 8px
+.list
+	margin: 20px 0
+	padding: 20px 0
+	border-top 1px solid RGBA($plight_blue,.2)
+	border-bottom 1px solid RGBA($plight_blue,.2)
+	&:last-child
+		border-bottom: 0
+	li
+		margin-bottom 8px
+	strong
+		display inline-block
+		w 163px
+		font-weight 500
+	span
+		color RGB($pdark_gray)
 .identity
 	&-select,&-list
 		min-width 312px
 		+desktop()
-			min-width 583px
+			min-width initial
+			width 583px
 	&-list
 		box-shadow 0 2px 8px RGBA($plight_blue,.24)
-		margin-top: 16px
+		margin-top 16px
 		border-radius 8px
-		padding: 8px
+		+desktop()
+			padding 8px
 		.white-block-list-item
 			padding 16px
 			+desktop()
 				padding 16px 0
+		.white-block-list-item_content
+			max-width 368px
 	&-select
-		margin-top: 40px
+		margin-top 0
 		position: relative
 		.select-head
 			background-color: #fff
@@ -1301,14 +1321,25 @@ body
 					display: none
 
 	&-more
-		margin-top: 16px
-	&-left
-		padding-bottom: 80px
+		margin-top 16px
+	&-title
+		margin-top 8px
+		order 2
 		+desktop()
-			padding-bottom: 0
+			order initial
+			margin-top 0
+	&-left
+		margin-top 40px
+		padding-bottom 80px
+		+desktop()
+			padding-bottom 0
+		&:first-child
+			margin-top 24px
+			+desktop()
+				margin-top 40px
 		.white-block_head
 			+desktop()
-				margin-top: 40px
+				margin-top 40px
 	&-right
 		w 100%
 		order -1
@@ -1317,7 +1348,7 @@ body
 		+desktop()
 			w initial
 			display: block
-			order 0
+			order 1
 			padding: 20px 0 0 56px
 		.link
 			w 100%
@@ -1330,21 +1361,10 @@ body
 				order 0
 				margin-top: 0
 
-.list
-	margin: 20px 0
-	padding: 20px 0
-	border-top 1px solid RGBA($plight_blue,.2)
-	border-bottom 1px solid RGBA($plight_blue,.2)
-	&:last-child
-		border-bottom: 0
-	li
-		margin-bottom 8px
-	strong
-		display inline-block
-		w 163px
-		font-weight 500
-	span
-		color RGB($pdark_gray)
+	&-popup
+		&-list
+			padding 40px 0
+			margin 40px 0
 #address-form
 	.subtitle
 		color RGB($pdark_blue)
@@ -1352,7 +1372,8 @@ body
 		margin-bottom: 8px
 	.text,.btn
 		margin-top 16px
-
+	.identity-popup-btn
+		margin-top 40px
 .vault
 	.white-block_title
 		+desktop()
@@ -1872,8 +1893,9 @@ body
 .title
 	&-head
 		max-width 583px
-		margin-top: 40px
+		margin-top 24px
 		+desktop()
+			margin-top 40px
 			.white-block_title
 				order 0
 
@@ -2060,9 +2082,8 @@ body
 .member-popup.driver
 	.title-popup
 		font-size: 32px
-.monit
-	&-table
-		td,th
-			&:first-child
-				font-weight: 400 !important
-
+.monitoring
+	&-block
+		margin-bottom 0
+		+desktop()
+			margin-bottom 24px

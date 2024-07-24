@@ -1,7 +1,7 @@
 extends template/main
 append vars
 	-
-		page_title = 'Home'
+		page_title = 'Identity'
 block content
 	main
 		section.identity
@@ -10,15 +10,15 @@ block content
 					a(href='#').breads-item.-home Home
 					span.breads-delim >
 					a(href='#').breads-item Identity Protection
+				.white-block_head.title-head
+					h5.title.identity-title
+						span Identity Protection
+					.white-block-status.-active.row
+						svg
+							use(xlink:href='/img/sprite.svg#check_circle')
+						span Active
 				.identity-content.row
 					.identity-left
-						.white-block_head
-							h5.white-block_title
-								span Identity Protection
-							.white-block-status.-active.row
-								svg
-									use(xlink:href='/img/sprite.svg#check_circle')
-								span Active
 						.select.identity-select(data-click="front:openSelect")
 							span.select-head
 								span.select-option Filters
@@ -77,7 +77,6 @@ block content
 									label.checkbox
 										input(type='checkbox')
 										span Other
-
 						ul.identity-list
 							li.white-block-list-item
 								.white-block-list-item_image
@@ -85,79 +84,65 @@ block content
 										use(xlink:href='/img/sprite.svg#mark_as_unread')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| Your password appeared in a data leak
+									strong Your password appeared in a data leak
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#money_off')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| Your password appeared in multiple data breach
-										br
-										| records for jmurack@gmail.com
+									strong Your password appeared in multiple data breach records for jmurack@gmail.com
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#credit_score')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| Your email address for “Infostealer Naz.API Logs”
-										br
-										| appeared in a data leak
+									strong Your email address for “Infostealer Naz.API Logs” appeared in a data leak
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#captive_portal')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to AllWebLeads
+									strong We completed your 1st remove request to AllWebLeads
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#badge')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Equifax
+									strong We completed your 1st remove request to Equifax
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#group')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to OldPhonebook
+									strong We completed your 1st remove request to OldPhonebook
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#call')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Lexis Nexis - Know X
+									strong We completed your 1st remove request to Lexis Nexis - Know X
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#badge')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Lexis Nexis - Know X
+									strong We completed your 1st remove request to Lexis Nexis - Know X
 							li.white-block-list-item
 								.white-block-list-item_image
 									svg
 										use(xlink:href='/img/sprite.svg#location_on')
 								.white-block-list-item_content
 									span Jan 17 at 5:22 AM
-									strong
-										| We completed your 1st remove request to Lexis Nexis - Know X
+									strong We completed your 1st remove request to Lexis Nexis - Know X
 						button.btn.-full.-blue.identity-more
 							| Load More
-					.identity-right
 	include footer-profile
 
 
