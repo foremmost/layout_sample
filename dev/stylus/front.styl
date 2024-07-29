@@ -1983,11 +1983,10 @@ body
 	w 100%
 	+desktop()
 		w initial
-		border: 0
-		background-color: transparent
-		box-shadow: none
-		padding: 0
-
+		border 0
+		background-color transparent
+		box-shadow none
+		padding 0
 	&.profile-block
 		padding 24px
 	&-table
@@ -2016,6 +2015,13 @@ body
 		+desktop()
 			w initial
 
+	.popup-half-right
+		transform translate(0px,-60px)
+		position relative
+		z-index  1000
+		+desktop()
+			padding-top 189px
+			transform translate(64px,0px)
 .footer
 	margin-top auto
 .foot
@@ -2068,14 +2074,6 @@ body
 	.section
 		+desktop()
 			padding: 16px 0
-.details
-	.popup-half-right
-		transform: translate(0px,-60px)
-		padding-top: 189px
-		position: relative
-		z-index:  1000
-		+desktop()
-			transform translate(64px,0px)
 .mem
 	&-title
 		display: none
