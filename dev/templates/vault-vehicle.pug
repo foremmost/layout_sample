@@ -34,7 +34,6 @@ block content
 										button.vault-accordeon-item_arr
 											svg
 												use(xlink:href='/img/sprite.svg#chevron_right')
-									.vault-accorderon-item_body
 								.vault-accordeon-item
 									.vault-accordeon-item_head.row
 										.vault-accordeon-item_img
@@ -44,8 +43,7 @@ block content
 										button.vault-accordeon-item_arr
 											svg
 												use(xlink:href='/img/sprite.svg#chevron_right')
-									.vault-accorderon-item_body
-								.vault-accordeon-item
+								.vault-accordeon-item.-show
 									.vault-accordeon-item_head.row
 										.vault-accordeon-item_img
 											svg
@@ -64,6 +62,18 @@ block content
 										use(xlink:href='/img/sprite.svg#add')
 									span Add new vehicle
 					.vault-right
+						h3.subtitle What is the Identimaxx vault?
+						.vault-img
+							img(src='/img/vault.svg')
+						h4.subtitle.-little
+							| Your own digital lockbox
+						p.text.vault-text Safeguard important information and files in your vault, an essential tool for protecting your identity. Documents stored here will be encrypted, but not all of them are not monitored on the dark web.
+						.vault-ensure
+							.vault-ensure_img
+								img(src='/img/ensure.svg')
+							.vault-ensure_content
+								strong.vault-ensure_title Ensure your safety with Identimaxx’s vault service.
+								span.vault-ensure_text The vault serves as your digital lockbox, safeguarding your data and sensitive files with our top-tier encryption.
 		script(src='/front.js' type='module')
 	.popup-half.-whiteshadow#license
 		.popup-half-left

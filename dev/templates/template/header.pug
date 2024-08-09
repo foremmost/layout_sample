@@ -115,6 +115,14 @@ header.head
 				button.head-burger(data-click="front:showMobileMenu")
 					span.head-burger_item
 			.head-mobile-menu-cont
+				.row.head-row
+					.head-logo
+						a(href='#')
+							svg
+								use(xlink:href='/img/sprite.svg#main_logo')
+					.head-actions
+						button.head-burger(data-click="front:showMobileMenu")
+							span.head-burger_item
 				ul.head-mobile-menu.row
 					li.head-mobile-menu_item.head-menu_item
 						a(href='#') Home
@@ -178,7 +186,7 @@ header.head
 						li.head-mobile-subitem
 							span.head-mobile-subitem_value.menu_value
 								| Account Details
-						li.head-mobile-subitem.menu-active
+						li.head-mobile-subitem
 							span.head-mobile-subitem_value.menu_value
 								| Membership
 						li.head-mobile-subitem

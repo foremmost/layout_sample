@@ -17,20 +17,49 @@ block content
 						nav.vault-tabs
 							button.vault-tab
 								| Personal
-							button.vault-tab
+							button.vault-tab.-active
 								| Financial
 							button.vault-tab
 								| Auto
-							button.vault-tab.-active
+							button.vault-tab
 								| Other
 						.vault-left-content
 							.vault-accordeon
+								.vault-accordeon-item.-show
+									.vault-accordeon-item_head.row
+										.vault-accordeon-item_img
+											svg
+												use(xlink:href='/img/sprite.svg#credit_card')
+										.vault-accordeon-item_title Credit Card
+										button.vault-accordeon-item_arr
+											svg
+												use(xlink:href='/img/sprite.svg#chevron_right')
+									.vault-accordeon-item_body
+										.vault-accordeon-item_input
+											input(type='text' value='Credit Card')
+											.vault-accordeon-item_action
+												button
+													svg
+														use(xlink:href='/img/sprite.svg#more_vert')
+												.vault-accordeon-item_actions
+													button
+														svg
+															use(xlink:href='/img/sprite.svg#border_color')
+														span Edit Details
+													button
+														svg
+															use(xlink:href='/img/sprite.svg#adelete')
+														span Delete Item
+										button.link.-plus
+											svg
+												use(xlink:href='/img/sprite.svg#add')
+											span Add credit card
 								.vault-accordeon-item
 									.vault-accordeon-item_head.row
 										.vault-accordeon-item_img
 											svg
-												use(xlink:href='/img/sprite.svg#joystick')
-										.vault-accordeon-item_title Gamertag
+												use(xlink:href='/img/sprite.svg#vault-financial')
+										.vault-accordeon-item_title Savings Account
 										button.vault-accordeon-item_arr
 											svg
 												use(xlink:href='/img/sprite.svg#chevron_right')
@@ -39,8 +68,8 @@ block content
 									.vault-accordeon-item_head.row
 										.vault-accordeon-item_img
 											svg
-												use(xlink:href='/img/sprite.svg#school')
-										.vault-accordeon-item_title School Identification
+												use(xlink:href='/img/sprite.svg#vault-financial')
+										.vault-accordeon-item_title Checking Account
 										button.vault-accordeon-item_arr
 											svg
 												use(xlink:href='/img/sprite.svg#chevron_right')
@@ -49,8 +78,8 @@ block content
 									.vault-accordeon-item_head.row
 										.vault-accordeon-item_img
 											svg
-												use(xlink:href='/img/sprite.svg#news')
-										.vault-accordeon-item_title Birth Certificate
+												use(xlink:href='/img/sprite.svg#vault-financial')
+										.vault-accordeon-item_title Retirement Account
 										button.vault-accordeon-item_arr
 											svg
 												use(xlink:href='/img/sprite.svg#chevron_right')
