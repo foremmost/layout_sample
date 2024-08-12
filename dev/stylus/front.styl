@@ -2162,3 +2162,29 @@ body
 .-resetlink
 	span,a
 		display: inline!important
+		
+.users
+	&-list
+		w 100%
+		padding 8px
+		border-radius 8px
+		background-color #fff
+		border 1px solid RGBA($plight_blue,.2)
+		display flex
+		flex-direction column
+		row-gap 8px
+		position absolute
+		bottom 0
+		left 0
+		z-index 1
+	&-item
+		&_btn
+			w 100%
+			padding 8px 16px
+			border-radius 8px
+			text-align left
+			font 16px/19.2px Barlow
+			color RGB($pdark_gray)
+			&.active,&:active
+				background-color RGBA($plight_blue,.2)
+				color RGB($pdark_blue)
