@@ -39,10 +39,17 @@ body
 	&.-full
 		w 100%
 	&-table
+		border-radius 8px
+		transition .35s ease
 		&,svg
 			wh(24px)
 		use
 			fill RGB($ured)
+		&:hover
+			background-color RGBA($plight_blue,.2)
+		&:disabled
+			opacity .2
+			background-color RGBA($plight_blue,.5)
 	&-eye
 		position absolute
 		top 16px
