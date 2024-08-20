@@ -48,10 +48,11 @@ body
 				display block
 				margin 0 auto
 		&_item
-			padding 2px 6px
+			padding 8px 0
 			transition .35s ease
 			+desktop()
 				padding 11px 16px
+				max-height 40px
 			a
 				color RGB($pdark_blue)
 			&.-dropdown
@@ -60,8 +61,11 @@ body
 				align-items center
 				column-gap: 14.35px
 			&:hover
+				padding 8px 16px
 				border-radius 8px
 				background-color: RGB($plight_blue,.2)
+				+desktop()
+					padding: 11px 16px
 			&.menu-active
 				svg
 					transform rotate(180deg)
@@ -163,6 +167,7 @@ body
 				w initial
 				position static
 				align-items center
+				column-gap initial
 		.head-menu_sublist
 			w 212px
 			left initial
@@ -175,7 +180,12 @@ body
 			padding: 0!important
 			display: none !important
 			+desktop()
+				wh 40px
 				display: flex !important
+				align-items: center
+				justify-content: center
+				svg
+					wh 25px
 			.head-menu_sublist
 				w 256px
 	&-mobile
