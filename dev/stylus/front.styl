@@ -84,20 +84,16 @@ body
 				&>.head-menu_sublist
 					opacity: 1
 					visibility visible
-					display: block
 		+desktop()
 			display flex
 			column-gap 40px
 			font 500 16px/19.2px Barlow
 
 		&_sublist
-			display: none
-			//+desktop()
 			w 256px
 			position: absolute
 			z-index 100
-			display: block
-			padding 8px
+			padding 6px 4px
 			padding-bottom: 0
 			top: 40px
 			left: 0
@@ -107,13 +103,14 @@ body
 			border-radius 8px
 			opacity: 0
 			visibility hidden
-			.head-mobile-subitem:hover
-				cursor: pointer
-				background-color: RGB($plight_blue,.2)
-				.head-mobile-subitem_icon use
-					fill RGB($pdark_blue)
-				span
-					color:  RGB($pdark_blue)
+			.head-mobile-subitem
+				&:hover,&.active
+					cursor: pointer
+					background-color: RGB($plight_blue,.2)
+					.head-mobile-subitem_icon use
+						fill RGB($pdark_blue)
+					span
+						color:  RGB($pdark_blue)
 			.head-mobile-subitem_icon
 				flex 0 0 24px
 
@@ -239,7 +236,7 @@ body
 			padding 8px 16px
 			column-gap: 8px
 			margin-bottom: 8px
-			&:hover
+			&:hover,&.active
 				background-color: RGB($plight_blue,.2)
 			&:active
 				border-radius 8px
