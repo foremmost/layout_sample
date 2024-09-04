@@ -1000,8 +1000,6 @@ body
 				padding: 16px
 				border-radius 8px
 				transition .35s ease
-				&:hover
-					background-color RGBA($plight_blue,.08)
 				&:last-child
 					padding 16px 0 0
 				&.nopad
@@ -1022,6 +1020,8 @@ body
 				+desktop()
 					flex-wrap nowrap
 					align-items: center
+					&:hover
+						background-color RGBA($plight_blue,.08)
 				&.-empty
 					padding: 16px
 					background-color RGBA($plight_blue,.08)
@@ -1333,10 +1333,6 @@ body
 		border 2px solid RGBA(var(--plight_blue), 0.2)
 		+desktop()
 			padding 8px
-		.white-block-list-item
-			padding 16px
-			+desktop()
-				padding 16px 0
 		.white-block-list-item_content
 			max-width 368px
 	&-select
