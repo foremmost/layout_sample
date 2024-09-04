@@ -952,9 +952,10 @@ body
 					opacity: 1
 		.btn
 			w 100%
+			margin-top 16px
 			+desktop()
 				width 133px
-				padding 6px
+				padding 8.5px 6px
 			&.-bi
 				+desktop()
 					w 219px
@@ -1063,18 +1064,18 @@ body
 				span
 					font 400 13px/15.6px Barlow
 					color RGB($pdark_gray)
+					margin-bottom: 4px
 				strong
 					font 500 16px/19.2px Barlow
 					color RGB($pdark_blue)
-					margin-bottom: 4px
 			&-item_image
 				flex-shrink 0
 				display flex
 				justify-content center
 				margin-right 8px
 				+desktop()
-					margin-right 0
-					flex 0 0 calc( 16px + 16px + 40px)
+					margin-right 16px
+					flex 0 0 40px
 				svg
 					wh 32px
 					+desktop()
@@ -1945,7 +1946,7 @@ body
 		justify-content: center
 		flex-direction column
 		+desktop()
-			height calc( 100vh - 67px)
+			height calc( 100vh - 75px)
 	&-img
 		display: block
 		margin 40px 0 45px
@@ -1964,7 +1965,7 @@ body
 		color RGB($pdark_gray)
 	&-title
 		text-align center
-		font-weight 700!important
+		font-weight 600!important
 		+desktop()
 			font-size 40px !important
 .title
